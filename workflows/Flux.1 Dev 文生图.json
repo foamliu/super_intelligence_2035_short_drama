@@ -1,0 +1,127 @@
+{
+  "195": {
+    "inputs": {
+      "images": [
+        "194:8",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "194:39": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "194:38": {
+    "inputs": {
+      "unet_name": "flux1-dev.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "194:40": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "双CLIP加载器"
+    }
+  },
+  "194:27": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "空Latent图像（SD3）"
+    }
+  },
+  "194:45": {
+    "inputs": {
+      "text": "An Eastern woman with delicate and refined facial features, long hair flowing gently in the wind. She wears a crop top and jeans, with her chest and abdomen facing the camera. One finger is placed against her lips in a \"shushing\" gesture, her legs slightly apart, feet visible, looking directly at the camera. She leans back on a sofa by a sun-drenched floor-to-ceiling window. Soft natural light comes from the side, accentuating her graceful silhouette. The background features minimalist indoor greenery and white sheer curtains, creating a relaxed and cozy atmosphere. Warm, soft tones throughout. Cinematic medium shot, fine details, artistic portrait style.",
+      "clip": [
+        "194:40",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "194:31": {
+    "inputs": {
+      "seed": 1097051836587144,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "194:38",
+        0
+      ],
+      "positive": [
+        "194:45",
+        0
+      ],
+      "negative": [
+        "194:42",
+        0
+      ],
+      "latent_image": [
+        "194:27",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "194:8": {
+    "inputs": {
+      "samples": [
+        "194:31",
+        0
+      ],
+      "vae": [
+        "194:39",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "194:42": {
+    "inputs": {
+      "conditioning": [
+        "194:45",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  }
+}

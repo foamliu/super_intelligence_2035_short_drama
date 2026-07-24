@@ -1,0 +1,200 @@
+{
+  "27": {
+    "inputs": {
+      "images": [
+        "13:24",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "预览图像"
+    }
+  },
+  "28": {
+    "inputs": {
+      "image": "skeleton.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "13:14": {
+    "inputs": {
+      "clip_name": "qwen_3_4b.safetensors",
+      "type": "lumina2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "13:15": {
+    "inputs": {
+      "unet_name": "z_image_turbo_bf16.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNet加载器"
+    }
+  },
+  "13:16": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  },
+  "13:17": {
+    "inputs": {
+      "name": "Z-Image-Turbo-Fun-Controlnet-Union.safetensors"
+    },
+    "class_type": "ModelPatchLoader",
+    "_meta": {
+      "title": "加载模型补丁"
+    }
+  },
+  "13:18": {
+    "inputs": {
+      "shift": 3,
+      "model": [
+        "13:21",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "采样算法（AuraFlow）"
+    }
+  },
+  "13:19": {
+    "inputs": {
+      "seed": 361937923584727,
+      "steps": 9,
+      "cfg": 1,
+      "sampler_name": "res_multistep",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "13:18",
+        0
+      ],
+      "positive": [
+        "13:23",
+        0
+      ],
+      "negative": [
+        "13:20",
+        0
+      ],
+      "latent_image": [
+        "13:22",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "13:20": {
+    "inputs": {
+      "conditioning": [
+        "13:23",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  },
+  "13:21": {
+    "inputs": {
+      "strength": 1,
+      "model": [
+        "13:15",
+        0
+      ],
+      "model_patch": [
+        "13:17",
+        0
+      ],
+      "vae": [
+        "13:16",
+        0
+      ],
+      "image": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "QwenImageDiffsynthControlnet",
+    "_meta": {
+      "title": "QwenImageDiffsynthControlnet"
+    }
+  },
+  "13:23": {
+    "inputs": {
+      "text": " (杰作，最高品质，超精细，8k)，1个女孩，单人，年轻的亚洲女性，棕色短发，波波头，刘海，看着镜头，中性表情，美丽的细节眼睛，化妆，(双臂交叉，手放胳膊上)，白色短袖T恤，露脐装，露腰，浅蓝色牛仔牛仔裤，扣扣子的牛仔裤，站立，靠在木质墙上，户外，白天，街头，自然光，写实，照片级真实感，电影级光影，景深。",
+      "clip": [
+        "13:14",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "13:24": {
+    "inputs": {
+      "samples": [
+        "13:19",
+        0
+      ],
+      "vae": [
+        "13:16",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "13:25": {
+    "inputs": {
+      "image": [
+        "28",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "获取图像尺寸"
+    }
+  },
+  "13:22": {
+    "inputs": {
+      "width": [
+        "13:25",
+        0
+      ],
+      "height": [
+        "13:25",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "空Latent图像（SD3）"
+    }
+  }
+}
