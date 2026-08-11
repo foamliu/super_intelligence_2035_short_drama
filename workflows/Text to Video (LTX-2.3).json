@@ -25,7 +25,7 @@
   },
   "324:279": {
     "inputs": {
-      "noise_seed": 621856049976808
+      "noise_seed": 474784230355519
     },
     "class_type": "RandomNoise",
     "_meta": {
@@ -631,7 +631,7 @@
   },
   "324:320": {
     "inputs": {
-      "value": "Medium-wide shot. A fluffy golden monkey standing on a rustic wooden stage, eyes closed, mouth moving open and close as if singing passionately. Its body gently swaying to a melody, holding an imaginary microphone in its hand. The background features golden countryside fields bathed in warm sunset glow. Warm color tones, soft cinematic lighting. Consistent character and background, natural movements, realistic style, 5 seconds."
+      "value": "第一场：秋夜送别\n场景：浔阳江头，夜，枫叶荻花，客船泊岸\n\n项目\t内容\n景别\t全景→中景\n镜头\t摇镜头从枫叶落至江面，再推至二人\n人物\t白居易、客人\n动作\t二人对坐船头，酒壶已空，相对无言\n对白\t客人：（举杯苦笑）白兄，今夜一别，不知何日再聚。这江州地界，再无对饮之人了。\n白居易：（长叹）秋风萧瑟，举酒无乐，连丝竹管弦都没有，这酒越喝越冷。（搁杯，望江面）你看那江月，像是浸在水里一般……惨淡得很。\n旁白/字幕\t浔阳江头夜送客，枫叶荻花秋瑟瑟。醉不成欢惨将别，别时茫茫江浸月。\n情绪\t萧瑟、悲凉"
     },
     "class_type": "PrimitiveStringMultiline",
     "_meta": {
