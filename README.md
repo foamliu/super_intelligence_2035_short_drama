@@ -13,7 +13,7 @@ super_intelligence_2035_short_drama/
 ├── README.md                    # 项目总览（本文件）
 ├── SCENES/                      # 分镜脚本（已编写 25 章，详见覆盖矩阵）
 ├── ASSETS/                      # 素材库（全剧统一）
-│   ├── CHARACTERS/              # 角色定妆参考图（8/11 已定妆，3 待定妆）
+│   ├── CHARACTERS/              # 角色定妆参考图（56 个角色目录，核心角色已定妆）
 │   │   ├── 林薇/
 │   │   ├── 墨子/
 │   │   ├── 陈思危/
@@ -31,14 +31,28 @@ super_intelligence_2035_short_drama/
 │   │   ├── 林薇直播间/
 │   │   └── ...
 │   ├── PROPS/                   # 道具/物件参考图（待补充）
+│   ├── SHOT_SPECS/              # 分镜 Prompt 规格文档（Markdown，非图片）
+│   │   ├── 13_外骨骼_T2I_Prompts.md   # T2I 画面描述
+│   │   └── 13_外骨骼_I2V_Prompts.md   # I2V 动态描述
 │   └── {章节}/                  # 已生成素材（按章）
 │       ├── manifest.json        # 素材清单
 │       ├── narration_*.flac     # 旁白音频
 │       └── s*_*.png             # 已生成素材图
-├── OUTPUT/                      # 输出成品（成片、字幕等）
+├── OUTPUT/                      # 输出成品（成片、字幕、分镜帧）
+│   ├── .gitkeep
+│   ├── 超级智能2035_视觉资产规格全书.docx
+│   ├── {章节}/                  # 每章输出
+│   │   ├── frames/              # 分镜帧图片（生成的静态图）
+│   │   │   ├── 13_sarah_01_*.png
+│   │   │   └── ...
+│   │   └── videos/              # 生成的视频片段
+├── SCENES/                      # 分镜脚本（按章 .md）
+╰── scripts/                     # 生成脚本（Python）
+    ├── generate_ep13_t2i.py     # 章节 T2I 批量生成（自动路由：角色镜头→Image Edit + 定妆照，其他→Z-Image-Turbo）
+    └── ...
 ├── BOOK/                        # 原著书稿（42章 .md）
 ├── docs/                        # 附加文档
-├── workflows/                   # ComfyUI工作流（.json）
+├── workflows/                   # ComfyUI工作流（19个 .json，含 Minimax H3 I2V/T2V/R2V）
 └── .git/                        # Git 版本控制
 ```
 
@@ -88,26 +102,28 @@ super_intelligence_2035_short_drama/
 | **莉娜·陈** | ✅ | 华裔美籍AI政策顾问，东西方桥梁 | 25-42 | 35岁，干练短发，高级西装套裙，中英混血面容 |
 | **约翰内斯·奥比** | ✅ | 非洲AI伦理委员会主席 | 30, 33 | 45岁，非洲裔，精干身材，彩色印花衬衫+白大褂 |
 
-### 单章/支线角色（暂无定妆）
+### 单章/支线角色（已定妆 ✓）
 
-| 角色 | 章节 | 场景 | 视觉特征 |
-|------|------|------|----------|
-| 李思远 | 4 | 上海公寓 | 30岁，斯文干净，戴眼镜，三块屏幕 |
-| 周沫 | 11 | 直播间 | 30岁，清秀耐看，居家便装，白墙贴满笔记 |
-| 赵淑芬 | 12 | 上海老公房 | 72岁，慈祥端庄，银发，老式睡衣 |
-| 莎拉·赵 | 13, 14 | 脱口秀后台 | 30岁，飒爽干练，中性穿着，舞台/实验室 |
-| 玛丽娜 | 10 | 莫斯科办公室 | 30+岁，冷艳，职业套装，窗外克里姆林宫 |
-| Mira Carter | 9 | 硅谷 | 34岁，精致干练，商务装，落地窗办公室 |
-| 老周 | 18, 39 | 网约车 | 45岁，憔悴沧桑，便装，车内夜晚 |
-| 奥蒂诺 | 30, 33 | 内罗毕诊所 | 30岁，精干非洲男性，白大褂 |
+| 角色 | 定妆 | 章节 | 场景 | 视觉特征 |
+|------|:----:|------|------|----------|
+| 李思远 | ✅ | 4 | 上海公寓 | 30岁，斯文干净，戴眼镜，三块屏幕 |
+| 周沫 | ✅ | 11 | 直播间 | 30岁，清秀耐看，居家便装，白墙贴满笔记 |
+| 赵淑芬 | ✅ | 12 | 上海老公房 | 72岁，慈祥端庄，银发，老式睡衣 |
+| 莎拉·赵 | ✅ | 13, 14 | 脱口秀后台 | 30岁，飒爽干练，中性穿着，舞台/实验室 |
+| 玛丽娜 | ✅ | 10 | 莫斯科办公室 | 30+岁，冷艳，职业套装 |
+| Mira Carter | ✅ | 9 | 硅谷 | 34岁，精致干练，商务装 |
+| 老周 | ✅ | 18, 39 | 网约车 | 45岁，憔悴沧桑，便装，车内夜晚 |
+| 奥蒂诺 | ✅ | 30, 33 | 内罗毕诊所 | 30岁，精干非洲男性，白大褂 |
 
-### 历史章节角色（暂无定妆）
+### 待定妆角色
 
-| 角色 | 章节 | 视觉特征 |
-|------|------|----------|
-| 陈圆（宋代） | 19 | 30岁，温婉古典美人，宋代襦裙 |
-| 沈言家族（明代） | 20 | 明代工匠装扮，粗布衣 |
-| 多萝西·韦斯特菲尔德（美国） | 21 | 20-70岁年龄跨度，美国年代服饰 |
+| 角色 | 章节 | 视觉特征 | 优先级 |
+|------|------|----------|:------:|
+| **师兄**（莎拉·赵的实验室同伴） | 13 | 31岁，瘦高、黑框眼镜、深色卫衣 | 🔴 P0 |
+| 小周（开放麦场务） | 13 | 大学生年龄，棒球帽 | 🟡 P2 |
+| 王教授 | 33 | 60+岁，白发学者 | 🟡 P2 |
+
+> **🔴 紧急**：**师兄**是第13集《外骨骼》的核心配角（与莎拉·赵有大量对手戏），SHOT_SPECS 已标注"待创建"。需尽快生成定妆照。详见 `ASSETS/SHOT_SPECS/13_外骨骼_SHOT_SPECS.md`。
 
 ---
 
@@ -334,35 +350,18 @@ SCENES/
 
 ## 十、ComfyUI 工作流清单
 
-所有工作流以 `.json` 格式存放于 `workflows/` 目录。
+> **⚠️ 本文档已更新至第十三章。** 本章为简化版速查，完整清单及 API 调用范例见 → [§十三 ComfyUI API 完全手册](#十三comfyui-api-完全手册)
 
-### 图像生成与处理
+共 **19 个**工作流，按管线阶段分四层：
 
-| 工作流文件 | 用途 | 输入 | 输出 |
-|-----------|------|------|------|
-| `Z-Image-Turbo 文生图.json` | 文生图（主） | Prompt | 1280×720（16:9）|
-| `Flux.1 Dev 文生图.json` | 文生图（备/高质量）| Prompt | 1280×720（16:9）|
-| `Image Edit (LongCat Image Edit).json` | 图像编辑/修复 | 图+指令 | 编辑后图像 |
-| `Image Segmentation (SAM3).json` | 图像分割/抠图 | 图 | 蒙版/Mask |
-| `Image to Pose Map (SDPose Multi-Person).json` | 多人姿态提取 | 图 | 姿态骨架图 |
-| `Pose to Image (Z-Image-Turbo).json` | 姿态→图像 | 姿态图+Prompt | 指定姿态的人物图 |
-| `Image to Model (Hunyuan3d 2.1).json` | 图像→3D模型 | 图 | 3D模型文件 |
+| 层级 | 工作流 | 用途 |
+|------|--------|------|
+| 🖼️ 图像层 | `Z-Image-Turbo 文生图.json` / `Flux.1 Dev` / `LongCat Image Edit` / `Pose to Image` | T2I / I2I / 角色一致性 |
+| 🎬 视频层 | **`video_minimax_h3_i2v.json`** ⭐ / `h3_r2v` / `h3_t2v` / Wan 2.2 / LTX-2.3 系列 | I2V / R2V / T2V |
+| 🎵 音频层 | `Qwen3-TTS 语音合成.json` / `ACE-Step 1.5 文生音频.json` / `Qwen3-ASR` | TTS / BGM / ASR |
+| 🧰 工具层 | SAM3 分割 / SDPose 姿态 / Hunyuan3D | 分割、姿态、3D |
 
-### 视频生成
-
-| 工作流文件 | 用途 | 输入 | 输出 |
-|-----------|------|------|------|
-| `Wan 2.2 图生视频.json` | 图生视频（主）| 图+Prompt | 720p视频片段 |
-| `Image to Video (LTX-2.3).json` | 图生视频（备）| 图+Prompt | 720p视频片段 |
-| `Text to Video (LTX-2.3).json` | 文生视频 | Prompt | 720p视频片段 |
-
-### 音频
-
-| 工作流文件 | 用途 | 输入 | 输出 |
-|-----------|------|------|------|
-| `Qwen3-TTS 语音合成.json` | 语音合成（旁白/台词）| 文本 | 语音音频 |
-| `Qwen3-ASR 语音识别.json` | 语音转文字（辅助）| 音频 | 文本 |
-| `ACE-Step 1.5 文生视频.json` | 文生音频（配乐/音乐生成）| Prompt | 音频片段 |
+**视频生成首选模型**：Minimax H3 I2V/R2V（画面质量最高、角色一致性最好、音画联合生成）
 
 ### 配乐策略
 
@@ -428,13 +427,16 @@ SCENES/
 
 ### 模型选择建议
 
+> **视频生成统一首选 Minimax H3**（I2V / R2V / T2V）。Wan 2.2 / LTX-2.3 仅作为特定场景的降级备选（详见 §十三）。
+
 | 场景类型 | 推荐模型 | 理由 |
 |----------|----------|------|
-| 静态/少动作 | Wan 2.2 图生视频 | 画面稳定，细节好 |
-| 动态/运动多 | LTX-2.3 图生视频 | 运动流畅，速度快 |
-| 角色对话（中景）| Wan 2.2 | 人物一致性较好 |
-| 环境/空镜 | LTX-2.3 | 生成效率高 |
-| 历史场景 | Wan 2.2 | 风格控制更精准 |
+| 人物表演/对话 | **Minimax H3 I2V/R2V** | 画面质量最高、角色一致性最好、音画联合生成 |
+| 微表情/情感特写 | **Minimax H3 I2V** | 微表情自然，情感表现力最强 |
+| 多角色锁定 | **Minimax H3 R2V** | ref_image 多参考图锁定角色外观 |
+| 无参考图动态 | **Minimax H3 T2V** | 文本直接生成视频 |
+| 屏幕内容/UI动画 | LTX-2.3（降级备选） | 1280×720，纯界面动态 |
+| 低显存/国产备选 | Wan 2.2（降级备选） | 640×640，需后期放大 |
 
 ### 各环节批量处理策略
 
@@ -464,8 +466,9 @@ SCENES/
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      2. 视频片段生成                              │
 ├─────────────────────────────────────────────────────────────────────┤
-│  有关键帧参考 → Wan 2.2 图生视频.json / Image to Video (LTX-2.3).json │
-│  无参考图场景 → Text to Video (LTX-2.3).json                      │
+│  有关键帧参考 → Minimax H3 I2V（首选）/ R2V（多角色锁定）        │
+│  无参考图场景 → Minimax H3 T2V                                    │
+│  降级备选 → Wan 2.2 图生视频 / LTX-2.3（UI/屏幕动画）             │
 │                              ↓                                     │
 │  视频超分（待补充工作流）→ 1080p                                  │
 └─────────────────────────────────────────────────────────────────────┘
@@ -541,12 +544,265 @@ SCENES/
 
 ---
 
-## 十三、待补充工作流
+## 十三、ComfyUI API 完全手册
+
+### 13.1 Workflow 全景图（19个）
+
+所有工作流以 API Format JSON 存放于 `workflows/`，按管线阶段划分：
+
+```
+🖼️ 图像层 (T2I/I2I)
+  Z-Image-Turbo 文生图.json      文生图·国产首选 (10 nodes)
+  Flux.1 Dev 文生图.json         文生图·高质量备选 (9 nodes)
+  Image Edit (LongCat Image Edit).json  图生图·角色一致性 (15 nodes)
+  Pose to Image (Z-Image-Turbo).json    姿态→图像 (14 nodes)
+
+🎬 视频层 (I2V/R2V/T2V)
+  video_minimax_h3_i2v.json  ⭐ I2V·首选 (20 nodes)
+  video_minimax_h3_r2v.json  ⭐ R2V·角色锁定 (20 nodes)
+  video_minimax_h3_t2v.json     T2V·备选 (17 nodes)
+  Wan 2.2 图生视频.json         I2V·国产备选 (17 nodes)
+  Image to Video (LTX-2.3).json I2V·LTX备选 (46 nodes)
+  Text to Video (LTX-2.3).json  T2V·LTX (46 nodes)
+  video_ltx2_3_ia2v.json        I2V·LTX音频版 (55 nodes)
+  video_wan2_2_14B_s2v.json     S2V·Wan音频版 (29 nodes)
+
+🎵 音频层 (TTS/BGM/ASR)
+  Qwen3-TTS 语音合成.json       配音·角色对话 (4 nodes)
+  ACE-Step 1.5 文生音频.json    配乐·情绪BGM (12 nodes)
+  Qwen3-ASR 语音识别.json       语音转文字 (4 nodes)
+
+🧰 工具层 (分割/姿态/3D)
+  Image Segmentation (SAM3).json           图像分割·抠图 (7 nodes)
+  Image to Pose Map (SDPose Multi-Person).json  多人姿态提取 (10 nodes)
+  Image to Model (Hunyuan3d 2.1).json      图像→3D模型 (10 nodes ×2)
+```
+
+### 13.2 API 调用通用模式
+
+所有工作流通过 ComfyUI REST API（默认 `http://127.0.0.1:8188`）调用：
+
+```python
+import json, time, uuid, urllib.request
+
+COMFYUI = "http://127.0.0.1:8188"
+
+# 1. 加载 workflow 模板
+wf = json.load(open("workflows/xxx.json", encoding="utf-8"))
+
+# 2. 注入参数（按 class_type 匹配）
+for node_id, node in wf.items():
+    ct = node.get("class_type", "")
+    if ct == "KSampler":
+        node["inputs"]["seed"] = 42
+        node["inputs"]["steps"] = 8
+    elif ct == "SaveVideo":
+        node["inputs"]["filename_prefix"] = "output/my_shot"
+    # ... 按需修改各节点
+
+# 3. 提交
+data = json.dumps({"prompt": wf, "client_id": str(uuid.uuid4())}).encode()
+req = urllib.request.Request(f"{COMFYUI}/prompt", data=data,
+                             headers={"Content-Type": "application/json"})
+with urllib.request.urlopen(req, timeout=30) as r:
+    prompt_id = json.loads(r.read())["prompt_id"]
+
+# 4. 等待完成
+while True:
+    r = urllib.request.urlopen(f"{COMFYUI}/history/{prompt_id}")
+    h = json.loads(r.read()).get(prompt_id, {})
+    st = h.get("status", {}).get("status_str", "")
+    if st == "success" and h.get("outputs"):
+        break
+    if st == "error":
+        raise RuntimeError(f"Prompt failed: {h}")
+    time.sleep(2)
+
+# 5. 下载
+for nid, node in h["outputs"].items():
+    for img in node.get("images", []) + node.get("audio", []):
+        fn = img["filename"]; sub = img.get("subfolder", "")
+        typ = img.get("type", "output")
+        url = f"{COMFYUI}/view?filename={fn}&subfolder={sub}&type={typ}"
+        urllib.request.urlretrieve(url, f"OUTPUT/{fn}")
+```
+
+### 13.3 Minimax H3 I2V ⭐（首选视频生成）
+
+**workflow**：`video_minimax_h3_i2v.json`  
+**模型**：`minimax_h3_fl2va_pruned_int8_convrot.safetensors`  
+**质量**：1280×720 @ 24fps，同时生成画面+环境音（音画天然同步）
+
+| 节点 | class_type | 关键参数 |
+|------|-----------|----------|
+| LoadImage | `LoadImage` | `image` — 输入首帧 PNG |
+| MiniMaxH3ImageToVideo | `MiniMaxH3ImageToVideo` | `prompt`, `length`, `first_frame` |
+| ResolutionSelector | `ResolutionSelector` | `aspect_ratio`, `megapixels` |
+| PrimitiveFloat | `PrimitiveFloat` | `value` — 时长（秒） |
+| RandomNoise | `RandomNoise` | `noise_seed` — 视频种子 |
+| BasicScheduler | `BasicScheduler` | `steps=20`, `denoise=1` |
+| SaveVideo | `SaveVideo` | `filename_prefix` |
+
+```python
+wf = json.load(open("workflows/video_minimax_h3_i2v.json", encoding="utf-8"))
+for node_id, node in wf.items():
+    ct = node["class_type"]
+    if ct == "LoadImage":
+        node["inputs"]["image"] = "13_sarah_01.png"  # 已上传 ComfyUI input/
+    elif ct == "MiniMaxH3ImageToVideo":
+        node["inputs"]["prompt"] = """Cinematic video, 28yo Chinese woman at desk.
+        On phone call, natural lip sync. Hand gestures toward monitor.
+        Office ambience, keyboard clicks. Camera: medium shot, slow push-in."""
+    elif ct == "PrimitiveFloat":
+        node["inputs"]["value"] = 10.0  # 10秒
+    elif ct == "RandomNoise":
+        node["inputs"]["noise_seed"] = 7001
+    elif ct == "SaveVideo":
+        node["inputs"]["filename_prefix"] = "output/EP13_SHOT-01"
+```
+
+**I2V Prompt 规范**：只描述**应该动起来**的部分（动作、表情变化、镜头运动、环境音）。静态场景已在首帧中，H3 自动识别 `<Picture 1>` 占位符。
+
+### 13.4 Minimax H3 R2V（参考图角色锁定）
+
+**workflow**：`video_minimax_h3_r2v.json` — 支持 2 张参考图
+
+```python
+elif ct == "MiniMaxH3ReferenceToVideo":
+    node["inputs"]["prompt"] = "Two people talking at a bar..."
+    node["inputs"]["ref_image1"] = "sarah_portrait.png"
+    node["inputs"]["ref_image2"] = "shixiong_portrait.png"
+    node["inputs"]["reference_prompt"] = "角色A=莎拉·赵，角色B=师兄"
+```
+
+### 13.5 Z-Image-Turbo 文生图
+
+**workflow**：`Z-Image-Turbo 文生图.json`（国产 T2I，快）
+
+```python
+for node_id, node in wf.items():
+    ct = node["class_type"]
+    if ct == "EmptySD3LatentImage":
+        node["inputs"]["width"] = 1920
+        node["inputs"]["height"] = 1920
+    elif ct == "CLIPTextEncode":
+        node["inputs"]["text"] = "你的中文 prompt..."
+    elif ct == "KSampler":
+        node["inputs"]["seed"] = 42
+        node["inputs"]["steps"] = 8
+    elif ct == "SaveImage":
+        node["inputs"]["filename_prefix"] = "output/my_image"
+```
+
+### 13.6 Image Edit·LongCat（角色一致性）
+
+**workflow**：`Image Edit (LongCat Image Edit).json`  
+**核心**：`FluxKontextMultiReferenceLatentMethod` + `TextEncodeQwenImageEdit`
+
+```python
+for node_id, node in wf.items():
+    ct = node["class_type"]
+    if ct == "LoadImage":
+        node["inputs"]["image"] = "ref_sarah_zhao.png"  # 主定妆照（需先上传）
+    elif ct == "TextEncodeQwenImageEdit":
+        node["inputs"]["text"] = "同上角色，坐在酒吧吧台角落，暖暗灯光..."
+    elif ct == "KSampler":
+        node["inputs"]["seed"] = 100
+    elif ct == "ImageScaleToTotalPixels":
+        node["inputs"]["megapixels"] = 3.69  # 1920×1920 ≈ 3.69MP
+```
+
+### 13.7 Qwen3-TTS 语音合成
+
+**workflow**：`Qwen3-TTS 语音合成.json`  
+**输出**：FLAC（无损）
+
+| speaker | 声线 |
+|---------|------|
+| `Vivian` | 年轻女声，适合 28-35 岁女性 |
+| `Dylan` | 沉稳男声，适合 30-40 岁男性 |
+| `Serena` | 柔和女声，AI 系统语音感 |
+| `aiden` / `eric` / `ryan` / `ono_anna` / `sohee` / `uncle_fu` | 其他备选 |
+
+```python
+elif ct == "Qwen3CustomVoice":
+    node["inputs"]["text"] = "明天那个模型的上线评审，你准备一下。"
+    node["inputs"]["speaker"] = "Vivian"
+    node["inputs"]["custom_speaker_name"] = ""    # ⚠️ 必须为空！
+    node["inputs"]["instruct"] = "28岁女性，北京口音，自嘲节奏感。"
+    node["inputs"]["seed"] = 1301                  # 同角色固定 seed
+elif ct == "SaveAudioAdvanced":
+    node["inputs"]["filename_prefix"] = "audio/ep13_sarah_01"
+```
+
+> **⚠️ `custom_speaker_name` 不是自定义名字字段**，而是语音特征 mixing 的 speaker 名列表。填入非预置名会导致 `ValueError`。同角色用 `speaker` + `seed` 保证一致性。
+
+### 13.8 ACE-Step 1.5 文生音频（BGM）
+
+**workflow**：`ACE-Step 1.5 文生音频.json` | 输出：MP3
+
+```python
+elif ct == "TextEncodeAceStepAudio1.5":
+    node["inputs"]["tags"] = "solo piano, contemplative, sparse notes, minor key"
+    node["inputs"]["lyrics"] = ""                  # 纯器乐则留空
+elif ct == "PrimitiveFloat":
+    node["inputs"]["value"] = 60                   # 时长（秒）
+elif ct == "KSampler":
+    node["inputs"]["seed"] = 4001
+elif ct == "SaveAudioAdvanced":
+    node["inputs"]["filename_prefix"] = "audio/ep13_bgm_01"
+```
+
+### 13.9 生成脚本索引
+
+项目已有批量生成脚本（`scripts/`）：
+
+| 脚本 | 用途 | 对应 workflow |
+|------|------|-------------|
+| `generate_ep13_t2i.py` | 第13集 T2I 批量（按 shot/priority 筛选） | Z-Image-Turbo + LongCat |
+| `gen_shixiong_portraits.py` | 师兄定妆照 ×3 | Z-Image-Turbo |
+| `gen_ep13_tts.py` | 莎拉+师兄 TTS 配音 | Qwen3-TTS |
+| `gen_ep13_ai_voice.py` | AI外骨骼语音 | Qwen3-TTS |
+| `gen_ep13_bgm.py` | 第13集 BGM 配乐 ×3 | ACE-Step 1.5 |
+| `generate_characters.py` | 角色批量定妆 | Z-Image-Turbo |
+| `generate_ep13_14_videos.py` | 第13/14集 I2V 视频 | Minimax H3 |
+
+> 每个脚本均包含 `load_wf()` → `queue()` → `wait()` → `download()` 四步通用 API 模式。
+
+### 13.10 待补充工作流
 
 | 缺失工作流 | 用途 | 优先级 |
-|-----------|------|--------|
-| 图像超分（720p→1080p）| 静态图超分 | 高 |
-| 视频超分（720p→1080p）| 视频片段超分 | 高 |
+|-----------|------|:------:|
+| 图像超分（720p→1080p） | 静态图超分 | 高 |
+| 视频超分（720p→1080p） | 视频片段超分 | 高 |
+
+
+
+---
+
+### 13.11 Minimax H3 音频策略
+
+Minimax H3 是**视频+音频联合生成模型**——一次推理同时输出画面和环境音。推荐三层混音策略：
+
+| 音轨 | 来源 | 工具 |
+|------|------|------|
+| 🎬 环境音/氛围 | **Minimax H3 内建音频** | prompt 中描述环境音，天然音画同步 |
+| 🎙️ 角色配音 | **Qwen3-TTS** | `seed` 锁定角色音色，跨集一致 |
+| 🎵 配乐 BGM | **ACE-Step 1.5** | 结构化 `[Verse][Chorus]` 控制情绪弧 |
+
+后期在剪辑软件中将三条音轨混音：H3 环境音轨 + TTS 配音轨 + ACE 配乐轨。
+
+### 13.12 角色定妆照审计
+
+全剧 **49 个**角色目录，截至 2026-08 审计：
+
+| 状态 | 数量 | 角色 |
+|------|------|------|
+| ✅ 有定妆照 | **13** | 林薇、陈思危、赵建军、王建国、莎拉·赵、李思远、赵淑芬、周沫、玛丽娜、Mira Carter、南山有台、迈克、莉娜·陈 |
+| ⚠️ 有图无主定妆 | **23** | 墨子(7图)、普里亚(8图)、老周、奥蒂诺、小华、小晴、小暖、小迈克、技术总监、星云、李师傅(3图)、李明、林薇祖父、沈固(3图)、沈梁、法官、王阿姨、约翰内斯、老张、老王、老赵(3图)、袁子轩、钱安、陈远、鲍勃(3图)、北极星CEO、多萝西(4图)、小林、王磊、老迈克、陈圆(5图) |
+| ❌ 完全缺失 | **13** | **师兄**、王教授、卡洛斯·门德斯、数据权益代表、制度西装角色群 + 编号 41-56 中的部分 |
+
+> **第13集《外骨骼》需优先补**：**师兄**（已生成 3 张变体到 `OUTPUT/13_外骨骼/frames/`，待回存 `ASSETS/CHARACTERS/师兄/`）。
 
 ---
 
@@ -559,7 +815,7 @@ SCENES/
 | 画面清晰度 | 无明显 AI 伪影（多余手指、五官变形、纹理粘连） | 重新生成该镜 |
 | 角色一致性 | 同一角色在同场景内面部特征差异可接受（不出现"换人"感） | 调高 IP-Adapter 权重重新生成 |
 | 光影连贯 | 同场景内光照方向和色温基本一致 | 调整 Prompt 或后期调色 |
-| 运动质量 | I2V 无明显画面撕裂、闪烁、物体突变 | 降速重生成或换 Wan 2.2 |
+| 运动质量 | I2V 无明显画面撕裂、闪烁、物体突变 | 降速重生成或换 Minimax H3 |
 | 台词同步 | 旁白/台词与对应画面时码偏差 < 0.3 秒 | 微调剪辑或重新生成音频 |
 | 叙事连续性 | 同一角色跨集经历不矛盾、跨集提及的事件前后一致 | 修编相关章节脚本或追加过渡镜头 |
 
@@ -581,24 +837,76 @@ SCENES/
 
 | 章节 | 静态画面 | 视频片段 | 音频 | 成片 |
 |------|----------|----------|------|------|
+| **13_外骨骼** | ✅ 16 帧已生成 | ✅ 12 镜（4 H3 + 8 LTX） | ✅ 15 音频 | 🔜 待合成 |
 | 12_身体 | ⏳ 待启动 | ⏳ | ⏳ | ⏳ |
 | 其他 | ⏳ 待启动 | ⏳ | ⏳ | ⏳ |
 
-### 首发章节策略
+> **13 集当前状态**：初始版 12 镜已用 Wan 2.2 / LTX-2.3 生成并存于 `OUTPUT/13_外骨骼/videos/`。**下一步用 Minimax H3 重生成 4 个 P0/P1 人物镜头**。
 
-第一梯队 7 章中，按 AI 生成难度排序选择首发：
+---
 
-| 推荐序 | 章节 | 场景复杂度 | 角色数 | 动作复杂度 | 选择理由 |
-|--------|------|-----------|--------|-----------|----------|
-| **🥇 首发** | **18 暖阳** | ⭐ | 2（1人+1App） | 极低 | 车内固定空间+手机屏幕+出租屋，纯对话驱动，AI 擅长人脸/情绪/光线 |
-| 🥈 次选 | 08 认知矿工 | ⭐⭐ | 1主+3辅 | 低 | 十平米房间+VR 抽象空间，VR 界面可后期叠加 |
-| 🥉 备选 | 19 汴京的茶香 | ⭐⭐⭐ | 5+ | 中 | 视觉风格明确，但街景群集和跨年代服化道增加复杂度 |
-| ⏸️ 暂缓 | 12 身体 | ⭐⭐⭐⭐ | 3 | 高 | 狭小空间人机肢体交互、镜面反射，均为 AI 视频模型弱势区 |
-| ⏸️ 暂缓 | 02 经验 | ⭐⭐ | 2-3 | 中 | 工厂洁净室场景，需黄光区机台参考 |
-| ⏸️ 暂缓 | 21 美国梦 | ⭐⭐⭐ | 1（大年龄跨度） | 低 | 20-70 岁年龄跨度对角色一致性是高挑战 |
-| ⏸️ 暂缓 | 33 十五小时 | ⭐⭐⭐⭐ | 4+ | 中 | 多线并联，出场角色跨三大洲，协调成本高 |
+### 🔥 第13集《外骨骼》制作清单
 
-> **选择逻辑**：首发应选择"单人+少量场景+纯对话驱动"，让 AI 在擅长区（人脸微表情、情绪光线、固定空间连续性）发挥最大优势。第 18 章的网约车/出租屋场景是理想起点——完成后可顺势产出第 39 章（老周线续，同角色复用定妆和场景资产）。
+> 目标：产出首集成片，验证 Minimax H3 + 三层音频混合管线。
+
+#### Step 1：补角色定妆照
+
+| # | 任务 | 工具 | 输出 | 状态 |
+|---|------|------|------|:----:|
+| 1.1 | 生成**师兄**定妆照（31岁中国男性，瘦高、黑框眼镜、深色卫衣） | Z-Image-Turbo | `OUTPUT/13_外骨骼/frames/13_shixiong_01_coffee.png` | ✅ |
+| 1.2 | 生成师兄变体（侧脸、实验室2017版） | Z-Image-Turbo | `02_侧脸.png` `03_实验室.png` | ✅ |
+| 1.3 | 师兄定妆照回存 ASSETS/CHARACTERS/ | 手动复制 | `主定妆照.png` + 2变体 | ✅ |
+
+#### Step 2：重生成视频（Minimax H3）
+
+> 工作流：`workflows/video_minimax_h3_i2v.json`  
+> 输入图：`OUTPUT/13_外骨骼/frames/` 下已有 PNG  
+> Prompt 规格：`ASSETS/SHOT_SPECS/13_外骨骼_I2V_Prompts.md`
+
+| # | 镜头 | 输入图 | 时长 | 优先级 | 状态 |
+|---|------|--------|------|:------:|:----:|
+| 2.1 | 镜头01·莎拉解释外骨骼 | `13_sarah_01_desk_explaining.png` | 10s | 🔴 P0 | ✅ H3 |
+| 2.2 | 镜头11·吧台散场0.52 | `13_sarah_03_bar_aftermath.png` | 10s | 🔴 P0 | ✅ H3 |
+| 2.3 | 镜头03·师兄"合法吗" | `13_shixiong_01_coffee.png` | 7s | 🟡 P1 | ✅ H3 |
+| 2.4 | 镜头06·莎拉地铁观察 | `13_sarah_02_subway_observing.png` | 8s | 🟡 P1 | ✅ H3 |
+
+> ✅ Minimax H3 4镜全部完成（`gen_ep13_h3_i2v.py`）。镜头02/04/05/07/08/09/10 保留 LTX-2.3 版，镜头12 🔄 补生成中。
+
+#### Step 3：生成音频
+
+| # | 任务 | 工具 | 细节 | 状态 |
+|---|------|------|------|:----:|
+| 3.1 | 莎拉·赵配音 | Qwen3-TTS | speaker=Vivian, seed=1301, 5条 FLAC | ✅ |
+| 3.2 | 师兄配音 | Qwen3-TTS | speaker=Dylan, seed=1303, 3条 FLAC | ✅ |
+| 3.3 | AI外骨骼语音 | Qwen3-TTS | speaker=Serena, 3条 FLAC（老刘护目镜语音） | ✅ |
+| 3.4 | 配乐·开放麦后台 | ACE-Step 1.5 | solo piano, contemplative, backstage quiet | ✅ |
+| 3.5 | 配乐·公司工位核心段 | ACE-Step 1.5 | industrial ambient, low drone | ✅ |
+| 3.6 | 配乐·实验室闪回 | ACE-Step 1.5 | nostalgic piano, memory, CRT warmth | ✅ |
+| 3.7 | 配乐·吧台散场 | ACE-Step 1.5 | `sparse piano, unresolved harmony` | ✅ |
+
+#### Step 4：后期合成
+
+| # | 任务 | 工具 | 状态 |
+|---|------|------|:----:|
+| 4.1 | 视频剪辑（12 镜拼接，按分镜脚本时序） | DaVinci Resolve / Premiere | ❌ |
+| 4.2 | 三层混音（H3 环境音 + TTS 配音 + ACE 配乐） | DaVinci Fairlight / Audition | ❌ |
+| 4.3 | 调色统一（半写实半水墨风格） | DaVinci | ❌ |
+| 4.4 | 字幕叠加（中英双语） | 字幕软件 | ❌ |
+| 4.5 | 质量验收（按 §十四 六项门禁逐项检查） | 人工审查 | ❌ |
+
+### 首发章节策略（已更新）
+
+> **当前首发**：**第13集《外骨骼》**。静态图和视频已在 `OUTPUT/13_外骨骼/` 下生成初始版本（Wan 2.2 / LTX-2.3），正在升级为 Minimax H3 + 音频三层混合管线。
+
+| 推荐序 | 章节 | 场景复杂度 | 角色数 | 状态 |
+|--------|------|-----------|--------|:----:|
+| **🥇 首发** | **13 外骨骼** | ⭐⭐⭐ | 3（莎拉·赵+师兄+林薇电话） | 🔄 制作中 |
+| 🥈 次选 | 18 暖阳 | ⭐ | 2（1人+1App） | ⏳ 待排期 |
+| 🥉 备选 | 08 认知矿工 | ⭐⭐ | 1主+3辅 | ⏳ 待排期 |
+| ⏸️ 暂缓 | 19 汴京的茶香 | ⭐⭐⭐ | 5+ | 历史服化道复杂度高 |
+| ⏸️ 暂缓 | 12 身体 | ⭐⭐⭐⭐ | 3 | 镜面反射+人机交互为 AI 弱项 |
+
+> **选择逻辑变更为 13 集**：13 集已有完整的 SHOT_SPECS、15 张 T2I 帧、12 个视频镜头的生成经验。场景集中在 4 个空间（工位/酒吧/地铁/实验室），角色仅 2-3 人——是验证 Minimax H3 + 音频三层混合管线的理想起点。
 
 ### 叙事连续性审核
 

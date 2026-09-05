@@ -80,7 +80,7 @@ Seed: <固定整数以实现可重复生成>
 2. **场景图（P1+P2）** → 豆包 T2I 生成 base → 存入 `ASSETS/BACKGROUNDS/`
 3. **变体镜头** → 用 P0/P1 生成的图作 base，在 ComfyUI 中用 IP-Adapter + ControlNet 重绘
 4. **UI 镜头** → 单独设计 UI 素材 → 与场景图合成
-5. **动态镜头** → 用生成的图作首帧，通过 LTX-2.3 / Wan 2.2 图生视频
+5. **动态镜头** → 用生成的图作首帧，通过 Minimax H3 图生视频（I2V/R2V）
 
 ---
 

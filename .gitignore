@@ -1,0 +1,14 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === 生成物 / 成片（不入库）===
+OUTPUT/
+
+# === 角色定妆图（大体积 PNG，约 318MB，暂不入库）===
+# 定妆规格 .md 与清单 .json 仍全量追踪
+ASSETS/CHARACTERS/**/*.png
+ASSETS/CHARACTERS/**/*.jpg
+ASSETS/CHARACTERS/**/*.jpeg
+ASSETS/CHARACTERS/**/*.webp

@@ -1,0 +1,16 @@
+{
+  "linwei/直播间": {
+    "status": "done",
+    "prompt_id": "962ce445-2059-4ba8-b7f2-fc0ce6af4aa2",
+    "seed": 5740787304182760720,
+    "ts": "2026-07-25T21:53:37.740718",
+    "output": "ASSETS\\CHARACTERS\\林薇\\02_直播间.png"
+  },
+  "linwei/沉默已读": {
+    "status": "done",
+    "prompt_id": "554bb662-deea-410e-b4c3-1b962d69ec73",
+    "seed": 7112147674085204437,
+    "ts": "2026-07-25T21:56:31.599911",
+    "output": "ASSETS\\CHARACTERS\\林薇\\03_沉默已读.png"
+  }
+}

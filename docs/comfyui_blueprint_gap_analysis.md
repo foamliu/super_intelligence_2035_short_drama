@@ -16,8 +16,8 @@
 | 图像→姿态 | `Image to Pose Map (SDPose Multi-Person).json` | 多人姿态提取 |
 | 图像分割 | `Image Segmentation (SAM3).json` | 前景/背景分离 |
 | 图像→3D | `Image to Model (Hunyuan3d 2.1).json` (×2) | 3D资产生成 |
-| 文生视频 | `Text to Video (LTX-2.3).json` | 文本→视频 |
-| 图生视频 | `Image to Video (LTX-2.3).json`、`Wan 2.2 图生视频.json` | 图像→视频 |
+| 文生视频 | `video_minimax_h3_t2v.json` ⭐、`Text to Video (LTX-2.3).json` | 文本→视频（H3 首选） |
+| 图生视频 | `video_minimax_h3_i2v.json` ⭐、`video_minimax_h3_r2v.json` ⭐、`Wan 2.2 图生视频.json` | 图像→视频（H3 首选） |
 | 语音合成 | `Qwen3-TTS 语音合成.json` | TTS旁白/对白 |
 | 语音识别 | `Qwen3-ASR 语音识别.json` | ASR转写 |
 | 音频生成 | `ACE-Step 1.5 文生音频.json` | 配乐/环境音生成 |
@@ -91,9 +91,10 @@
   🆕 Remove Background (BiRefNet) ← P0 引入，角色/场景合成
 
 动画生成:
-  ✅ Text to Video (LTX-2.3) (已有)
-  ✅ Image to Video (LTX-2.3) (已有)
-  ✅ Wan 2.2 图生视频 (已有)
+  ✅ Minimax H3 I2V/R2V/T2V (已有，首选)
+  ✅ Text to Video (LTX-2.3) (已有，备选)
+  ✅ Image to Video (LTX-2.3) (已有，备选)
+  ✅ Wan 2.2 图生视频 (已有，备选)
   🆕 First-Last-Frame to Video ← P1 引入，可控视频
   🆕 Frame Interpolation ← P1 引入，补帧
   🆕 Prompt Enhance ← P1 引入，提示词优化

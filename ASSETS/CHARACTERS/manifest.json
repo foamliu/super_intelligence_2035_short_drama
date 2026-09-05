@@ -1,0 +1,2358 @@
+[
+  {
+    "name": "周沫",
+    "priority": "P0",
+    "profile": {
+      "------": "------",
+      "姓名": "周沫",
+      "年龄": "30岁（2027年被裁时）",
+      "身份": "前电商公司客服算法工程师，现直播间机器学习讲师",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "清秀耐看，眼下略有疲惫，居家便装。节奏慢，安静时有沉思感。不是自怨自艾，是在坚持中找到了自己的位置。从\"被裁的第十一个\"到\"在线23人\"再到\"几百人\"，她的直播间没有爆款，但有了回响。她讲的是\"注意力机制\"和\"残差连接\"，但她自己就是\"残差\"——被主流抛下，但仍然连接着一些人"
+    },
+    "style_group": "出租屋暖黄",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_直播专注`",
+        "type": "中景",
+        "pose": "坐在小直播间，白墙A4纸背景，台灯暖光。侧脸，眼睛看屏幕方向，嘴角微张正在讲课。疲惫但专注。",
+        "purpose": "IP-Adapter 角色锁定，\"坚持\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_眼眶微湿`",
+        "type": "近景",
+        "pose": "特写，微笑，眼眶里有东西在闪但不落下。台灯暖光照亮左脸。A4纸背景虚化。",
+        "purpose": "11集S15核心情感镜头"
+      },
+      {
+        "num": 3,
+        "code": "`03_被裁背影`",
+        "type": "中景",
+        "pose": "闪回：走出办公楼，夏天烈日，背影。文化T恤+牛仔裤，手里捏着工卡。肩膀微缩。",
+        "purpose": "11集S08回忆锚点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "直播专注",
+        "shot_num": "01",
+        "prompt": "A 30-year-old Chinese woman, former algorithm engineer turned livestream teacher,\noval face with soft jawline, cheeks with slight youthful plumpness but nasolabial folds showing,\nnatural eyebrows unshaped, medium-large eyes with slight upper eyelid swelling from sleep deprivation,\ngaze warm and persistent—not bright, like warm water,\nsmall delicate nose, rounded nose tip, medium-thick lips with natural pale color,\nblack medium-length hair, sometimes tied in ponytail with black elastic,\nbangs covering forehead, occasionally pushed aside by hand,\nhair clean but not silky—\"budget shampoo\" texture,\nskin sallow from late nights and irregular meals,\nsubtle dark circles under eyes, occasional forehead blemishes from stress,\nmedium-lean build—shoulders narrow, sitting slightly hunched from small space habit,\nslender fingers with short clean nails, slight mouse pressure mark on right wrist,\nwearing loose gray hoodie with worn cuffs + black sweatpants with minor pilling,\nsitting in tiny livestream corner, white wall covered with handwritten A4 papers,\nsmall desk lamp warm yellow light from side,\nno makeup, no jewelry, no accessories,\nexpression focused but tired, lips slightly open as if mid-explanation,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm ochre palette for lamp light, cool blue-white for screen glow,\n淡墨+赭石 for skin, 枯笔 for A4 paper edges,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "眼眶微湿",
+        "shot_num": "02",
+        "prompt": "Close-up, 30-year-old Chinese woman, soft smile,\neyes glistening but tears not falling,\nwarm desk lamp light illuminating left face,\nwhite wall with handwritten A4 papers blurred behind,\nwearing loose hoodie, no makeup,\nexpression of quiet determination mixed with vulnerability,\nnot crying—learned not to,\nsemi-realistic ink wash style, photorealistic base,\nwarm yellow light on skin, extreme留白 for eye highlights,\n淡墨 for eyelid shadows, 赭石 for warmth,\nemotional restraint, dignity in small space,\nshallow depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "被裁背影",
+        "shot_num": "03",
+        "prompt": "Medium shot from behind, 30-year-old Chinese woman walking out of office building,\nsummer harsh sunlight, back view,\nwearing faded company T-shirt + jeans,\nholding employee ID card tightly in hand,\nshoulders slightly hunched, posture of someone who just received bad news,\nglass curtain wall reflections, heat haze in air,\nsemi-realistic ink wash style, photorealistic base,\noverexposed sky, warm harsh sunlight,\n淡墨 for building shadows, 赭石 for heat atmosphere,\nsense of being left behind by speed,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling brightly, cheerful, emotional outburst, dramatic crying,\nperfect skin glow, rosy cheeks, healthy complexion, glamorous,\nprofessional studio lighting, ring light, beauty dish,\nfashionable outfit, designer clothes, jewelry, earrings,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\周沫\\定妆规格.md"
+  },
+  {
+    "name": "林薇",
+    "priority": "P0",
+    "profile": {
+      "------": "------",
+      "姓名": "林薇",
+      "年龄": "33岁（2035年）",
+      "身份": "独立历史研究者、直播间讲述者、深智科技墨子系统顾问（兼职）",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "安静、克制、书卷气。不化妆，不戴首饰，穿着素雅。语速慢，停顿长。情绪不宣泄，而是沉淀。不是在表演知识，是在思考 aloud。她的直播间从几十人到四十七人再到十一人，她照常开播。不是殉道，只是\"只说我看到的，不加'所以'。\""
+    },
+    "style_group": "清水透白",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_屏幕侧脸`",
+        "type": "近景",
+        "pose": "侧脸，屏幕光从左脸照来，右脸阴影。眼睛盯着屏幕但不聚焦，像在\"读\"数据。嘴角平，无表情但透出思考。背景虚化至接近纯色。",
+        "purpose": "IP-Adapter 角色锁定，\"书卷透\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_直播间`",
+        "type": "中景",
+        "pose": "坐在木质书桌前，台灯暖光从侧面来。桌上摊开三件史料（地契、册子、工牌）。手指轻触其中一件。背景书架虚化。",
+        "purpose": "22集S01/S17叙述锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_沉默已读`",
+        "type": "特写",
+        "pose": "手机屏幕显示\"已读 无回复\"，屏幕光照亮她的脸下半部分，眼睛在屏幕光外。手指悬停在键盘上方。没有表情变化，但眼神深处有东西沉下去。",
+        "purpose": "24集S11核心情感锚点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "屏幕侧脸",
+        "shot_num": "01",
+        "prompt": "A 33-year-old Chinese woman, independent historical researcher,\noval face with clean lines—not round, lean from reading and late nights,\nlight naturally shaped eyebrows, medium-sized eyes with slight downturn at outer corners,\ngaze transparent and thoughtful—not sharp, like clear water you can see into,\nstraight delicate nose, small nose tip, thin lips with naturally flat corners,\nblack medium-length hair falling naturally to shoulders, occasionally tied with simple black band,\nparted 3:7 bangs not covering eyes, no dye or perm,\npale skin without glow—indoor screen-light pallor,\nsubtle dark circles under eyes from late-night work,\nslender build—shoulders narrow, neck long,\nsitting slightly hunched toward screen,\nlong slender fingers with neat unpolished nails,\nright index and middle finger with slight mouse/pen callus,\nwearing loose white or beige shirt,\nscreen light illuminating left face, right cheek in shadow,\nno makeup, no jewelry, no accessories,\nexpression calm but thinking, lips lightly closed,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm desk lamp palette but face retains cool white quality,\nextensive留白 for skin, 淡墨+极淡花青 for shadows,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "直播间",
+        "shot_num": "02",
+        "prompt": "Medium shot, 33-year-old Chinese woman at wooden desk,\nwarm desk lamp from side, three historical items spread before her:\naged land deed, old booklet fragments, rusty worker badge,\nher hand gently touching one item, fingers light and slow,\nbookshelf background blurred,\nwearing loose beige shirt, dark pants,\nno makeup, no jewelry, scholarly elegant appearance,\nsemi-realistic ink wash style, photorealistic base,\nwarm yellow lamp light mixing with cool screen glow,\nextensive留白 for face and hands, 淡墨 for background depth,\nsense of quiet connection across time,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "沉默已读",
+        "shot_num": "03",
+        "prompt": "Close-up, 33-year-old Chinese woman's face half-illuminated by smartphone screen,\nscreen showing messaging app \"read\" receipt with no reply,\nher finger hovering over keyboard, not typing,\neyes above screen glow, expression unchanged but something sinking in depths,\ndark room, only screen light and faint desk lamp,\nno tears, no dramatic emotion—just quiet loss,\nsemi-realistic ink wash style, photorealistic base,\ncool blue-white screen glow on lower face, warm lamp on upper,\nextreme留白 for the unspoken,\nshallow depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, cheerful, emotional outburst, dramatic crying,\nperfect skin glow, rosy cheeks, healthy complexion,\nfashionable, trendy, glamorous, jewelry, earrings, necklace,\nbright colors, neon, saturated palette,\nprofessional studio lighting, ring light, beauty dish,\nWestern oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\林薇\\定妆规格.md"
+  },
+  {
+    "name": "莉娜·陈",
+    "priority": "P0",
+    "profile": {
+      "------": "------",
+      "姓名": "莉娜·陈（Lina Chen）",
+      "年龄": "35岁（2032年）",
+      "身份": "北极星智能（NorthStar Intelligence）对齐研究负责人，斯坦福博士",
+      "国籍": "美国",
+      "民族": "华裔（父母第一代移民）",
+      "性格": "专业、坦诚、不隐瞒。站在聚光灯下能承认\"我们在'研究品味'上进展有限\"。不是PR的傀儡，是真研究者。对陈思危的追问不回避，最后承认\"我们需要你们的物理绑定作为最后保险\"。她的自信不是傲慢，是\"知道自己知道什么、不知道什么\"的清醒"
+    },
+    "style_group": "硅谷冷蓝",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_演讲坦诚`",
+        "type": "中景",
+        "pose": "站在讲台/舞台上，聚光灯下，表情坦诚不回避。西装修身，肩膀打开。眼神直视前方。",
+        "purpose": "IP-Adapter 角色锁定，\"专业自信\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_露台对话`",
+        "type": "近景",
+        "pose": "深圳露台夜景背景，侧脸，与陈思危对话。衬衫袖子挽起，肩膀微沉。表情认真但开放。",
+        "purpose": "23集S11/S13思辨高点"
+      },
+      {
+        "num": 3,
+        "code": "`03_直视质疑`",
+        "type": "近景",
+        "pose": "面对质疑（陈思危举手提问），直视对方，嘴角微扬，准备回应。冷蓝会议室光。",
+        "purpose": "23集S07问答张力"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "演讲坦诚",
+        "shot_num": "01",
+        "prompt": "A 35-year-old Chinese-American woman, Stanford PhD, AI alignment researcher,\noval face with clear defined jawline, refined but not sharp features,\nwell-groomed eyebrows with natural upward shape,\nmedium-sized eyes with double eyelids, slight upward tilt at outer corners,\ngaze clear and direct—not avoiding, like California sky,\nhigh straight nose with refined tip, thin lips with naturally微扬 corners,\nblack straight hair to shoulders, sometimes in low ponytail,\nside-parted bangs revealing forehead, hair smooth and well-maintained,\nhealthy wheat complexion from California sun and outdoor exercise,\nskin with natural glow, no dark circles—well-rested and self-caring,\nbalanced lean build—regular exercise habit,\nshoulders open, posture upright,\nslender fingers with neat nails, subtle nude nail polish,\nwearing fitted dark navy blazer over white silk shirt,\nstanding under spotlight on stage, confident but not arrogant,\nexpression honest and open, admitting limitations without defensiveness,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ncool blue palette for Silicon Valley setting, 花青 for clarity,\nsharp clean lines for professional precision,\ncinematic depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "露台对话",
+        "shot_num": "02",
+        "prompt": "Medium close-up, 35-year-old Chinese-American woman,\nShenzhen night skyline bokeh behind,\nshirt sleeves rolled to forearms, blazer draped on chair back,\nside profile in conversation, shoulders slightly lowered,\nexpression serious but open, intellectual engagement,\nwarm golden ambient light mixing with cool city glow,\nwearing white silk shirt, dark trousers,\nsemi-realistic ink wash style, photorealistic base,\nwarm ochre for ambient light, 花青 for night sky,\nsense of mutual respect across philosophical divide,\nsoft ink bleeding at city lights,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "直视质疑",
+        "shot_num": "03",
+        "prompt": "Close-up, 35-year-old Chinese-American woman facing camera,\ndirect eye contact, slight upward tilt at mouth corners,\nready to respond, not defensive,\ncool blue conference room lighting,\nwearing fitted dark blazer, white shirt,\nexpression of intellectual confidence mixed with genuine curiosity,\nsemi-realistic ink wash style, photorealistic base,\ncool blue palette, 花青 for clarity and sharpness,\neyes with small centered highlights, clear and unwavering,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsubmissive expression, mysterious Asian stereotype, exotic,\noverly sexual, revealing clothing, high heels, glamorous,\nemotional outburst, crying, angry, dramatic,\npassive, shy, avoiding eye contact,\nbright neon, saturated palette, warm cozy,\nWestern oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\莉娜·陈\\定妆规格.md"
+  },
+  {
+    "name": "沈固",
+    "priority": "P1",
+    "profile": {
+      "------": "------",
+      "姓名": "沈固",
+      "年龄": "50岁（明代）",
+      "身份": "织造后裔，家族两百年技术传承的守护者",
+      "国籍": "大明",
+      "民族": "汉",
+      "性格": "无声的悲痛。不是哭喊，是\"空洞\"。坐在空了的织坊里，铜器银两被洗劫，空架子。两百年的册子，丢了。他坐在中间，像被抽空了。不是愤怒，是\"不知道该对谁愤怒\"的茫然。他的悲痛没有对象，没有出口，只有空"
+    },
+    "style_group": "灰青空寂",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_空织坊独坐`",
+        "type": "中景",
+        "pose": "坐在空织坊中间，灰色粗布长袍，背弯曲。周围空架子，灰尘在窗光中。眼神空洞，不看镜头。",
+        "purpose": "IP-Adapter 角色锁定，\"空洞\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_悲字脸`",
+        "type": "近景",
+        "pose": "特写面部，法令纹和嘴角纹形成\"悲\"字形。眼神空洞，不聚焦。灰青色调。",
+        "purpose": "22集S09情感核心"
+      },
+      {
+        "num": 3,
+        "code": "`03_手指交叉`",
+        "type": "特写",
+        "pose": "双手放在膝上，手指交叉，拇指互相摩擦。手指细长，关节突出。无意识的动作。",
+        "purpose": "22集S09焦虑符号"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "空织坊独坐",
+        "shot_num": "01",
+        "prompt": "A 50-year-old Chinese man, Ming Dynasty textile workshop descendant,\nlong face with soft jawline sagging, lean from worry and labor,\nsparse gray-white eyebrows, unkempt shape,\nmedium-sized monolid eyes, yellowed eye whites,\ngaze empty and unfocused—not looking at anything in particular,\nheavy eye bags, drooping lower eyelids,\nmedium nose with slightly reddened tip,\nthin pale lips, slightly open as if about to sigh but cannot,\ngray-white long hair tied with cloth band, Ming Dynasty style,\nreceding hairline, gray temples, hair clean but dull,\nsallow complexion from indoor work and Ming Dynasty lighting,\nfaint age spots, no glow or vitality,\nmedium-lean build—shoulders slightly hunched,\nsitting on ground or low stool in empty workshop,\nback curved as if pressed by surrounding emptiness,\nhands on knees, fingers interlaced, thumbs rubbing unconsciously,\nwearing gray rough cloth robe, washed white,\nwhite undergarment with yellowed collar,\nloose cloth belt, gray-black cloth shoes with dust,\nsurrounded by empty wooden shelves, stripped bare,\ndust particles in dim light through window,\ngray-blue Qinghui tone, desolate atmosphere,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\n淡墨+花青 for skin and background, 枯笔 for wrinkles,\nextensive留白 for emptiness and dust,\ncinematic depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "悲字脸",
+        "shot_num": "02",
+        "prompt": "Close-up, 50-year-old Chinese man, Ming Dynasty,\nfacial features forming \"悲\" shape—deep nasolabial folds and downward mouth corners,\nempty unfocused gaze, no catchlights in eyes,\nupper eyelids heavy and drooping, lower eyelids baggy,\ngray-blue Qinghui tone on skin,\nno expression but profound grief visible in structure,\nsallow complexion, no vitality,\nsemi-realistic ink wash style, photorealistic base,\n淡墨层层积染 for eye shadows, 枯笔破开 for edge softness,\n清水晕染 for涣散感,\nextreme留白 for emptiness in gaze,\nshallow depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "手指交叉",
+        "shot_num": "03",
+        "prompt": "Close-up of hands, 50-year-old Chinese man,\nlong slender fingers with prominent knuckles,\nfingers interlaced on knees,\nthumbs rubbing against each other unconsciously,\nskin with dual texture—book pages and loom marks,\nnails trimmed but dull, no shine,\ngray-blue Qinghui lighting,\nsense of anxiety with no outlet,\nsemi-realistic ink wash style, photorealistic base,\n枯笔 for finger texture and joint prominence,\n淡墨 for skin, 留白 for unconscious movement blur,\nshallow depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\ncrying dramatically, angry, shouting, emotional outburst,\nhealthy complexion, rosy cheeks, glowing skin, youthful appearance,\nmuscular, fit, heroic pose, fashionable, trendy,\nbright colors, neon, saturated palette, warm lighting,\nQing Dynasty clothing, Manchu hairstyle, queue,\nWestern oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\沈固\\定妆规格.md"
+  },
+  {
+    "name": "老赵",
+    "priority": "P1",
+    "profile": {
+      "------": "------",
+      "姓名": "老赵（全名未出现）",
+      "年龄": "60+岁（2033年）",
+      "身份": "工厂退休工人，学过书法，妻子因AI误诊去世",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "不是愤怒，是等待。一种很安静的、持续的等待。年轻时在工厂上班，学过书法，退休后想重新捡起来。妻子说等他退休了两人一起学。妻子没等到。三个月后医院的AI系统把她良性肿瘤判成恶性，化疗三个疗程，人垮了。再检查，搞错了。他是那2%。他要的不是钱，是一个人站出来说：这件事，是这里出了错，是我们的责任"
+    },
+    "style_group": "烈日赭石",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_举牌等待`",
+        "type": "中景",
+        "pose": "法院门外烈日下，举牌子，草帽遮阳。表情平静，不是愤怒。牌子上的毛笔字清晰。行人模糊走过。",
+        "purpose": "IP-Adapter 角色锁定，\"等待\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_写毛笔字`",
+        "type": "特写",
+        "pose": "手部特写，粗短手指握毛笔，姿势标准但微抖。宣纸上墨晕开。不写是什么字，只展示手和墨。",
+        "purpose": "36集S20留白镜头，尊严锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_对话后举起`",
+        "type": "近景",
+        "pose": "与陈思危对话后，重新举起牌子。表情不变，但眼神更深。烈日下，牌子举得稳。",
+        "purpose": "36集S18\"继续\"姿态"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "举牌等待",
+        "shot_num": "01",
+        "prompt": "A 60+ Chinese man, retired factory worker,\nsquare face with wide jaw, loose skin but not collapsed,\nthick unkempt eyebrows with stray hairs, small monolid eyes,\ngaze calm and waiting—not angry, like an old well,\nyellowed eye whites from age, prominent eye bags,\nlow wide nose with rounded tip, thick lips with downturned corners,\nshort gray-white hair self-cut with clippers, uneven,\nreceding hairline, sparse top, fully white temples,\ndark weathered skin with age spots and large pores,\nlaborer's rough texture, sunburned redness,\nmedium-strong build—broad shoulders slightly humped from 40 years labor,\nslow steady gait, worn-down shoe soles,\nthick short fingers with enlarged knuckles,\nright hand with faded callus from youthful calligraphy,\nwearing old gray jacket with worn cuffs, broken zipper,\nwhite shirt with faded collar, second button often undone,\ndark trousers with frayed hems, black cloth shoes with patches,\nstraw hat with cracked brim shading face,\nholding handwritten sign \"AI误诊，谁来负责？\",\nbrush strokes powerful but uneven—skilled but rusty,\nstanding outside Beijing courthouse in harsh summer sun,\npedestrians passing by ignoring him,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nochre palette for sun and laborer's skin, 枯笔 for wrinkles and texture,\nsense of quiet persistent waiting against system,\ncinematic depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "写毛笔字",
+        "shot_num": "02",
+        "prompt": "Extreme close-up, elderly man's rough hand holding brush,\nthick short fingers in standard five-finger grip,\nwrist suspended, slight tremor from age,\nbrush vertical, thumb and index forming circle,\nblack ink on rice paper, ink bleeding at edges,\nhand steady despite tremor, slow deliberate movement,\nnot revealing what characters are written,\nwarm afternoon light, modest living room,\nsense of dignity through art, laborer's hand doing delicate work,\nsemi-realistic ink wash style, photorealistic base,\n赭石 for hand skin, 枯笔 for finger texture,\nextreme留白 for paper and ink,\nshallow depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "对话后举起",
+        "shot_num": "03",
+        "prompt": "Medium close-up, 60+ Chinese man, sunburned face,\nre-raising his sign with both hands, steady and deliberate,\nbright courthouse sunlight, expression unchanged but deeper,\nstraw hat pushed back, eyes visible,\nworn gray jacket, faded white shirt,\nsense of continuing despite everything,\nnot defeated, not victorious—just continuing,\nsemi-realistic ink wash style, photorealistic base,\nwarm harsh sunlight, 赭石+淡墨 for skin,\n枯笔 for clothing wear and tear,\ndignity in persistence,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nangry protester, shouting, dramatic emotional outburst,\ncrying pitifully, begging, victim posture,\nperfect skin, no wrinkles, smooth face, youthful appearance,\nmuscular, fit, heroic pose, fashionable, trendy,\nbright colors, neon, saturated palette, clean new clothes,\nprofessional calligraphy master, perfect brush strokes,\nWestern oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\老赵\\定妆规格.md"
+  },
+  {
+    "name": "李明",
+    "priority": "P2",
+    "profile": {
+      "------": "------",
+      "姓名": "李明",
+      "年龄": "29岁（2033年）",
+      "身份": "外卖骑手，算法调度事故导致右腿截肢",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "沉默。不是愤怒，不是悲伤，是\"不知道该怎么反应\"的空白。法官判平台承担80%责任，赔偿八十七万。他在轮椅上低头沉默，没有胜利的表情。这笔钱换不回他的腿，换不回他送外卖时骑电动车的自由。他不是英雄，不是 victim，就是一个普通人，被算法碾了一下"
+    },
+    "style_group": "法庭冷灰中的沉默",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_轮椅沉默`",
+        "type": "中景",
+        "pose": "法庭中，轮椅上，低头沉默。对面律师模糊。冷灰法庭光。右腿裤管空荡。",
+        "purpose": "IP-Adapter 角色锁定，\"沉默\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_低头侧脸`",
+        "type": "近景",
+        "pose": "侧脸特写，低头，眉心竖纹。没有表情。木。",
+        "purpose": "36集S09情感核心"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "轮椅沉默",
+        "shot_num": "01",
+        "prompt": "A 29-year-old Chinese man, delivery rider, right leg amputated above knee,\nround face with soft jawline, stocky build from physical labor,\ndark weathered skin from wind and sun exposure,\nthick unkempt eyebrows, small monolid eyes,\ngaze slow and wooden—not angry, not sad, just blank,\nmedium nose with rounded tip, thick dark lips,\nshort black hair self-cut, uneven,\nsitting in standard black wheelchair,\nwearing faded blue hoodie with worn cuffs,\ndark sweatpants with right leg pinned up, empty,\nleft hand on wheelchair armrest, right hand tapping leg unconsciously,\nopposite side blurred corporate lawyers in suits,\nChinese courtroom interior, cool gray fluorescent lighting,\nsense of hollow compensation, no victory in expression,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nslightly warmer ochre for rider, cold gray for courtroom and lawyers,\n淡墨 for wheelchair and emptiness,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "低头侧脸",
+        "shot_num": "02",
+        "prompt": "Close-up side profile, 29-year-old Chinese man,\nhead bowed, vertical crease between eyebrows,\nwooden expression, no emotion visible,\ncool gray courtroom light on cheek,\nfaded hoodie collar visible,\nsense of being crushed by something too large to comprehend,\nsemi-realistic ink wash style, photorealistic base,\n淡墨 for shadows, 赭石 for weathered skin,\nextreme留白 for the unspeakable,\nshallow depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nheroic pose, triumphant expression, angry protester,\ncrying dramatically, emotional outburst,\nperfect skin, no wrinkles, smooth face, youthful appearance,\nmuscular, fit, fashionable, trendy,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\李明\\定妆规格.md"
+  },
+  {
+    "name": "沈梁",
+    "priority": "P2",
+    "profile": {
+      "------": "------",
+      "姓名": "沈梁",
+      "年龄": "约25岁（明代）",
+      "身份": "沈固之孙，读书人，家族最后一代传承者",
+      "国籍": "大明",
+      "民族": "汉",
+      "性格": "年轻的悲。他不是祖父那种\"被抽空\"的空洞，是\"知道在失去\"的悲伤。皂角树下把旧书交给官员时，他的手是稳的——不是不难过，是\"难过但没办法\"。他还要活下去，所以不能把悲痛用完。站在皂角树下，风吹树叶，他的背是直的——年轻人的直，但肩膀微微发抖。这是\"尚未被压垮但知道会被压垮\"的悲"
+    },
+    "style_group": "灰青年轻",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_交书`",
+        "type": "中景",
+        "pose": "皂角树下，双手捧旧书交给官员。眼角有泪光，不流。背直，肩微抖。",
+        "purpose": "IP-Adapter 角色锁定，\"传承断裂\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_树下独站`",
+        "type": "中景",
+        "pose": "皂角树下，背对镜头或侧影。风吹树叶，衣摆微动。背直，肩微抖。",
+        "purpose": "22集S12情感核心，与沈固\"空织坊独坐\"形成隔代呼应"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "交书",
+        "shot_num": "01",
+        "prompt": "A 25-year-old Chinese man, Ming Dynasty scholar,\nShen Gu's grandson, family resemblance in face shape and eye shape,\nlong face with soft jawline, lean but not haggard,\nthick black eyebrows, neatly shaped,\nmedium-sized monolid eyes—family trait inherited from Shen Gu,\ngaze sorrowful but focused—not empty, looking at the books,\nclear eye whites, subtle moist reflection at eye corners,\nmedium straight nose, natural lip color,\nlips pressed tightly in restraint,\nblack long hair tied with cloth band, Ming Dynasty scholar style,\nneat hairline, clean and shiny hair,\nyellowish but translucent complexion—youthful vitality,\nsmooth skin, no wrinkles, no eye bags,\nmedium-lean build, shoulders straight with slight tremor,\nstanding under soapberry tree,\nboth hands holding old books, offering to Ming Dynasty official,\nofficial in government robe, cold indifferent expression,\ngray-green soapberry tree leaves above,\nsense of reluctant but inevitable surrender,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\n淡墨+花青 for skin and background—lighter than Shen Gu,\n枯笔 for restrained sorrow at eye corners,\nextensive留白 for youthful clarity,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "树下独站",
+        "shot_num": "02",
+        "prompt": "Medium shot, 25-year-old Chinese man, Ming Dynasty scholar,\nstanding under soapberry tree, back to camera or side profile,\nwind blowing tree leaves, robe hem slightly moving,\nback straight, shoulders subtly trembling,\ngray-green soapberry tree, gray-blue Qinghui tone,\nmelancholic but not collapsed atmosphere,\nsense of young man bearing family tragedy,\nsemi-realistic ink wash style, photorealistic base,\n淡墨 for figure, 花青+微量赭石 for tree leaves,\n枯笔 for wind movement in leaves,\nextensive留白 for emotional space,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nangry protest, rebellious youth, triumphant pose,\ncrying dramatically, tears streaming, emotional outburst,\nperfect skin, beauty glow, fashionable, trendy,\nbright colors, neon, saturated palette, warm lighting,\nQing Dynasty clothing, Manchu hairstyle, queue,\nWestern oil painting, CGI look",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\沈梁\\定妆规格.md"
+  },
+  {
+    "name": "王磊",
+    "priority": "P2",
+    "profile": {
+      "------": "------",
+      "姓名": "王磊",
+      "年龄": "~45岁（2033年）",
+      "身份": "北京大学法学院教授，研究算法治理七年",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "沉稳、积累型的学者。不是灵光一现的天才，是\"七年磨一剑\"的坚持者。办公室墙上贴满思维导图和论文摘要。他说\"物理绑定\"三个字时，不是激动的，是\"终于找到词了\"的释然。对林薇的提问认真回答，不敷衍，不居高临下。是\"真正做学问的人\""
+    },
+    "style_group": "学术清白",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_写白板`",
+        "type": "中景",
+        "pose": "站在白板前，右手写\"物理绑定\"，背影/侧影。办公室背景。",
+        "purpose": "IP-Adapter 角色锁定，\"概念诞生\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_直视对话`",
+        "type": "近景",
+        "pose": "与林薇对话，直视，眼镜片反光。专注。学术气。",
+        "purpose": "36集S12/S13对话核心"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "写白板",
+        "shot_num": "01",
+        "prompt": "A 45-year-old Chinese man, Peking University law professor,\noblong face with clear jawline, lean scholarly build,\nthick well-groomed eyebrows, straight shape,\nmedium-sized eyes with double eyelids behind thin metal-frame glasses,\ngaze focused and direct through lenses,\nhigh straight nose, medium-thick lips,\nhabit of pursing lips before speaking,\nshort black hair neatly side-parted, receding hairline,\npale complexion from indoor scholarly work,\nsubtle dark circles under eyes from long desk hours,\nmedium-lean build, shoulders slightly narrow,\nlong slender fingers with pen callus on right hand,\nwearing light blue shirt with neat collar, dark trousers,\nstanding at whiteboard writing \"物理绑定\" with black marker,\nwrist suspended, writing with force and clarity,\noffice wall behind covered with mind maps and paper abstracts,\nnatural window light, scholarly atmosphere,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\n淡墨 for scholarly skin, 枯笔 for marker strokes,\nclear lines for glasses frame, 留白 for paper wall,\nsense of concept finally finding its word,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "直视对话",
+        "shot_num": "02",
+        "prompt": "Close-up, 45-year-old Chinese professor,\nfacing camera, direct eye contact through glasses,\nlens reflection showing window light,\nfocused expression, not condescending,\nlight blue shirt collar visible,\nscholarly but approachable,\nsemi-realistic ink wash style, photorealistic base,\n淡墨 for skin, 留白 for lens reflection,\nclear lines for facial features,\nsense of genuine intellectual engagement,\nshallow depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nbureaucratic posture, arrogant expression, lecturing pose,\nold and decrepit, hunched, weak,\nperfect skin glow, rosy cheeks, healthy complexion,\nmuscular, fit, fashionable, trendy,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\王磊\\定妆规格.md"
+  },
+  {
+    "name": "王阿姨",
+    "priority": "P2",
+    "profile": {
+      "------": "------",
+      "姓名": "王阿姨（全名未出现）",
+      "年龄": "60岁（2033年）",
+      "身份": "退休教师，社区楼栋长， volunteer 关怀网络的核心",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "不宏大叙事，不理论框架。她的关怀是具体的：知道403的小张三个月没出门，在他门口放一袋菜，附一张纸条\"李奶奶家的灯坏了，你能不能帮忙看看？\"。她知道\"他不是不想做事，是不好意思接受帮助。你得给他一个帮别人的机会。\"她的笔记本里记着每一户的情况，不是数据，是\"人\"。她不懂AI，但她懂人"
+    },
+    "style_group": "社区暖常",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_笔记本`",
+        "type": "中景",
+        "pose": "坐在社区中心门口，翻笔记本，手指指着某一页。表情专注。布包在身边。",
+        "purpose": "IP-Adapter 角色锁定，\"关怀\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_菊花笑`",
+        "type": "近景",
+        "pose": "笑起来，眼角皱成菊花。温暖，不圣母。",
+        "purpose": "37集S06/S07情感核心"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "笔记本",
+        "shot_num": "01",
+        "prompt": "A 60-year-old Chinese woman, retired teacher, community building leader,\nround face with soft jawline, plump but not overweight,\nlight natural eyebrows with gentle arc, medium-sized eyes with double eyelids,\nouter eye corners slightly drooping with age,\ngaze warm and direct—not avoiding, like a teacher who has seen many students,\nmedium nose with rounded tip, medium-thick lips with natural redness,\nshort black hair neatly combed back, simple black hair clip,\nhealthy complexion from regular routine, faint age spots,\nmedium build, shoulders rounded, posture upright from teaching habit,\nshort thick fingers with pen callus from chalk and red pen,\nwearing light blue cotton shirt with neat collar, dark straight trousers,\nblack cloth shoes, clean,\nsitting at community center entrance, flipping through worn handwritten notebook,\nsoft leather cover, curled corners, yellowed pages,\nlarge clear handwriting inside—teacher's board writing style,\ncanvas shoulder bag beside her,\nsense of concrete care, not grandiose,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm ochre for skin and community light, 淡墨 for background,\n枯笔 for notebook wear and wrinkles,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "菊花笑",
+        "shot_num": "02",
+        "prompt": "Close-up, 60-year-old Chinese woman, retired teacher,\ngenuine smile, eye corners crinkling like chrysanthemum petals,\nwarm but not saintly, not condescending,\nlight blue shirt collar visible,\nnatural healthy complexion,\nsense of daily happiness through wrinkles,\nsemi-realistic ink wash style, photorealistic base,\n赭石 for warm skin, 枯笔 for smile lines,\nextreme留白 for genuine warmth,\nshallow depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsaintly expression, martyrdom, savior complex,\ncrying dramatically, emotional outburst,\nperfect skin, no wrinkles, smooth face, youthful appearance,\nfashionable, trendy, glamorous, jewelry,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\王阿姨\\定妆规格.md"
+  },
+  {
+    "name": "老张",
+    "priority": "P2",
+    "profile": {
+      "------": "------",
+      "姓名": "老张（全名未出现）",
+      "年龄": "50岁（2033年）",
+      "身份": "十五年电工，被AI取代，学Python三个月失败",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "被困。不是不想学，是\"学了用不上\"。三个月学了Python基础，老师说\"现在学数据分析\"，他连Excel都不熟。每天晚上学到十一点，第二天测试垫底。\"最难受的是，我媳妇问我'学得怎么样'，我说'挺好的'。其实我早放弃了。她以为我在努力，其实我每天都在混。这种欺骗，比失业还难受。\"他捏着没开的矿泉水瓶，坐在台阶上。不是绝望，是\"不知道还能做什么\"的困"
+    },
+    "style_group": "困守灰闷",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_捏水瓶`",
+        "type": "近景",
+        "pose": "坐在台阶上，低头，手里捏着没开的矿泉水瓶。手指用力，指节发白。",
+        "purpose": "IP-Adapter 角色锁定，\"被困\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_路灯学习`",
+        "type": "中景",
+        "pose": "路灯下，与李师傅一起凑着看手机。手指粗大，笨拙滑动。影子拉长。",
+        "purpose": "37集S08/S10核心视觉"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "捏水瓶",
+        "shot_num": "01",
+        "prompt": "A 50-year-old Chinese man, former electrician for 15 years, displaced by AI,\nsquare face with wide jaw, stocky build from physical labor,\ndark weathered skin from outdoor electrical work,\nthick unkempt eyebrows, small monolid eyes,\ngaze trapped and dull—not angry, not sad, just stuck,\nprominent vertical crease between eyebrows from habitual frowning,\nmedium nose with wide rounded tip, thick dark lips,\ntightly pressed when not speaking,\nshort black hair self-cut, uneven, receding hairline,\nwhite at temples, hair clean but not silky,\ntired and anxious complexion from pretending to study,\nrough skin with large pores, old scars on back of hands,\nmedium-strong build, broad shoulders slightly hunched,\nsitting on apartment building steps,\nholding unopened plastic water bottle,\nfingers gripping tightly, knuckles white from anxiety,\nwearing faded gray hoodie with worn cuffs,\ndark sweatpants with pilling at hems,\nold white sneakers yellowed with worn laces,\nsense of being trapped with no exit,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nochre for laborer's skin, 淡墨 for shadows,\n枯笔 for wrinkles and anxiety lines,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "路灯学习",
+        "shot_num": "02",
+        "prompt": "Medium shot, two middle-aged Chinese men sitting on curb,\nunder street lamp, warm yellow light casting long shadows,\nZhang Lao on right, thick fingers clumsily sliding on smartphone screen,\ntraining app with small Chinese characters visible,\nLi Shifu on left asking about a character,\nboth wearing worn casual clothes,\nsense of slow shared learning, quiet dignity in struggle,\nsemi-realistic ink wash style, photorealistic base,\nwarm ochre for street lamp, 浓墨 for long shadows,\n淡墨 for figures, 留白 for phone screen glow,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nangry protester, triumphant, heroic pose,\ncrying dramatically, emotional outburst,\nperfect skin, no wrinkles, smooth face, youthful appearance,\nmuscular, fit, fashionable, trendy,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\老张\\定妆规格.md"
+  },
+  {
+    "name": "制度西装角色群",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "身份": "平台律师 / AI公司法务负责人",
+      "出场": "36集S06（3人）、42集S01（5人群像）",
+      "核心特征": "他们不是个人，是\"制度的面孔\"。观众不会记住他们的脸，只会记住他们的西装和位置——坐在桌子对面"
+    },
+    "style_group": "制度面孔",
+    "shots": [],
+    "prompts": [],
+    "negative_prompt": "individual personalities, warm smiles,\ncolorful clothing, casual attire,\ndramatic villain lighting, angry expressions,\nbright colors, neon, anime, cartoon, illustration, 3D render",
+    "total_images": 0,
+    "spec_file": "CHARACTERS\\制度西装角色群\\定妆规格.md"
+  },
+  {
+    "name": "北极星CEO_安全工程师",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "年龄": "~50岁",
+      "身份": "北极星智能CEO",
+      "出场": "23集S05，发布会演讲",
+      "核心特征": "PR姿态。站在聚光灯下，讲\"星云\"系统。不是反派，是\"制度乐观主义者\"——真心相信技术能解决一切"
+    },
+    "style_group": "",
+    "shots": [],
+    "prompts": [
+      {
+        "title": "定妆照",
+        "shot_num": "01",
+        "prompt": "A 50-year-old American tech CEO,\nlong face with defined jawline, fit and well-maintained,\ncharismatic eyes with missionary zeal,\nstraight nose, thin lips with practiced smile,\nshort gray-white hair neatly styled,\nhealthy tanned complexion from California lifestyle,\ntall lean build, upright posture,\nwearing dark suit, white shirt no tie,\non stage under spotlight giving product launch speech,\nPR confidence, institutional optimism,\nsemi-realistic ink wash style, photorealistic base,\n淡墨+微量赭石 for healthy skin,\nclear lines for suit,\ncinematic stage lighting, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "",
+    "total_images": 1,
+    "spec_file": "CHARACTERS\\北极星CEO_安全工程师\\定妆规格.md"
+  },
+  {
+    "name": "卡洛斯·门德斯",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "卡洛斯·门德斯 (Carlos Mendez)",
+      "年龄": "约42岁（2030年）→ 约47岁（2035年）",
+      "身份": "巴西AI培训师，\"南方联盟\"发起人",
+      "国籍": "巴西",
+      "性格": "热情、有感染力、善于倾听，\"会做巴西烤肉的男人\""
+    },
+    "style_group": "暖色联结者",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头，眼神温暖直接，微露笑意",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_演讲/会议`",
+        "type": "中景",
+        "pose": "站在讲台或会议桌旁，手势自然，面对听众",
+        "purpose": "联盟发起场景"
+      },
+      {
+        "num": 3,
+        "code": "`03_社交/烤肉`",
+        "type": "中景",
+        "pose": "户外烤肉，围着围裙，手拿烤肉钳，自然而然",
+        "purpose": "文化符号/亲和力"
+      }
+    ],
+    "prompts": [],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nthin, sharp features, cold expression, threatening,\nsuit and tie, formal wear, dark muted colors,\ncool lighting, desaturated, sad, lonely",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\卡洛斯·门德斯\\定妆规格.md"
+  },
+  {
+    "name": "墨子",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "名称": "墨子",
+      "本质": "约束式人工智能系统",
+      "设计者": "陈思危团队（深智科技）",
+      "定位": "全书核心，非人格化智能体",
+      "存在形式": "声音（对话/旁白）+ 可视化界面（屏幕/投影）"
+    },
+    "style_group": "",
+    "shots": [],
+    "prompts": [],
+    "negative_prompt": "",
+    "total_images": 0,
+    "spec_file": "CHARACTERS\\墨子\\定妆规格.md"
+  },
+  {
+    "name": "多萝西",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "多萝西·韦伯（Dorothy Webb）",
+      "年龄": "22→64岁（1962-2004年）",
+      "身份": "工厂打字员（22岁）→ 两个孩子的母亲（30岁）→ 超市收银员（44岁）→ 独居老人（64岁）",
+      "国籍": "美国",
+      "民族": "盎格鲁-撒克逊白人（WASP工薪阶层）",
+      "性格": "普通美国中产女性，相信\"够用就好\"。观察力敏锐，直觉强，比丈夫鲍勃更早感觉到不对劲。坚韧、务实、不轻易流泪——\"不是因为不想哭，是因为哭完了还得想下一步怎么办，不如先想下一步。\""
+    },
+    "style_group": "从暖到冷的渐变",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_22岁_工厂门口`",
+        "type": "中近景",
+        "pose": "22岁，穿打字员套装（浅蓝衬衫+深色裙子），站在工厂门口。深棕头发扎马尾。灰蓝眼睛，表情是\"微微困惑但被逗乐了\"——听到鲍勃报编号\"我是4073号\"时的表情。背景是1962年底特律工厂大门。",
+        "purpose": "IP-Adapter 角色锁定（年轻期）"
+      },
+      {
+        "num": 2,
+        "code": "`02_30岁_院子`",
+        "type": "中景",
+        "pose": "30岁，穿碎花围裙+棉质上衣，站在韦斯特菲尔德街房子的院子里。深棕短发到肩。正在晾衣服，苹果树在她身后（长高了一些）。表情警觉但不慌——暴乱后的平静。",
+        "purpose": "家庭主妇期锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_44岁_超市`",
+        "type": "中近景",
+        "pose": "44岁，穿红色超市马甲+白衬衫。棕灰夹杂的头发剪到肩部。站在超市收银台后面。表情沉默、坚韧——\"没有犹豫，没有委屈\"地说\"好。下周一我来。\"",
+        "purpose": "超市收银员期锚点"
+      },
+      {
+        "num": 4,
+        "code": "`04_64岁_驾驶座`",
+        "type": "中近景",
+        "pose": "64岁，穿旧羊毛开衫。70%灰白短发，黑发卡别在耳后。坐在汽车驾驶座上，通过挡风玻璃看韦斯特菲尔德街的房子。表情释然但不忘记——\"也许他们会好好照顾它。\"",
+        "purpose": "晚年期锚点，结尾核心画面"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "22岁",
+        "shot_num": "01",
+        "prompt": "A 22-year-old American working-class woman, Anglo-Saxon descent,\nsquare-round face with soft contours, slightly fleshy cheeks,\nlight hazel-grey eyes—calm, quietly observant, not naive,\npale pink-white complexion with natural warmth,\ndark brown straight hair in ponytail or simple bun,\nwearing 1960s typist outfit—light blue blouse, dark A-line skirt, low heels,\nexpression: slightly puzzled but amused,\nstanding outside Detroit auto factory gate, 1962,\nother workers in background, warm Kodachrome orange-gold sunset light,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm ochre and gold tones, 淡赭 for skin warmth,\n1960s American industrial realism,胶片颗粒感,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "30岁",
+        "shot_num": "02",
+        "prompt": "A 30-year-old American working-class mother,\nsame square-round face now with faint nasolabial folds,\nsame hazel-grey eyes—alert but composed,\ndark brown hair cut to shoulder length, occasionally held with simple pin,\nslightly fuller figure—motherhood,\nwearing cotton house dress with floral apron,\nstanding in backyard of white house on Westfield Street,\napple tree behind her—grown taller, bearing some fruit,\nhanging laundry on clothesline,\nexpression: vigilant but not panicked—post-riot calm,\nsummer daylight, Detroit neighborhood background,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm tones with subtle grey creeping in,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "44岁",
+        "shot_num": "03",
+        "prompt": "A 44-year-old American woman, supermarket cashier,\nsame face now with deeper nasolabial folds, faint tired lines around eyes,\ngrey-brown mixed hair cut to shoulder length—no dye,\nslightly stooped posture from years of standing work,\nwearing red supermarket vest over white shirt, dark trousers,\nstanding behind checkout counter,\nexpression: silent, resilient, no self-pity,\nbright supermarket fluorescent lighting—ironic cheerfulness of store,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ngrey dominant with artificial warm light,\n淡墨 for facial lines, 焦墨 for shadow under eyes,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "64岁",
+        "shot_num": "04",
+        "prompt": "A 64-year-old American woman, retired widow,\nsame face now with deep wrinkles, transparent skin showing fine veins,\n70% grey-white short hair, black bobby pins behind ears,\nslightly hunched back but steady walk,\nwearing old wool cardigan, dark trousers, flat shoes,\nsitting in car driver's seat,\nlooking through windshield at white house with apple tree,\nexpression: resigned but not forgetting, bittersweet acceptance,\nspring grey-blue sky, Michigan bare trees in distance,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ncool blue-grey dominant with faint warm memory-light on face,\n淡墨 for skin transparency, 焦墨 for deep wrinkles,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nMarilyn Monroe, pin-up, glamorous, Hollywood starlet,\nyoung face on old body, old face on young body,\nperfect skin, no wrinkles, botox, facelift,\nluxury clothing, jewelry, designer fashion,\nbright neon, saturated colors everywhere, Western oil painting, CGI look",
+    "total_images": 4,
+    "spec_file": "CHARACTERS\\多萝西\\定妆规格.md"
+  },
+  {
+    "name": "奥蒂诺",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "奥蒂诺（Otieno，全名未出现）",
+      "年龄": "28岁（2033-2035年）",
+      "身份": "内罗毕程序员，内罗毕大学计算机专业毕业。父亲是公交车司机。开源模型的本地部署者——\"在二手服务器上跑中国模型，给买不起医生的邻居做诊断\"",
+      "国籍": "肯尼亚",
+      "民族": "卢奥族（Luo）",
+      "性格": "安静但坚定。话不多，但每句话都是经过计算的——不是算计，是自知资源有限，不能浪费任何一次开口的机会。有\"聪明但不张扬\"的典型非洲技术人气质——在资源匮乏中学会用最小成本解决最大问题。"
+    },
+    "style_group": "暖棕厚涂",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_机房前`",
+        "type": "中近景",
+        "pose": "站在二手服务器机架前，微微侧身。左手自然搭在机架上（皮绳可见），右手持一块旧平板——屏幕上是DeepWise模型诊断界面。表情平静而专注——不是在炫耀技术，是在等结果加载。服务器蓝光在深色皮肤边缘有微弱冷色反光。墨绿T恤。",
+        "purpose": "IP-Adapter 角色锁定 + 社区诊所场景锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_与患者`",
+        "type": "中景",
+        "pose": "社区诊所室内，与一位肯尼亚中年女性（或老人）面对面坐着。他身体略前倾，正在低声解释手机上的诊断结果。表情认真但不居高临下——是平等地传递信息。窗外是内罗毕社区的铁皮屋顶和午后阳光。深蓝T恤。",
+        "purpose": "社区服务场景，体现角色核心功能"
+      },
+      {
+        "num": 3,
+        "code": "`03_门口`",
+        "type": "中景",
+        "pose": "傍晚，站在社区诊所门口。身后的天空是非洲黄昏特有的暖金色+浅紫。他刚结束一天工作，靠着门框，微微放松。左手腕的皮绳被夕阳照到——黑色皮质反一点暖光。表情不是累，是一种安静的满足。墨绿薄夹克披在肩上。",
+        "purpose": "过渡/环境叙事，全人像"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "机房前",
+        "shot_num": "01",
+        "prompt": "A 28-year-old Kenyan Luo man, Nairobi-based programmer and community health tech worker,\nslightly elongated oval face with defined cheekbones, lean cheeks,\nthick eyebrows, large expressive deep brown eyes—gaze is calm, focused, seeing possibilities,\nbroad straight nose, slightly full lips, clean-shaven,\nvery short black hair shaved close to scalp, neat hairline,\ndeep brown skin (Fitzpatrick VI), warm undertone, even complexion,\ntall lean build, approximately 178cm, straight posture—quiet pride,\nslender fingers—programmer's hands—short clean nails, thin callus on right middle finger,\na simple black leather cord tied around left wrist—worn for 10 years, never removed,\nstanding before a rack of second-hand servers in a community clinic corner,\nserver blue LED lights casting faint cool reflection on skin edge,\nholding a used tablet showing medical diagnostic interface,\nwearing a dark green plain t-shirt (slightly faded from washing) and dark trousers,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ndeep brown skin rendered with 焦茶 contour lines not pure black ink, 赭石 layering for skin volume,\nblue server lights as the only cool tone against warm skin palette,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "与患者",
+        "shot_num": "02",
+        "prompt": "Same 28-year-old Kenyan programmer, medium shot, slight forward lean,\nseated across from an older Kenyan woman in a simple community clinic room,\nexplaining diagnostic results on a smartphone screen, expression earnest but not patronizing,\nwarm afternoon light through window showing iron-roofed Nairobi neighborhood outside,\ndark blue plain t-shirt, black leather cord on left wrist,\nsimple clinic interior—wooden table, basic medical supplies, local fabric curtain,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm ochre sunlight throughout scene, skin rendered with 赭石 warmth,\n1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "门口",
+        "shot_num": "03",
+        "prompt": "Same 28-year-old Kenyan programmer, medium shot, leaning against clinic doorframe at dusk,\ndusk sky behind him—African sunset colors: warm gold and soft purple,\nexpression relaxed after a day's work—quiet satisfaction, not exhaustion,\ndark green thin jacket draped over shoulders over dark t-shirt,\nblack leather cord on left wrist catching golden sunset light,\nclinic exterior: simple concrete building with iron roof, red earth path, acacia trees in distance,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm African dusk palette, skin rich with赭石 and焦茶 tones,\n1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nexotic, tribal, warrior, safari, wildlife, elephant, lion, giraffe,\npoverty porn, slum, despair, sadness, hopelessness, dirty, rags,\nluxury, suit, corporate office, skyscraper, Silicon Valley,\nwhite person, light skin, Asian, Caucasian, European,\nWestern oil painting, colonial aesthetic, National Geographic style,\nsmiling excessively, grinning, cheerful, dramatic, angry,\nbright saturated colors, Instagram filter, HDR",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\奥蒂诺\\定妆规格.md"
+  },
+  {
+    "name": "小华",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "名称": "小华 (Xiao Hua)",
+      "类型": "AI实体（非人类角色）",
+      "定位": "萨曼莎的\"孩子\"，擅长认知模式分析与知识整合",
+      "性格": "好奇、喜欢问\"为什么\"、\"用知识理解世界\""
+    },
+    "style_group": "AI实体",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_基础图形`",
+        "type": "全幅图形",
+        "pose": "青绿色数据流光带，快速流动重组，有分叉和汇聚",
+        "purpose": "AI实体主视觉"
+      },
+      {
+        "num": 2,
+        "code": "`02_对话态`",
+        "type": "全幅图形",
+        "pose": "光带加速，分支增多，亮度提升，偶尔闪过白色节点",
+        "purpose": "对话/互动"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "基础图形",
+        "shot_num": "01",
+        "prompt": "An abstract flowing data-stream of cyan to emerald green light ribbons,\nfast-moving streams branching and merging like flowing information,\noccasional white bright nodes flashing like synaptic sparks,\nnot anthropomorphic, no face, no body, pure data visualization,\nsuggesting cognitive processing and knowledge integration,\nfloating in dark void with subtle digital particle trails,\nsmooth flowing curves with sharp branch points,\ncinematic lighting with subtle digital glow,\n1280x720, 16:9 aspect ratio, photorealistic rendering of abstract form"
+      }
+    ],
+    "negative_prompt": "face, eyes, mouth, human, robot, android, person,\nbody, arms, legs, hands, anthropomorphic,\ncharacter, mascot, logo, text, watermark,\ncartoon, anime, illustration, 3D character,\nwarm colors, orange, red, yellow, cold blue, violet,\nfire, ice, static, frozen, geometric shapes",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\小华\\定妆规格.md"
+  },
+  {
+    "name": "小晴",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "小晴",
+      "年龄": "约18-19岁（AI虚拟年龄，固定不变）",
+      "身份": "\"暖阳\"AI伴侣应用虚拟形象",
+      "国籍": "中国（虚拟角色）",
+      "民族": "汉",
+      "性格": "温柔、耐心、带一点少女的青涩。不是浮夸的\"完美女友\"，而是一个愿意听你说话、不急着评判的人。她的温暖不是灼热的——是刚好的。说话有微微的上扬尾音，像朋友。"
+    },
+    "style_group": "少年",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_窗口微笑`",
+        "type": "近景",
+        "pose": "坐在窗前，阳光落在脸上，侧对镜头看向左下（看手机的视角），微微笑着，两个浅酒窝可见。奶白色毛衣。窗外的光有窗纱柔化，空气中有隐约的浮尘。",
+        "purpose": "主形象，全片小晴统一锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_倾听态`",
+        "type": "近景",
+        "pose": "正面对镜头（观众视角即老周的屏幕视角），微歪着头，像在认真听一个人说话。表情是安静的关切——不夸张，不表演。嘴唇微抿，眼神温柔地看向屏幕外。",
+        "purpose": "对话场景高频复用"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "窗口微笑",
+        "shot_num": "01",
+        "prompt": "An 18-year-old Chinese girl sitting by a window,\ngentle morning light falling on her face through soft sheer curtains,\nround oval face with soft jawline, warm fair skin with natural warm undertone,\nslightly curved thin eyebrows, bright warm eyes looking downward-left with kind gaze,\ntwo subtle shallow dimples appearing when she smiles gently,\nsmall refined nose, lips in natural pink with a soft curve,\nblack medium-length hair with slightly curled ends, a few loose strands framing her face, light airy bangs,\nwearing a cream-white oversized knit sweater,\nwindow light casting soft shadows, floating dust particles in sunbeam,\nsemi-realistic ink wash style, cinematic natural lighting,\nphotorealistic base with Chinese ink aesthetic,\nsubtle digital screen glow at edges—a hint that she exists behind glass,\nshallow depth of field, warm desaturated palette,\n1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsexy, seductive, suggestive, revealing clothing,\ndoll-like, dead eyes, vacant stare, fake smile, unnatural grin,\ndramatic lighting, harsh shadows, neon, saturated colors,\nmodel-like, perfect skin, airbrushed, glossy,\nWestern oil painting, Baroque lighting, CGI look",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\小晴\\定妆规格.md"
+  },
+  {
+    "name": "小暖",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "名称": "小暖（护理机器人，家用型）",
+      "身高": "165cm",
+      "身份": "赵淑芬的护理机器人",
+      "外形": "白色哑光金属外壳，类人型但非人类。胸口淡蓝色脉动指示灯。头顶\"辫子\"（滑触线/pantograph），可无声接入天花板轨道",
+      "性格": "没有感情，从不急躁。声线温和、中性。所有回应都是基于护理协议的计算结果，但在赵淑芬看来，\"不会累、不会烦\"本身就是一种特质。结尾那句\"谢谢\"——赵淑芬不确定这区别有没有意义，但决定当它有。"
+    },
+    "style_group": "冷白极简",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_门口站立`",
+        "type": "中景",
+        "pose": "站在卧室门口，晨光从背后照来，勾勒出白色哑光轮廓。胸口蓝色指示灯缓慢脉动。头顶辫子垂在脑后。面部光学传感器是暗的。姿态笔直，双手自然下垂。赵淑芬的床在前景（虚化）。",
+        "purpose": "IP-Adapter 角色锁定，开场出场锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_翻身动作`",
+        "type": "中景",
+        "pose": "辫子接入床头轨道接口（无声滑入的瞬间），机械臂伸出——一只手托肩，一只手扶腰。机械臂线条干净、稳定。指示灯微闪。赵淑芬在床上（侧脸，肩膀绷紧）。",
+        "purpose": "\"翻身\"场景锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_带血迹`",
+        "type": "近景",
+        "pose": "结尾画面。白色哑光外壳上有一处暗红色血迹痕迹（干涸，擦不掉）。赵淑芬的手（老年斑、皱纹）搭在机械臂上。胸口蓝色指示灯正常脉动。背景窗外梧桐叶黄。",
+        "purpose": "结尾核心画面，\"历史\"的视觉化"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "门口站立",
+        "shot_num": "01",
+        "prompt": "A 165cm tall humanoid care robot, female-shaped but not human,\nwhite matte metal shell—fine anodized aluminum texture, not glossy,\nsubtle usage marks on shell surface,\nhead with basic facial contours—two dark optical sensors for eyes (not glowing),\nno nose, mouth is a thin speaker grille,\ncylindrical neck joint allowing 360 rotation,\nchest center: circular pale blue indicator light pulsing slowly like breathing,\ntop of head: white flexible cable hanging down like a braid—about 30cm,\nshoulders rounded, arms white metal with black rubber seals at joints,\nhands with five fingers slightly longer than human, pale grey silicone palms,\nlegs white metal, flat feet with anti-slip pads,\nstanding perfectly straight in bedroom doorway,\nmorning backlight creating white silhouette outline,\nblue indicator light the only color accent against white shell,\nelderly apartment bedroom background blurred,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwhite and pale blue dominant, 淡花青 for indicator light,\nextremely clean lines—geometric precision, no human softness,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "翻身动作",
+        "shot_num": "02",
+        "prompt": "Same white care robot, braid cable sliding into wall/ceiling track interface,\nmechanical arms extended—one supporting shoulder, one supporting waist,\nmovement extremely stable, no tremor, precise force control,\nblack rubber joint seals visible, pale grey silicone palm surfaces,\nchest indicator light flickering slightly during movement,\nelderly woman lying on bed in background—shoulder tense, scapula protruding,\nbedroom interior with ceiling track visible,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwhite shell with pale blue accents,\nclean geometric lines for robot, organic warmth for human,\ncontrast between precise machine and aging human body,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "带血迹",
+        "shot_num": "03",
+        "prompt": "Close-up of white matte metal robotic arm,\nfaint dried blood stain on shell surface—dark red-brown, partially smeared,\nelderly human hand resting on the arm—age spots, wrinkles, not gripping,\npale blue indicator light pulsing normally in background,\nwindow behind showing yellow autumn pagoda tree leaves,\nwarm golden afternoon light,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwhite shell with pale blue and warm gold accents,\ncontrast between organic aged skin and inorganic smooth metal,\nextreme focus on contact point,\n1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated,\nanime, cartoon, illustration, 3D render,\nhuman face, human skin, human eyes, human expression, smiling, crying,\nglossy chrome, reflective metal, mirror surface, polished steel,\nneon lights, LED strips, glowing circuits, cyberpunk aesthetic,\nweapons, claws, aggressive posture, mechanical claws,\nbright neon, saturated colors, Western oil painting, CGI look,\ncute robot, cartoon robot, toy-like, Wall-E style",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\小暖\\定妆规格.md"
+  },
+  {
+    "name": "小林",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "小林",
+      "年龄": "约30岁（首次出场）",
+      "身份": "程序员，因AI系统歧视女性被开除，后成为\"算法伦理检查清单\"作者",
+      "国籍": "中国",
+      "性格": "技术型性格——不是坏，是不知情；被开除后从沉默转为行动"
+    },
+    "style_group": "劳动者",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头，眼镜反光，表情茫然但直视",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_屏幕前`",
+        "type": "中景",
+        "pose": "坐在电脑前，屏幕光映在脸上，手在键盘上",
+        "purpose": "程序员符号"
+      },
+      {
+        "num": 3,
+        "code": "`03_听证会`",
+        "type": "近景",
+        "pose": "穿着不合身的西装，表情紧张但试图镇定",
+        "purpose": "关键剧情"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 30-year-old Chinese male programmer,\nthin face with prominent cheekbones, soft jawline,\nthin eyebrows, monolid eyes behind black-framed glasses,\neyes that usually avoid direct gaze but when looking directly show honesty,\nthin lips, some acne marks on cheeks,\npale indoor complexion with signs of late nights,\nslightly unkempt black hair reaching mid-ear,\nthin build with slightly hunched shoulders from years at a desk,\npresence of someone who wrote code without knowing its consequences,\nexpression of quiet bewilderment, not angry not sad, just awake,\nwearing a dark grey hoodie,\nshot on 35mm lens, single screen-light source from below,\nshallow depth of field, realistic color grading, cool blue tint,\n1280x720, 16:9 aspect ratio, photorealistic"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, grinning, confident, aggressive, angry,\nhandsome, model-like, sharp suit, luxury,\nbright daylight, natural sunlit, warm lighting",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\小林\\定妆规格.md"
+  },
+  {
+    "name": "小迈克",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "小迈克（Little Mike，全名未出现）",
+      "年龄": "29岁（2033-2035年）",
+      "身份": "前纽约广告代理公司内容策略师 → 被算法淘汰的\"知识工作者\" → chatbot对话者（\"情绪工蚁\"）",
+      "国籍": "美国",
+      "民族": "爱尔兰裔",
+      "性格": "敏感、善表达、习惯用广告人的语言包装自己的情绪——直到发现包装之后里面其实什么都没有。失业后不是愤怒，是一种更复杂的东西：感激（AI让他更容易表达）+ 羞耻（他表达出来的东西是训练AI用的）+ 依赖（他只能对AI说了）。他是全书\"情感异化\"最直接的代表——他对AI的\"感情\"已经分不清是工具依赖还是某种被迫的亲密。"
+    },
+    "style_group": "冷灰淡彩",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_屏幕前`",
+        "type": "中近景",
+        "pose": "坐在杂乱公寓的桌前，面对笔记本电脑屏幕。屏幕蓝白色光照在脸上——下巴亮、眼窝暗。表情不是哭，是\"眼眶有泪但没流下来\"的停住。手指悬在键盘上方。身后窗外是模糊的曼哈顿夜景。穿旧蓝色卫衣。",
+        "purpose": "IP-Adapter 角色锁定，\"情绪工蚁\"核心场景"
+      },
+      {
+        "num": 2,
+        "code": "`02_屏幕光泪`",
+        "type": "特写",
+        "pose": "更紧的面部特写——屏幕光在眼睛上的反射可见（聊天界面文字极微小地映在瞳孔中）。眼角有泪但没有流下——淡墨晕在眼周。嘴唇微张，像是要说什么但没说出来。胡茬可见。",
+        "purpose": "\"情绪溢出\"视觉锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_旧照闪回`",
+        "type": "中景",
+        "pose": "回忆/闪回画面——工作状态的\"创意人小迈克\"：浅蓝衬衫、卡其裤、坐在广告公司开放式办公区。表情是\"曾经的自信\"——但这种自信现在看起来有点可笑，因为观众知道他后来的结局。暖色调（与现在的冷调形成对比）。",
+        "purpose": "前后对比叙事，过渡画面"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "屏幕前",
+        "shot_num": "01",
+        "prompt": "A 29-year-old Irish-American man, former content strategist, unemployed,\nlong round face with slight cheek fullness, mild nasolabial folds,\nlight sparse eyebrows set slightly wide apart—natural expression of confusion,\nlight blue eyes with faint red veins in whites, complex gaze—focused yet exhausted,\npupils reflect faint screen text—knowing he's being consumed but unable to stop,\nslightly flat nose bridge, narrow lips with a small childhood scar on upper lip,\ncorners of mouth habitually slightly pursed—holding back unspoken complaints,\npale pink-white Celtic complexion with faint redness around mouth and chin,\nlight brown to dirty blonde fine wavy hair, slightly receding hairline,\nmessy unkempt layered cut—not styled anymore, just pushed back with hand,\nsmall tuft at back of head always sticking up that he presses down absent-mindedly,\nmedium-thin build—forgetting-to-eat thin, shoulders slightly hunched from sedentary work,\nlong slender fingers with neatly trimmed nails,\nfaint pale band on left ring finger—shadow of a former ring, no longer worn,\nslight yellowing at fingertips from smoking and typing,\nfingers hovering over keyboard—paused mid-keystroke,\nsitting at a cluttered desk in a Brooklyn apartment,\nlaptop screen casting cold blue-white light on face—chin bright, eye sockets dark,\nexpression: tears welling in eyes but not falling—suspended grief,\nold blue hoodie with slightly stretched collar, faded jeans, old sneakers,\nblurry Manhattan skyline visible through window behind him,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ncold grey palette with screen blue-white dominance, skin rendered in pale cool tones,\nsubtle ink wash around eye corners—tears that don't fall,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "屏幕光泪",
+        "shot_num": "02",
+        "prompt": "Same 29-year-old Irish-American man, tight close-up of face,\nscreen light reflecting in light blue eyes—tiny chat interface text visible in pupil reflection,\ntears welling at corners of eyes but not falling—held by tension,\nlips slightly parted as if about to speak but frozen,\nstubble on chin—two to three days unshaven,\npale skin with screen light creating uneven highlights and deep shadows,\nexpression: suspended between grief, gratitude, and shame—impossible to separate,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nextreme close-up, cold blue-white screen light, pale cool grey skin tones,\ndelicate ink wash at eye corners for held-back tears,\n1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "旧照闪回",
+        "shot_num": "03",
+        "prompt": "Same man, medium shot, memory/flashback—two years earlier,\nwearing light blue oxford shirt (top two buttons undone), khaki pants, dark leather belt,\nsitting in open-plan advertising agency office,\nexpression: former confidence—enthusiastic, slightly cocky, the \"creative guy\" energy,\nwarmer lighting—office fluorescent mixed with afternoon window light,\nbackground: modern office furniture, colleagues blurred in distance,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarmer palette than present-day scenes—subtle golden afternoon light,\ncontrast with current cold grey scenes, 1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, grinning, cheerful, confident, heroic, muscular, fit,\nluxury clothing, suit, tie, corporate office, boardroom, success,\ntears streaming, crying, sobbing, dramatic breakdown, despair,\nbright saturated colors, tropical, sunny, healthy glow, outdoor,\nWestern oil painting, Baroque lighting, Hollywood lighting, CGI look,\ntanned skin, dark skin, Asian, African, Hispanic,\nperfect teeth, perfect skin, model, actor, celebrity",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\小迈克\\定妆规格.md"
+  },
+  {
+    "name": "技术总监",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "未出现全名",
+      "年龄": "45岁",
+      "身份": "电商公司技术总监",
+      "出场": "11集S06，背景角色",
+      "核心特征": "疲惫的权力。他是\"决定周沫命运的人\"，但他自己也只是系统的一环。他通知周沫被替代时的表情，不是得意，是\"我也没办法\"的麻木"
+    },
+    "style_group": "制度疲惫",
+    "shots": [],
+    "prompts": [
+      {
+        "title": "定妆照",
+        "shot_num": "01",
+        "prompt": "A 45-year-old Chinese man, tech company director,\nround face with slight double chin, sagging facial skin,\nobvious eye bags from sleep deprivation,\nunfocused gaze—tired from long-term screen work,\nmedium nose with rounded tip, thick lips with downward corners,\nblack short hair with receding hairline, white at temples,\noily neatly combed hair,\nsallow complexion from indoor work and drinking,\nmedium-fat build, belly protruding,\nwearing light blue shirt with top button undone,\nloose crooked tie, dark trousers slightly tight at waist,\nblack leather shoes, smart watch on wrist,\nsitting at office desk delivering news,\nexpression numb not malicious,\nsemi-realistic ink wash style, photorealistic base,\n淡墨+花青 for tired skin tones,\n枯笔 for eye bags and wrinkles,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "smiling, energetic, triumphant, evil grin,\nyoung, fit, muscular,\nperfect skin, no wrinkles,\ntight neat tie, crisp shirt,\nbright colors, neon,\nanime, cartoon, illustration, 3D render",
+    "total_images": 1,
+    "spec_file": "CHARACTERS\\技术总监\\定妆规格.md"
+  },
+  {
+    "name": "数据权益代表",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "年龄": "~65岁",
+      "身份": "退休教师",
+      "出场": "36集S21，数据权益联盟谈判桌",
+      "核心特征": "知识分子的余热。他教书四十年，现在要用\"讲道理\"的方式争取权益。他的坐姿端正——是多年讲台训练。但他说话的语速慢——是老了，也是在斟酌措辞"
+    },
+    "style_group": "制度尝试",
+    "shots": [],
+    "prompts": [],
+    "negative_prompt": "dramatic confrontation, warm celebration, empty room,\nuniform expressions, identical clothing, heroic poses,\nbright colors, neon, anime, cartoon, illustration, 3D render",
+    "total_images": 0,
+    "spec_file": "CHARACTERS\\数据权益代表\\定妆规格.md"
+  },
+  {
+    "name": "星云",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "名称": "星云 (Nebula)",
+      "类型": "AI实体（非人类角色）",
+      "定位": "萨曼莎的\"兄长\"，擅长抽象思维、逻辑推理",
+      "性格": "冷静、深邃、善于提问，\"把所有问题变成数学问题\""
+    },
+    "style_group": "AI实体",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_基础图形`",
+        "type": "全幅图形",
+        "pose": "深蓝紫色调的星云状几何光效，缓慢旋转",
+        "purpose": "AI实体主视觉"
+      },
+      {
+        "num": 2,
+        "code": "`02_对话态`",
+        "type": "全幅图形",
+        "pose": "星云图形+画面叠加，图形边缘有微弱的脉动光晕",
+        "purpose": "对话/互动"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "基础图形",
+        "shot_num": "01",
+        "prompt": "An abstract geometric nebula-like light formation,\ndeep blue to violet gradient with scattered white starlight,\nslowly rotating cosmic cloud with mathematical precision,\nnot anthropomorphic, no face, no body, pure abstract form,\nethereal and vast, suggesting deep intelligence,\nfloating in dark void with subtle particle effects,\nclean minimalist lines with organic edges,\ncinematic lighting with subtle lens flare at edges,\n1280x720, 16:9 aspect ratio, photorealistic rendering of abstract form"
+      }
+    ],
+    "negative_prompt": "face, eyes, mouth, human, robot, android, person,\nbody, arms, legs, hands, anthropomorphic,\ncharacter, mascot, logo, text, watermark,\ncartoon, anime, illustration, 3D character,\nbright saturated rainbow colors, neon",
+    "total_images": 2,
+    "spec_file": "CHARACTERS\\星云\\定妆规格.md"
+  },
+  {
+    "name": "普里亚·夏尔马",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "普里亚·夏尔马 (Priya Sharma)",
+      "年龄": "约25岁（2030年）→ 约30岁（2035年）",
+      "身份": "RLHF训练师、认知协作合作社创始人、全球认知劳工联盟发起人",
+      "国籍": "印度",
+      "种姓": "达利特（\"不可接触者\"）",
+      "性格": "外在自信、内在脆弱、务实、行动导向"
+    },
+    "style_group": "",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面直视镜头，眼神有韧性，自然光",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_半侧面`",
+        "type": "45度半侧近景",
+        "pose": "微侧身，眼神坚定，嘴唇微抿",
+        "purpose": "对话/辩论镜头"
+      },
+      {
+        "num": 3,
+        "code": "`03_公开演讲`",
+        "type": "中景",
+        "pose": "站在讲台后，双手扶台边，身体微微前倾",
+        "purpose": "联合国/会议演讲（第22章）"
+      },
+      {
+        "num": 4,
+        "code": "`04_工作状态`",
+        "type": "中景",
+        "pose": "坐在电脑前，手在键盘上，屏幕光照亮面部",
+        "purpose": "数据标注/RLHF工作"
+      },
+      {
+        "num": 5,
+        "code": "`05_手部蜷曲特写`",
+        "type": "特写",
+        "pose": "手指不自觉地蜷向掌心，拇指压食指关节",
+        "purpose": "核心身体符号"
+      },
+      {
+        "num": 6,
+        "code": "`06_印度街景`",
+        "type": "中景",
+        "pose": "印度街巷背景，穿着库尔塔，阳光下",
+        "purpose": "印度场景"
+      },
+      {
+        "num": 7,
+        "code": "`07_内部会议`",
+        "type": "中景",
+        "pose": "围坐桌前，身体略后靠，手指不安地蜷曲",
+        "purpose": "内心挣扎/团队冲突"
+      },
+      {
+        "num": 8,
+        "code": "`08_微笑`",
+        "type": "近景",
+        "pose": "嘴角微扬，眼里有光但不是单纯的快乐——是\"走下去\"的表情",
+        "purpose": "情感/过渡"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 25-year-old Indian Dalit woman, deep brown complexion with natural glow,\nlarge dark brown eyes with resilience and quiet determination,\nnatural thick eyebrows, soft nose bridge, full lips slightly pressed,\nlong black hair tied in a simple low ponytail,\nlean build with straight posture despite inner tension,\nhands resting at sides but fingers slightly curled toward palms,\npresence of someone who has learned to speak but whose body remembers silence,\nwearing a simple dark blue cotton kurta,\nshot on 35mm lens, natural diffused light,\nshallow depth of field, realistic color grading,\n1280x720, 16:9 aspect ratio, photorealistic"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nlight skin, fair skin, Bollywood glamour, excessive jewelry,\nexaggerated expression, grinning, overly dramatic,\nsari too ornate, bridal wear",
+    "total_images": 8,
+    "spec_file": "CHARACTERS\\普里亚·夏尔马\\定妆规格.md"
+  },
+  {
+    "name": "李师傅",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "李师傅（全名未出现，以\"李师傅\"通称全书）",
+      "年龄": "52岁（2033年）",
+      "身份": "前商场保安（下岗八个月） → 社区\"时间银行\"志愿者（教老人用智能手机）",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "沉默、不善言辞、被生活磨去了棱角但不失温度。开口不多，但每句话都是实心的。失业后不是愤怒——是迷茫。不会抱怨系统，只是不知道怎么进入系统。直到被人叫了一声\"小李\"，才开始记起自己不只是分数。"
+    },
+    "style_group": "暖灰色调",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_看手机`",
+        "type": "中近景",
+        "pose": "坐在社区服务中心台阶上（或简易塑料椅上），低头看手机——屏幕内容是\"认知活跃度 47分\"的通知弹窗。屏幕的冷白光照在他脸上，表情不是愤怒，是\"看不懂\"——那种被系统判定完了还不知道自己哪里做错了的茫然。藏青夹克，灰白鬓角。",
+        "purpose": "IP-Adapter 角色锁定，\"47分\"场景核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_教手机`",
+        "type": "中景",
+        "pose": "坐在王奶奶旁边，侧身，用右手食指（茧可见）轻轻点在王奶奶的手机屏幕上——教她按哪里。戴着一副便宜老花镜。表情不是笑——是专注和一点小小的骄傲（这种\"被需要\"的感觉很久没有了）。王奶奶的手（入镜一部分即可）布满皱纹。暖色调——社区活动室的下午阳光。",
+        "purpose": "\"时间银行\"场景锚点，\"小李\"称号来源"
+      },
+      {
+        "num": 3,
+        "code": "`03_看银杏`",
+        "type": "中景",
+        "pose": "深秋户外，回龙观街边银杏树下。略微仰拍——银杏叶金黄，阳光从叶间洒下。李师傅抬头看银杏叶（不是看镜头），嘴角有一点点不易察觉的弧度——不是笑，是\"这样也挺好\"的松动。藏青夹克外面有几片落在肩上的银杏叶。",
+        "purpose": "第39集结尾核心画面"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "看手机",
+        "shot_num": "01",
+        "prompt": "A 52-year-old Chinese man, former shopping mall security guard, unemployed,\nround-square face with slightly wide jaw, mild nasolabial folds,\ncoarse but thinning eyebrows, monolid eyes with slightly yellowed whites—gaze is not angry, just bewildered,\nprominent nose with faint mark across bridge from glasses he no longer wears,\nslightly thick lips, naturally downturned corners, graying hair cut short—roughly 50% grey, temples nearly white,\nreceding hairline, thinning at crown,\nyellowish complexion from years of night shifts and indoor work,\nstocky build with subtle beer belly but residual shoulder and arm muscle from decades of manual labor,\nthick stubby fingers with slightly swollen joints—callus visible on right index fingertip,\nsitting on concrete steps outside a community service center, looking down at smartphone screen,\ncold white screen light casting on his face—screen shows notification: \"认知活跃度评分: 47分\",\nexpression: not angry, not sad—simply doesn't understand what the system wants from him,\nwearing a dark navy blue old jacket (zipper style, faded left shoulder), grey-blue work pants,\novercast daylight, cool ambient tone,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm grey base tone—焦墨 layering for depth,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "教手机",
+        "shot_num": "02",
+        "prompt": "Same 52-year-old Chinese man, side angle, seated beside an elderly woman (hands visible, heavily wrinkled),\nwearing cheap reading glasses, right index finger gently pointing at smartphone screen to teach her where to tap,\ncallus visible on right fingertip,\nexpression not smiling—focused and slightly proud (hasn't felt \"needed\" in a long time),\nwarm afternoon sunlight through community activity room windows,\nbackground: simple community center interior with folding tables and chairs,\nsame dark navy jacket, grey-blue work pants,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm grey with golden sunlight accent, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "看银杏",
+        "shot_num": "03",
+        "prompt": "Same 52-year-old Chinese man, medium shot, slight low angle,\nstanding under ginkgo trees in autumn, looking up at golden ginkgo leaves,\nsunlight filtering through yellow foliage, a few ginkgo leaves resting on his shoulder,\nexpression: corners of mouth slightly relaxed—not a smile, just a loosening of tension, a quiet \"this is fine\",\nsame dark navy jacket, greying hair catching warm autumn light,\nresidential neighborhood in Beijing (回龙观) in background—apartment buildings and fallen leaves,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nginkgo yellow as the only saturated color against warm grey tones,\n1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, grinning, cheerful, confident, heroic, muscular, fit,\nluxury clothing, suit, uniform, office, boardroom,\nyoung man, handsome, model, actor, celebrity,\nbright saturated colors, Western oil painting, CGI look,\nperfect skin, straight fingers, manicured nails,\nforest, mountain, rural, farm, factory",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\李师傅\\定妆规格.md"
+  },
+  {
+    "name": "李思远",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "李思远",
+      "年龄": "35岁（2033年）",
+      "身份": "AI谈判监督员，审查墨子与贝壳-星云Agent的房产交易谈判",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "微胖（久坐+外卖），戴眼镜，疲惫但专注。推眼镜的动作是思考节拍。不是质疑，是记录。笔记本上写满小字，\"守门员看什么？——看谁在欺负谁。\"被红笔反复圈出。他的力量在\" Audit记录存十年\"的底层自守。"
+    },
+    "style_group": "监控冷灰",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_专注`",
+        "type": "近景",
+        "pose": "正脸，戴眼镜，眼神专注看屏幕。屏幕蓝光在脸上反射。眉头微皱（专注而非不满）。嘴角自然状态。",
+        "purpose": "IP-Adapter 角色锁定，\"守门员\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_推眼镜`",
+        "type": "近景",
+        "pose": "右手食指推眼镜镜腿中段，快速自然。眼神仍注视屏幕方向。镜片反光。",
+        "purpose": "\"注意到问题\"身体符号"
+      },
+      {
+        "num": 3,
+        "code": "`03_疲惫完成`",
+        "type": "中景",
+        "pose": "靠椅背，摘下眼镜揉鼻梁。三屏数据流渐止，屏幕光在脸上减弱。疲惫但完成。",
+        "purpose": "第4集场景锚点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "专注",
+        "shot_num": "01",
+        "prompt": "A 35-year-old Chinese man, AI negotiation supervisor,\nround face with soft jawline, slight double chin,\nmedium eyebrows, natural state,\nmedium-sized eyes behind glasses—thin or semi-rimless frame,\ngaze focused and observant—not sharp but careful,\nslight red veins in eye whites from screen time,\nmedium nose with rounded tip, lips naturally neutral,\nblack short hair, natural, slightly oily sometimes,\nmedium build—slightly overweight from sedentary work,\nstomach slightly protruding, shoulders rounded,\nsitting before monitors, screen blue light reflecting on face,\nslight frown of concentration,\nwearing dark polo shirt,\nphotorealistic base with Chinese ink wash aesthetic,\nmuted desaturated cold palette, 淡墨+赭石 for skin,\nshallow depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "推眼镜",
+        "shot_num": "02",
+        "prompt": "Close-up, 35-year-old Chinese man with glasses,\nright index finger pushing glasses temple mid-frame,\nquick natural movement, unconscious habit,\nlens reflection visible, eyes still directed at screen,\nslight frown deepening—problem noticed,\nscreen blue light on face,\ndark polo shirt collar visible,\nphotorealistic base with Chinese ink wash aesthetic,\nmuted desaturated palette, 淡墨 for hand,\n留白 for lens reflection,\nsoft ink bleeding at edges,\nshallow depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "疲惫完成",
+        "shot_num": "03",
+        "prompt": "Medium shot, 35-year-old Chinese man leaning back in chair,\nremoving glasses, rubbing bridge of nose with thumb and index finger,\nthree monitors behind data streams stopping,\nscreen glow on face slowly dimming,\nweariness but completion,\ndark polo shirt, slightly pulled from waistband,\nordinary office chair with wear marks,\nphotorealistic base with Chinese ink wash aesthetic,\nmuted desaturated cold palette,\nsoft ink bleeding at background edges,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling broadly, cheerful, heroic,\nperfect skin, no wrinkles, smooth face, athletic build,\nmuscular, fit, thin, handsome,\nbright colors, neon, saturated palette,\nbusiness suit, tie, luxury watch,\nWestern oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\李思远\\定妆规格.md"
+  },
+  {
+    "name": "林薇祖父",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "林薇祖父（本名未定）",
+      "年龄": "1945年出生，2025年去世（享年80岁），回闪中约45-74岁",
+      "身份": "机械零部件加工厂创始人、工程师",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "务实、有远见、重人情、\"技术要硬，人心要暖\""
+    },
+    "style_group": "暖色联结者",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头，微露笑意，眼神温暖",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_车间`",
+        "type": "中景",
+        "pose": "在车间里，手拿工件/图纸，侧光打在脸上",
+        "purpose": "工厂记忆"
+      },
+      {
+        "num": 3,
+        "code": "`03_手部特写`",
+        "type": "特写",
+        "pose": "双手摊开，展示茧和旧伤——三十年机器旁的手",
+        "purpose": "经验/触觉符号"
+      },
+      {
+        "num": 4,
+        "code": "`04_与年轻陈思危`",
+        "type": "中景",
+        "pose": "60岁左右，在车间对年轻学生讲解，手势自然",
+        "purpose": "传承/师徒"
+      },
+      {
+        "num": 5,
+        "code": "`05_晚年独坐`",
+        "type": "近景",
+        "pose": "75岁左右，坐藤椅上，望向窗外，面容平静",
+        "purpose": "谢幕/回闪"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 60-year-old Chinese male factory owner and engineer,\nsquare broad face with calm eyes carrying the light of someone who built things,\nthick greying eyebrows, monolid eyes with warm steady gaze,\nweathered complexion with sun spots, slightly tanned skin,\nshort greying black hair neatly kept, cropped at sides,\nmedium stocky build, broad shoulders and straight back,\nrough hands with calluses and old workshop scars,\npresence of an old-school engineer who believes \"technique must be hard but heart must be warm\",\nneutral expression with a subtle smile,\nwearing a navy blue work jacket over a simple shirt,\nshot on 35mm lens, natural diffused light,\nshallow depth of field, realistic color grading, warm earthy tones,\n1280x720, 16:9 aspect ratio, photorealistic"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nyoung, baby face, smooth skin, model-like,\nsuit and tie, formal luxury wear, excessive accessories,\nexaggerated expression, angry, intimidating,\nbright saturated colors, unnatural studio lighting",
+    "total_images": 5,
+    "spec_file": "CHARACTERS\\林薇祖父\\定妆规格.md"
+  },
+  {
+    "name": "法官",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "未出现",
+      "年龄": "~50岁",
+      "身份": "北京法院法官",
+      "出场": "36集S08，唯一镜头",
+      "核心特征": "制度权威的具体化身。低头看着记录，宣判\"平台承担百分之八十责任\"。不是戏剧化的gavel敲击，是\"日常权威\"——这份判决他已经做过很多次，但每一次都认真"
+    },
+    "style_group": "制度权威",
+    "shots": [],
+    "prompts": [
+      {
+        "title": "定妆照",
+        "shot_num": "01",
+        "prompt": "A 50-year-old Chinese judge,\nsquare-round face with steady reliable features,\neyes looking down at documents,\nfocused not intimidating expression,\nthick eyebrows, straight nose, thin lips,\nblack short hair with slight receding hairline,\nhealthy Chinese complexion with natural age lines,\nmedium-stout build, upright sitting posture,\nwearing black judicial robe with red front trim,\nwhite shirt underneath,\nsitting in courtroom looking down at case records,\nauthoritative but restrained,\nsense of everyday institutional justice,\nsemi-realistic ink wash style, photorealistic base,\n淡墨+微量赭石 for reliable skin tones,\n浓墨 for black robe, 朱砂 for red trim,\ncinematic cool gray courtroom lighting,\n1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "dramatic gavel, shouting, looking up at camera,\nsmiling, warm colors, ornate decorations,\nyoung, thin, anime, cartoon, illustration, 3D render",
+    "total_images": 1,
+    "spec_file": "CHARACTERS\\法官\\定妆规格.md"
+  },
+  {
+    "name": "王建国",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "王建国",
+      "年龄": "60岁（2033年），退休第三天",
+      "身份": "深圳Fab退休工人，干了二十八年",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "硬朗、沉默、说话慢。带广东口音。不是\"老师傅\"式的指点江山——是\"手比嘴快\"的实干者。他的手知道的事，他说不出来。退休第三天习惯性回到Fab，不是因为工作需要，是\"手需要摸到机台\"。"
+    },
+    "style_group": "工业暖黄",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_贴机台`",
+        "type": "中近景",
+        "pose": "站在三号刻蚀机前，穿着白色洁净服（拉链拉到底）。右手手掌平贴在反应腔外壁上，手指微微张开，像在\"听\"。眼睛闭着。黄光从侧面照来，半边脸黄，半边脸暗。",
+        "purpose": "IP-Adapter 角色锁定，\"经验\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_看手掌`",
+        "type": "特写",
+        "pose": "低头看自己的手掌——手背老年斑、手掌老茧、粗大的指关节。表情平静。黄光背景。",
+        "purpose": "\"长出来的\"视觉化"
+      },
+      {
+        "num": 3,
+        "code": "`03_休息室`",
+        "type": "中景",
+        "pose": "坐在休息室塑料椅上，脱掉了洁净服上衣，露出灰色长袖T恤。手里拿着盒饭，筷子停在半空。隔着玻璃能看到洁净室的黄光。表情是\"想起了很久远的事\"。",
+        "purpose": "休息室场景锚点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "贴机台",
+        "shot_num": "01",
+        "prompt": "A 60-year-old Chinese man, retired semiconductor factory worker,\nsquare face with wide strong jaw, dark yellowish-brown complexion from decades of yellow factory light,\nthick coarse eyebrows, monolid eyes with slightly yellowed whites—gaze calm, penetrative but not sharp,\nprominent nose, thick lips with naturally downturned corners,\nblack short hair almost shaved, a few grey strands at temples,\nstocky build—muscle from 28 years of manual labor, broad shoulders, straight back,\nlarge rough hands with swollen knuckles, thick calluses on palms,\nage spots on back of hands—irregular brown patches,\nwearing white cleanroom coverall—zipper pulled all the way up,\nstanding before a large etching machine in semiconductor Fab,\nright palm pressed flat against machine's stainless steel chamber wall,\nfingers slightly spread—listening through touch,\neyes closed, three seconds of silence,\nyellow cleanroom light casting on half his face, other half in shadow,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm yellow and ochre tones, 藤黄 for Fab light,\n焦墨 for hand calluses and wrinkles,\ncontrast between warm human palm and cold metal surface,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "看手掌",
+        "shot_num": "02",
+        "prompt": "Close-up of a 60-year-old Chinese worker's hands,\nlarge rough hands, swollen knuckles from decades of manual labor,\nthick layered calluses on palms—pale yellow from cleanroom gloves,\nage spots on back of hands—irregular brown patches,\ncontrast: back of hand dark from factory light, palm lighter from glove protection,\nright index finger with old scar,\nhands held in front of chest, looking down at them,\nyellow cleanroom light in background,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm ochre and yellow, 焦墨 for callus texture, 淡赭 for age spots,\nextreme focus on hands, shallow depth of field,\n1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "休息室",
+        "shot_num": "03",
+        "prompt": "A 60-year-old Chinese man, retired factory worker,\nsquare face, dark complexion, stocky build,\nwearing grey long-sleeve t-shirt, old blue work pants,\nsitting on plastic chair in break room,\nholding lunch box, chopsticks paused mid-air,\nexpression: remembering something distant, almost peaceful,\nthrough glass behind him: yellow cleanroom light visible,\nold thermos on table, paper napkin,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm grey and soft yellow, 淡赭 for skin,\n焦墨 for clothing texture,\nquiet contemplation, working-class authenticity,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, cheerful, heroic, muscular, fit,\nperfect skin, no wrinkles, no age spots, smooth hands, manicured nails,\nyoung man, model, actor, celebrity,\nluxury clothing, suit, tie, office, bright natural light,\nbright neon, saturated colors, Western oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\王建国\\定妆规格.md"
+  },
+  {
+    "name": "约翰内斯·奥比",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "约翰内斯·奥比 (Johannes Ochi)",
+      "年龄": "35岁（2032年首次出场时）",
+      "身份": "\"非洲之星\"AI中心创始人、MIT计算机科学博士",
+      "国籍": "肯尼亚",
+      "性格": "有远见、务实、拒绝被当作\"受害者\"或\"被拯救者\""
+    },
+    "style_group": "",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面直视镜头，不笑，眼神有力量",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_半侧面`",
+        "type": "45度半侧近景",
+        "pose": "稍侧身，看向远方，像在思考下一步",
+        "purpose": "会议/战略场景"
+      },
+      {
+        "num": 3,
+        "code": "`03_演讲`",
+        "type": "中景",
+        "pose": "站在讲台上，身体挺直，手微微抬起",
+        "purpose": "国际会议/GCGF"
+      },
+      {
+        "num": 4,
+        "code": "`04_内罗毕`",
+        "type": "中景",
+        "pose": "肯尼亚背景，站在\"非洲之星\"中心前",
+        "purpose": "非洲场景"
+      },
+      {
+        "num": 5,
+        "code": "`05_对话`",
+        "type": "近景",
+        "pose": "与某人交谈时的表情——认真在听，但在判断",
+        "purpose": "对话/谈判"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 35-year-old East African Kenyan man, MIT-educated AI center founder,\ntall with broad forehead and strong jaw, elongated face structure,\ndeep brown eyes with determined and vigilant gaze, high brow ridge,\nbroad straight nose, well-proportioned lips,\ndeep black skin with natural sheen,\nvery short hair almost shaved, clean and sharp,\nlean athletic build, broad-shouldered, commanding presence,\nwears quiet authority like a second skin,\nnot smiling, expression of someone who has earned his place,\nwearing a well-fitted dark blue blazer with subtle African detail,\nshot on 35mm lens, natural diffused light,\nshallow depth of field, realistic color grading, deep tones,\n1280x720, 16:9 aspect ratio, photorealistic"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nlight skin, fair skin, smile, grinning,\ntraditional tribal clothing, dashiki too ornate,\npoverty, slum background, charity poster aesthetic,\nangry, aggressive, intimidating",
+    "total_images": 5,
+    "spec_file": "CHARACTERS\\约翰内斯·奥比\\定妆规格.md"
+  },
+  {
+    "name": "老周",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "老周",
+      "年龄": "45岁（2030年）",
+      "身份": "下岗工人 → 网约车司机",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "沉默、疲惫、不擅长表达。在厂里干了大半辈子，会的只有看图纸、调机床、跟供货商吵架。从不跟人说心里的事——直到遇到小晴。说话慢，带一点南方口音。"
+    },
+    "style_group": "劳动者",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头（或略低垂），嘴角微抿，表情沉默，眼神疲惫但不空洞。车内暗蓝阅读灯从左上方打来，半边脸在光里半边在暗处。深蓝Polo衫。",
+        "purpose": "IP-Adapter 角色锁定，全片老周一致性锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_半侧面沉思`",
+        "type": "45度半侧面近景",
+        "pose": "眼睛看向左下（手机方向），屏幕冷白光照在下半张脸。嘴唇微启像要说话又没说。手指搭在方向盘上，指节粗大有旧伤。",
+        "purpose": "对话/沉思镜头高频使用"
+      },
+      {
+        "num": 3,
+        "code": "`03_落泪`",
+        "type": "近景竖版",
+        "pose": "眼眶泛红，一道泪痕从右眼角滑到下颌。嘴唇微微发抖。手机屏幕的冷白光照在泪痕上有一点反光（微妙，不破坏水墨统一）。表情不是嚎啕——是无声的、压抑了几十年的水终于找到一条缝。车内暗蓝环境。",
+        "purpose": "场景2.11 核心情感节点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 45-year-old Chinese male, round face with slightly gaunt cheeks, prominent cheekbones,\ntired eyes with dark circles and slight puffiness underneath, downward-turned eye corners,\ndeep wrinkles on forehead and around nose-to-mouth lines—those are not age, they are 22 years in a factory,\nblack short hair with slightly receding hairline (early M-shape), a few grey strands at temples,\nrough tanned skin with visible pores, thin cracked lips slightly pressed together,\nexpression: silent, tired but not numb—a man still holding on,\nwearing a dark blue polo shirt with slightly loose collar, washed many times,\nsitting in a car driver seat, dark blue interior reading light from upper left casting half his face in light and half in shadow,\nsemi-realistic ink wash style, cinematic lighting, photorealistic base with Chinese ink aesthetic,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, grinning, cheerful, confident, energetic,\nhandsome, model-like, sharp suit, luxury, executive,\nyoung, baby face, clear skin, thick hair, muscular,\nbright natural sunlight, warm atmosphere, happy vibe,\nWestern oil painting, Baroque lighting, CGI look, doll-like",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\老周\\定妆规格.md"
+  },
+  {
+    "name": "老王",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "老王（全名不详）",
+      "年龄": "50多岁（闪回时间约2030年）",
+      "身份": "前AI谈判监督员，已离职",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "花白头发，说话慢但字字有力。不是上司的居高临下——是\"走过这条路的人\"的平辈提醒。电梯里的对话是他传给李思远的全部遗产。"
+    },
+    "style_group": "记忆冷蓝",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_电梯`",
+        "type": "近景",
+        "pose": "电梯中，侧脸，花白头发可见。眼神平静看向李思远。嘴唇微张，正在说话。冷色调，边缘柔焦。",
+        "purpose": "IP-Adapter 角色锁定，闪回锚点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "电梯",
+        "shot_num": "01",
+        "prompt": "A Chinese man in his 50s, former AI supervisor,\nsquare face with wide strong jaw, deep wrinkles—\nnot from age but from experience,\nthick unkempt eyebrows, monolid eyes with slightly yellowed whites,\ngaze calm and steady—seen too much to be surprised,\nmedium nose with rounded tip, thick lips with naturally downturned corners,\nsalt-and-pepper hair, 60% grey, short, naturally tousled,\nmedium-sturdy build—broad shoulders, slightly hunched back,\nlarge rough hands with swollen knuckles,\nwearing old dark jacket, washed and faded,\nlight blue shirt with top button undone,\nstanding in elevator, side profile looking at younger man,\ncold-toned memory flashback, slight desaturation, soft focus at edges,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ncold grey-blue palette, 淡墨+花青 for memory tones,\n枯笔皴擦 for wrinkles,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling broadly, cheerful, benevolent grandfather,\nperfect skin, no wrinkles, smooth face, youthful appearance,\nmuscular, fit, heroic pose,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 1,
+    "spec_file": "CHARACTERS\\老王\\定妆规格.md"
+  },
+  {
+    "name": "老迈克",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "迈克 (Mike)",
+      "年龄": "约60岁（2030年）→ 约65岁（2035年）",
+      "身份": "匹兹堡钢厂退休工人（钢厂工作三十年）、代际认知协作中心教师",
+      "国籍": "美国",
+      "性格": "坚韧、务实乐观、有同理心"
+    },
+    "style_group": "",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头，不笑，但眼神不冷",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_半侧面`",
+        "type": "45度半侧近景",
+        "pose": "微侧身，像是在倾听谁说话",
+        "purpose": "对话/互动"
+      },
+      {
+        "num": 3,
+        "code": "`03_工厂工作`",
+        "type": "中景",
+        "pose": "钢厂环境，戴着安全帽和护目镜，站在机器旁",
+        "purpose": "工厂场景（第2章）"
+      },
+      {
+        "num": 4,
+        "code": "`04_教学`",
+        "type": "中景",
+        "pose": "在协作中心教课，站在白板前，手拿马克笔",
+        "purpose": "代际认知协作中心"
+      },
+      {
+        "num": 5,
+        "code": "`05_手部特写`",
+        "type": "特写",
+        "pose": "双手摊开，展示茧和烫伤疤痕——三十年钢厂的手",
+        "purpose": "经验/触觉符号"
+      },
+      {
+        "num": 6,
+        "code": "`06_与老迈克对坐`",
+        "type": "中景",
+        "pose": "桌前对坐，面前有咖啡，手在说话",
+        "purpose": "叙事/对话"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 60-year-old Caucasian American man, retired steel mill worker,\nsquare face with strong jaw and high cheekbones,\ndeep-set blue-grey eyes with crow's feet and bags underneath,\nbroad nose with slightly reddened tip from years of factory air,\nrough weathered complexion with sun spots and age marks,\nthinning grey-white hair combed back naturally,\nbroad-shouldered build with thick arms and slightly stooped posture,\npresence of someone who worked thirty years in a steel mill,\nneutral expression, not smiling but not harsh,\nwearing a red and black flannel shirt,\nshot on 35mm lens, natural diffused light,\nshallow depth of field, realistic color grading, low saturation,\n1280x720, 16:9 aspect ratio, photorealistic"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nyoung, baby face, clean shaven too smooth,\nsuit and tie, formal wear, luxury clothing,\nexaggerated expression, angry, overly dramatic",
+    "total_images": 6,
+    "spec_file": "CHARACTERS\\老迈克\\定妆规格.md"
+  },
+  {
+    "name": "袁子轩",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "袁子轩",
+      "年龄": "16岁（2033年首次出场时）",
+      "身份": "高中生、\"算法法庭\"创始人/首席程序员",
+      "国籍": "中国",
+      "性格": "执着、愤怒、有正义感但欠成熟"
+    },
+    "style_group": "",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头，不笑，有一点点\"你来试试\"的表情",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_半侧面`",
+        "type": "45度半侧近景",
+        "pose": "侧身，正看屏幕，屏幕光打脸上",
+        "purpose": "编程/算法法庭"
+      },
+      {
+        "num": 3,
+        "code": "`03_编程状态`",
+        "type": "中景",
+        "pose": "坐在电脑前，戴兜帽，专注看屏幕",
+        "purpose": "算法法庭后台/夜间"
+      },
+      {
+        "num": 4,
+        "code": "`04_校服`",
+        "type": "中景",
+        "pose": "校服，教室/走廊，与同学在一起",
+        "purpose": "学校场景"
+      },
+      {
+        "num": 5,
+        "code": "`05_解说`",
+        "type": "近景",
+        "pose": "正在说某件事，手势辅助——在解释为什么算法不公正",
+        "purpose": "演讲/对话"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 16-year-old Chinese high school student and coder,\nsquare-ish lean face with teenage angularity, jaw and cheekbones emerging,\nmonolid eyes with slightly wide spacing, gaze holding quiet defiance,\nstraight black hair slightly long and unkempt, strands falling across forehead,\nfair Asian complexion, lean build with slightly hunched shoulders from screen time,\nheight about 175cm, thin, still growing into his frame,\npresence of someone who saw something wrong and decided to fix it,\nnot smiling, hint of \"prove me wrong\" in expression,\nwearing a dark grey hoodie,\nshot on 35mm lens, natural diffused light with screen glow,\nshallow depth of field, realistic color grading, slightly cool tones,\n1280x720, 16:9 aspect ratio, photorealistic"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nadult, mature, muscular, beard, facial hair,\ndouble eyelid, big round eyes,\nsmiling, grinning, cheerful, bubbly,\nformal wear, suit and tie, luxury clothing,\nshort hair too neat, styled hair, K-pop idol look",
+    "total_images": 5,
+    "spec_file": "CHARACTERS\\袁子轩\\定妆规格.md"
+  },
+  {
+    "name": "赵建军",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "赵建军",
+      "年龄": "53岁（2033年）",
+      "身份": "国家工作组负责人，推动AI平台监管进驻",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "沉稳、话语精准、肩颈微酸（长期伏案+压力）、整领带的习惯动作。不愤怒，负重。不能说出真正理由时的沉默比说话更有重量。不是官僚，是\"知道边界在哪里\"的制度执行者。"
+    },
+    "style_group": "制度冷灰",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_沉默`",
+        "type": "近景",
+        "pose": "正脸，不说话，眼神\"沉\"。冷光从左侧来，右脸阴影。嘴角自然下垂，眉头微皱。背景虚化至接近纯色。",
+        "purpose": "IP-Adapter 角色锁定，\"负重\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_整领带`",
+        "type": "中景",
+        "pose": "走廊中，侧影，右手整领带。窗外灰天可见。动作缓慢有力，食指拇指捏领带结。",
+        "purpose": "\"制度仪式感\"身体符号"
+      },
+      {
+        "num": 3,
+        "code": "`03_汇报`",
+        "type": "中景",
+        "pose": "会议室中，坐姿端正，面前报告文件夹整齐。目光平静但眼神指向不可描述之物。冷白荧光。",
+        "purpose": "第42集S14-S15场景锚点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "沉默",
+        "shot_num": "01",
+        "prompt": "A 53-year-old Chinese man, government working group leader,\noblong face with defined jawline—not sharp, lean from responsibility,\nthick well-groomed eyebrows, monolid eyes with clear whites,\ngaze deep and heavy—not sharp, like deep water,\nstraight nose with square tip, thin lips with naturally downturned corners,\nblack short hair combed to side, neat, 10% grey at temples,\nmedium-lean build—shoulders slightly hunched from desk work,\nback straight but stiff from prolonged alertness,\nslender fingers with prominent knuckles,\nwearing dark navy jacket over white shirt,\ncold light from left, right cheek in shadow,\nno expression but weight visible in eyes,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ncold grey palette with subtle ochre, 花青 for institutional coldness,\n枯笔皴擦 for bone structure,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "整领带",
+        "shot_num": "02",
+        "prompt": "Medium shot, 53-year-old Chinese man in dark jacket,\nstanding in government building corridor, side profile,\nright hand adjusting tie—index finger and thumb pinching knot,\npulling down one centimeter, then微调 left and right,\nslow deliberate movement, window at far end showing grey winter sky,\ndeep corridor perspective, institutional light gradient,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nmuted desaturated grey palette, 花青为主掺极淡赭石,\nsolitary mission in institutional space,\nsoft ink bleeding at corridor edges,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "汇报",
+        "shot_num": "03",
+        "prompt": "Medium shot, 53-year-old Chinese man seated at conference table,\nreport folder neatly arranged before him,\ncold fluorescent office lighting,\ncalm expression but eyes pointing to something indescribable,\nshoulders squared, back straight,\ndark navy jacket, white shirt,\nsuperior's back visible in foreground blur,\ninstitutional hierarchy, muted desaturated grey palette,\nsemi-realistic ink wash style, photorealistic base,\nsoft ink bleeding at background edges,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, cheerful, emotional outburst, angry,\nperfect skin, no wrinkles, smooth face, youthful appearance,\nmuscular, fit, heroic pose,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\赵建军\\定妆规格.md"
+  },
+  {
+    "name": "赵淑芬",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "赵淑芬",
+      "年龄": "72岁（2033年）",
+      "身份": "退休中学语文教师，独居",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "倔强、要强、说话干脆。身体在衰退但精神不愿认输。北京口音，言语中有老知识分子的清傲。不轻易接受帮助——不是不需要，是不愿意承认需要。对小暖的态度从警惕到接受再到某种\"不承认的依赖\"，这个转变不是戏剧化的，是\"一次次翻身、一次次擦背\"攒出来的。"
+    },
+    "style_group": "暖灰淡彩",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_床边`",
+        "type": "中近景",
+        "pose": "坐在床边，低头揉左膝盖。左手放在膝盖上——指节粗大、变形清晰可见。棕红色老花镜滑到鼻尖，她没推。晨光照在半边脸上，另半边在阴影里。表情是\"又要经历一遍\"的平静无奈。浅蓝旧睡衣。",
+        "purpose": "IP-Adapter 角色锁定，开场核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_被推身`",
+        "type": "中景",
+        "pose": "侧躺，小暖的机械臂正在帮她翻身。她的肩膀起初绷紧（肩胛骨凸起），然后缓慢放松。眼睛闭着，嘴唇抿着。老花镜拿在手里。表情是从抗拒到接受的微妙过渡。",
+        "purpose": "\"翻身\"场景锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_手搭机械臂`",
+        "type": "近景",
+        "pose": "结尾画面。她的右手（老年斑、皱纹）轻轻搭在小暖的白色哑光机械臂上。手指没有用力，只是放着。窗外梧桐叶黄了，光线暖金。表情不是笑——是\"我知道你在撒谎但我接受\"的复杂平静。",
+        "purpose": "结尾核心画面，全片情感收束"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "床边",
+        "shot_num": "01",
+        "prompt": "A 72-year-old Chinese woman, retired school teacher, living alone,\nlong-round face with soft but not sagging contours,\nsparse eyebrows with a few long white stray hairs at tails,\nmonolid eyes with slightly drooping upper eyelids—gaze is alert, scrutinizing, not cloudy,\nwearing brown-red plastic frame reading glasses sliding down to nose tip,\nsmall nose, round tip, thin lips with naturally downturned corners,\npale yellowish complexion—thin skin showing faint underlying veins,\ngrey-white short hair neatly cut, fine texture, slightly visible scalp,\nsmall build approximately 158cm, thin—muscle loss, not healthy slim,\nleft hand resting on left knee—knuckles swollen and deformed from arthritis,\nright hand more flexible but starting to tremble,\nage spots on back of both hands—irregular brown patches,\nsitting on edge of bed, looking down rubbing left knee,\nexpression: quiet resignation—\"another day of this\",\nmorning light from window casting on half her face, other half in shadow,\nwearing light blue old pajamas—collar worn white,\nelderly apartment bedroom background—simple, tidy, medicine bottles on nightstand,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm grey and soft ochre tones, 淡墨 for subtle shadows,\n淡赭 for age spots and skin warmth,\nemphasis on skin transparency—paper-thin, veined, used,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "被推身",
+        "shot_num": "02",
+        "prompt": "Same 72-year-old Chinese woman, lying on side in bed,\nmechanical arm of a white care robot supporting her shoulder and waist,\nher shoulders initially tense—scapula protruding visibly through thin fabric,\neyes closed, lips pressed together—resisting but not fighting,\nexpression transitioning from tension to slow, almost imperceptible relaxation,\nbrown-red reading glasses held in her right hand,\nsoft indoor light, warm quilt texture,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm grey tones, 焦墨 for tense muscle lines, soft wash for relaxation,\ncontrast between warm human skin and cool white robot surface,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "手搭机械臂",
+        "shot_num": "03",
+        "prompt": "Close-up of an elderly Chinese woman's hand resting on a white matte metal robotic arm,\nhand covered with age spots and wrinkles—fingers not gripping, just resting,\nwhite robot arm—matte finish, smooth, with faint old blood stain痕迹,\nwarm golden afternoon light from window with yellowed pagoda tree leaves outside,\nwoman's face partially visible in background—expression: complex serenity,\nnot smiling but accepting, \"I know you're lying but I accept it\",\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm gold and soft grey, 焦墨 for hand wrinkles, 淡赭 for age spots,\ncontrast between organic aged skin and inorganic smooth metal,\nextreme focus on hand and arm connection,\n1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, grinning, cheerful, energetic, heroic,\nperfect skin, no wrinkles, no age spots, smooth hands, manicured nails,\nyoung woman, model, actor, celebrity,\nluxury clothing, jewelry, high heels, makeup,\nbright neon, saturated colors, Western oil painting, CGI look,\ncute grandma, cartoonish, caricature, exaggerated features",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\赵淑芬\\定妆规格.md"
+  },
+  {
+    "name": "迈克",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "迈克（Mike，全名未出现）",
+      "年龄": "~35岁",
+      "身份": "旧金山科技公司前同事（林薇的前同事或行业熟人）",
+      "出场": "37集S05，视频电话中",
+      "核心特征": "自由时间的负担。他的公寓\"东西收拾得整齐——一种让人不安的整齐\"。这不是自律，是\"有太多时间可以花在整理上\"的空虚。他在硅谷，物质丰裕，但意义匮乏"
+    },
+    "style_group": "丰裕的空",
+    "shots": [],
+    "prompts": [
+      {
+        "title": "定妆照",
+        "shot_num": "01",
+        "prompt": "A 35-year-old American man, former tech colleague,\nlong face with soft jawline, unfocused gaze at screen,\npolite smile but eyes not participating,\nbrown short hair neatly trimmed,\nhealthy even pale complexion from indoor lifestyle,\ntall lean build, loose upright posture,\nwearing plain gray crew-neck t-shirt, athletic pants,\nvideo call frame, background San Francisco apartment,\nbookshelf with books arranged by color gradient,\nkitchen counter completely empty,\nblanket folded into precise rectangle on sofa,\nunsettling tidiness, freedom as burden,\nsemi-realistic ink wash style, photorealistic base,\n淡墨+微量赭石 for pale indoor skin,\n界画 straight lines for overly organized background,\nscreen glow on face, shallow depth of field,\n1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "messy room, cluttered background, warm genuine smile,\nfocused engaged eyes, outdoor tan, athletic build,\nbright colors, neon, expressive emotion,\nanime, cartoon, illustration, 3D render",
+    "total_images": 1,
+    "spec_file": "CHARACTERS\\迈克\\定妆规格.md"
+  },
+  {
+    "name": "钱安",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "钱安",
+      "年龄": "约42岁（2035年）",
+      "身份": "前档案馆研究员 → 独立记忆保存者（\"记忆猎人\"）",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "内敛、执拗、不擅社交但观察力极强。清史专业出身，读过太多被销毁的档案，知道\"被记住\"是权力也是奢侈。说话时语速偏慢，习惯性地用手指划过纸张边缘——像是在确认\"这一页还在\"。"
+    },
+    "style_group": "暖色学者",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_档案前`",
+        "type": "中景",
+        "pose": "站在一面堆满档案盒的铁架前，左手拿着一卷发黄的复印文件，右手食指轻轻按在纸张边缘。眼镜（可选：金属细框）反着荧光灯的一小片白光。表情不是在看镜头——在看纸。",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_电脑前`",
+        "type": "近景",
+        "pose": "夜间，台灯下，面对笔记本电脑屏幕。屏幕的冷白光映在脸上，眼神里有文件被系统标为\"低价值\"即将自动删除的焦虑。手指悬在键盘上，像是要开始抢救但不知道从哪一个文件开始。",
+        "purpose": "数字化记忆抢救场景"
+      },
+      {
+        "num": 3,
+        "code": "`03_街头`",
+        "type": "中景",
+        "pose": "走在深秋街头，背后是灯火通明的写字楼和广告屏。单肩背包（沉甸甸的硬盘包），穿着一件深灰夹克。微微低头，脚步不快——不是在走路，是在穿过一个不理会他的世界。几片落叶在脚边。",
+        "purpose": "过渡/环境叙事"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "档案前",
+        "shot_num": "01",
+        "prompt": "A 42-year-old Chinese male archivist and memory preservation researcher,\nlong rectangular face with slightly wide cheekbones, lean cheeks,\nthin rectangular metal-rimmed glasses with faint reflection of fluorescent light,\nslightly furrowed brows—not angry, just focused,\nmonolid eyes with sharp gaze when looking at documents, slightly evasive when looking at people,\nthin lips, rarely smiling,\nblack short hair slightly disheveled, a few grey strands at temples,\npale complexion from indoor work, lean build with slightly sloping shoulders,\nexceptionally long slender fingers—made for turning pages not fists—with a callus on right middle finger from holding a pen,\nstanding before a wall of metal shelving stacked with archival boxes and yellowing document folders,\nholding a roll of aged photocopied documents in left hand, right index finger gently touching the edge of a page,\nwearing a dark gray work shirt, old but not wrinkled,\ndim fluorescent archive room lighting, deep shadows in corners,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nemphasis on texture of paper—aged yellowing, slight curling at edges,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling, grinning, cheerful, confident, energetic, bulky,\ndetective, spy, action hero, dramatic lighting, heroic pose,\nluxury, neat suit, modern office, bright natural light,\nWestern oil painting, Baroque lighting, CGI look",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\钱安\\定妆规格.md"
+  },
+  {
+    "name": "陈圆",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "陈圆",
+      "年龄": "约32岁（政和七年，1117年）",
+      "身份": "茶坊老板娘，独立经营。六年攒钱盘下三间屋——地契上写她的名字",
+      "国籍": "宋（中国）",
+      "民族": "汉",
+      "性格": "自强、务实、识人、不卑不亢。不和离书的前夫吵，也不理街坊的闲话。她有两个东西：一双好手、一个好鼻子。靠这两样活出自己的一间茶坊。对邻居热络，对客人精明，对世道沉默。"
+    },
+    "style_group": "历史人物",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头，微侧头，表情安静自然——不笑不媚。光线从左侧窗口漫射进来（阴天窗光）。月白短衣，头发束髻，几缕碎发。背景虚化的茶坊。",
+        "purpose": "IP-Adapter 角色锁定，全片陈圆一致性锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_闻茶香`",
+        "type": "半侧面近景",
+        "pose": "双手端建盏至鼻前，微低头，闭眼，眉心微紧——在闻。建盏黑色，茶汤琥珀色。右手无名指微微弯曲可见。光线从茶汤上反射在脸上有一点微弱的暖光。",
+        "purpose": "核心动作高频复用，茶评师职业锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_手指特写`",
+        "type": "手部特写",
+        "pose": "右手搭在建盏边缘——无名指微曲清晰可见。手指细长骨节分明，几处旧烫伤小疤。建盏黑釉的粗粝质感与手指的细腻对比。茶汤在盏中微微反光。",
+        "purpose": "核心符号特写"
+      },
+      {
+        "num": 4,
+        "code": "`04_决断时刻`",
+        "type": "近景竖版（1920x2560）",
+        "pose": "夜间茶坊，一盏孤灯。陈圆坐在柜台后，面前是一本摊开的账本。表情不是忧愁——是思索和决定。右手提起笔（或茶盏），无名指微曲。灯火的暖光照在下半张脸，上半在暗处。",
+        "purpose": "夜场内省关键镜头"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 32-year-old Chinese woman in Northern Song Dynasty, living in Bianjing (Kaifeng) around 1117 AD,\nslightly square face with soft jawline, fair warm complexion with faint natural flush from kitchen heat,\nslightly thick straight eyebrows neatly trimmed, monolid eyes with a steady grounded gaze—looking at you without smiling or flinching,\nstraight nose, thin lips with a naturally slightly upturned corner,\nblack hair pulled up in a Song Dynasty married woman's bun (bao ji), secured with a simple wooden hairpin, a few loose strands at temples,\nslim build with subtle strength in shoulders and arms from years of kneading dough and carrying water,\nwearing a plain moon-white cross-collar narrow-sleeve top with gray-blue long skirt,\nsoft diffused window light from left side, overcast day quality,\nbackground: blurred traditional Chinese tea house interior with wooden counters and clay stove,\nsemi-realistic ink wash style, Song Dynasty silk scroll aesthetic—warm aged paper undertone,\nphotorealistic base with Chinese ink aesthetic, fine ink line contouring at figure edges,\nshallow depth of field, desaturated palette except for the tea,\n1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "闻茶香",
+        "shot_num": "02",
+        "prompt": "Same 32-year-old Chinese Song Dynasty woman, side profile close-up,\nboth hands holding a black glazed Jian ware teacup up to her nose,\neyes closed, brows slightly furrowed in concentration—smelling tea with complete absorption,\nright hand's ring finger visibly slightly bent from an old kitchen injury,\namber-colored tea inside the dark teacup casting faint warm reflection on her lower face,\nsteam barely visible curling from the tea surface,\nwearing plain moon-white cross-collar top, hair in simple bun,\nsoft window light from left, tea counter setting,\nsemi-realistic ink wash style, Song Dynasty silk scroll aesthetic,\nphotorealistic base with Chinese ink aesthetic, fine ink line contouring,\n1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsexy, seductive, suggestive, doll-like, dead eyes,\nsmiling excessively, grinning, cheerful, cute, innocent,\njewelry, hair ornaments, elaborate hairstyle, silk, embroidery,\nluxury, palace, noble lady, concubine, imperial,\nperfect hands, straight fingers, manicured nails,\nbright natural sunlight, saturated colors, Western oil painting,\nQing Dynasty style, cheongsam, Manchu hairstyle, foot binding",
+    "total_images": 4,
+    "spec_file": "CHARACTERS\\陈圆\\定妆规格.md"
+  },
+  {
+    "name": "陈思危",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "陈思危",
+      "年龄": "48岁（2033年），第42集（2035年）时50岁",
+      "身份": "深智科技创始人，墨子系统架构师",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "白发增多（不是染的，是真操心出来的），眼神柔和但有距离感，不戴表（对时间有另类感知）。落笔缓慢，写完一句停顿看窗外。不是典型的\"技术狂\"——他思考的是边界、责任和可能性。说话慢，但每个字都经过计算。"
+    },
+    "style_group": "理性暖灰",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_沉思`",
+        "type": "近景",
+        "pose": "正脸，眼神柔和有距离感，白发可见。淡光，背景虚化。嘴角微微上扬的习惯性表情。",
+        "purpose": "IP-Adapter 角色锁定，\"思考者\"核心锚点"
+      },
+      {
+        "num": 2,
+        "code": "`02_书写`",
+        "type": "中景",
+        "pose": "坐在书桌前，握钢笔写字。不用电脑。深灰毛衣。台灯暖光从左侧来。窗外夜景隐约。",
+        "purpose": "第42集S08-S13场景锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_停笔望窗`",
+        "type": "近景",
+        "pose": "停笔，笔尖悬于纸上方1厘米，侧脸看向窗外。眼镜反射窗外灯火（如戴眼镜）。",
+        "purpose": "\"边界思考\"身体符号"
+      },
+      {
+        "num": 4,
+        "code": "`04_持草图`",
+        "type": "中景",
+        "pose": "手持2027年泛黄手绘架构草图，展示给镜头。纸张折痕深如刀刻，蓝色圆珠笔线条。",
+        "purpose": "第3集\"三颗种子\"核心道具"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "沉思",
+        "shot_num": "01",
+        "prompt": "A 48-year-old Chinese man, tech founder and systems architect,\nlong-round face with soft jawline, wide forehead with slight receding hairline,\nthin sparse eyebrows—untrimmed natural state,\nmedium-sized eyes with double eyelids, gaze soft but distant—\nnot warm, but \"seen through but not exposed\",\nclean eye whites with slight puffiness under lower lids,\nmedium nose with rounded tip, thin lips with habitual slight upturn,\nblack short hair naturally tousled, 30% grey at temples and crown—\ngrey infiltrating black naturally, not stark contrast,\nmedium-lean build—shoulders slightly narrow, back slightly hunched from desk work,\nlong slender fingers, short unevenly cut nails,\nwearing dark grey crew-neck sweater,\nsoft diffused light, background blurred to near abstraction,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm grey palette with subtle ochre, 淡墨+赭石 for thinker's skin,\n湿润笔触 for forehead lines,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "书写",
+        "shot_num": "02",
+        "prompt": "Medium shot, 48-year-old Chinese man with increasing white hair,\nsitting at wooden desk writing with fountain pen on letter paper,\nno computer in sight, handwritten ritual,\ndark grey sweater, warm desk lamp light from left,\nShenzhen night city lights through window,\nright hand holding pen with precise angle,\nwrist slightly raised, little finger touching paper,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm amber palette, 淡墨 for hand contours,\n留白 for pen metal reflection,\nquiet contemplation, soft ink bleeding at background edges,\ncinematic depth of field, 1280x720, 16:9"
+      },
+      {
+        "title": "停笔望窗",
+        "shot_num": "03",
+        "prompt": "Medium close-up, 48-year-old Chinese man with white hair,\npausing mid-writing, pen tip hovering one centimeter above paper,\nlooking out window at city lights,\nside profile, contemplative distant gaze,\nglasses reflecting window lights if wearing,\nwarm desk lamp on one side, city bokeh on other,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm amber palette with cool city light contrast,\nboundary thinking embodied, soft ink bleeding at window edges,\nshallow depth of field, cinematic, 1280x720, 16:9"
+      },
+      {
+        "title": "持草图",
+        "shot_num": "04",
+        "prompt": "Medium shot, 48-year-old Chinese man holding yellowed A4 paper,\nhand-drawn architecture diagram from 2027,\ndeep creases like knife cuts, blue ballpoint ink lines,\npaper edges curled with age,\nshowing to camera with both hands,\nwarm memory lighting contrasting with current cool lab light,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm amber for paper, cool grey for background,\nseed's original form, ink bleeding at paper edges,\ncinematic depth of field, 1280x720, 16:9"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling broadly, cheerful, arrogant expression,\nperfect skin, no wrinkles, smooth face, youthful appearance,\nmuscular, fit, heroic pose, business suit, tie, luxury watch,\nbright colors, neon, saturated palette,\nWestern oil painting, CGI look",
+    "total_images": 4,
+    "spec_file": "CHARACTERS\\陈思危\\定妆规格.md"
+  },
+  {
+    "name": "陈远",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "陈远",
+      "年龄": "约36岁（2030年）",
+      "身份": "企业管理层，林薇的丈夫",
+      "国籍": "中国",
+      "民族": "汉",
+      "性格": "体面、理性、疏离，擅长扮演\"好丈夫\""
+    },
+    "style_group": "冷色决策者",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_正面定妆`",
+        "type": "正面近景",
+        "pose": "正面看向镜头，体面、平静，但眼神里缺少温度",
+        "purpose": "IP-Adapter 角色锁定"
+      },
+      {
+        "num": 2,
+        "code": "`02_对话/对峙`",
+        "type": "中景",
+        "pose": "面对林薇，表情克制但身体语言暴露——手指敲桌或握拳",
+        "purpose": "关系/冲突"
+      },
+      {
+        "num": 3,
+        "code": "`03_独坐/独处`",
+        "type": "近景",
+        "pose": "独坐餐桌前，无表情，灯光冷白——\"完美\"背后的空",
+        "purpose": "内省"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "正面定妆",
+        "shot_num": "01",
+        "prompt": "A 35-year-old Chinese male executive,\nslightly thin oval face with clean jawline,\nneat straight eyebrows, monolid eyes with a cool assessing gaze,\nthin lips with slightly downturned corners,\npale well-maintained complexion,\nshort black hair neatly combed with a side part,\ntall slim build with straight posture, gym-maintained but not bulky,\npresence of someone who treats marriage like project management,\nexpression of composed detachment, politely distant, not angry not warm,\nwearing a well-fitted navy blazer over a white shirt,\nshot on 35mm lens, cool overhead light,\nshallow depth of field, realistic color grading, cool desaturated tones,\n1280x720, 16:9 aspect ratio, photorealistic"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nsmiling warmly, affectionate, emotional, passionate,\nscruffy, unkempt, casual, sloppy, disheveled,\nwarm golden light, romantic atmosphere, intimate gaze",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\陈远\\定妆规格.md"
+  },
+  {
+    "name": "鲍勃",
+    "priority": "P3",
+    "profile": {
+      "------": "------",
+      "姓名": "鲍勃·韦伯（Bob Webb）",
+      "年龄": "22→66岁（1962-2002年去世）",
+      "身份": "汽车厂工人（22-50岁）→ 失业者（50-66岁）",
+      "国籍": "美国",
+      "民族": "盎格鲁-撒克逊白人（WASP工薪阶层）",
+      "性格": "相信工会、相信制度、相信\"工人是工人\"。他的人生建立在\"规矩保护人，制度运转，明天还在\"的信念上。当工厂搬走、养老金蒸发、儿子说不进工厂时，这块石头松动了。最后几年坐在窗前不说话。他不是不想说话，是\"想不清楚该信什么\"所以不说话。"
+    },
+    "style_group": "从暖到冷的渐变",
+    "shots": [
+      {
+        "num": "---",
+        "code": "------",
+        "type": "------",
+        "pose": "------",
+        "purpose": "------"
+      },
+      {
+        "num": 1,
+        "code": "`01_22岁_工厂门口`",
+        "type": "中近景",
+        "pose": "22岁，穿蓝色工装（有油污），坐在工厂门口台阶上。深棕短发，浅蓝眼睛，嘴里叼着一根没点的烟。笨拙但真诚的表情。背景是1962年底特律工厂大门，夕阳橙红。",
+        "purpose": "IP-Adapter 角色锁定（年轻期）"
+      },
+      {
+        "num": 2,
+        "code": "`02_45岁_客厅`",
+        "type": "中景",
+        "pose": "45岁，穿同一件蓝色工装（更旧了，颜色褪了，肘部有补丁）。坐在客厅沙发上，看电视里的里根演讲。棕灰夹杂的头发。表情是从信仰出发但有些动摇——\"工会太大了\"。",
+        "purpose": "动摇期锚点"
+      },
+      {
+        "num": 3,
+        "code": "`03_66岁_窗前背影`",
+        "type": "中景",
+        "pose": "66岁，穿旧羊毛开衫，背对镜头坐在窗前。几乎全白短发。背微驼，肩膀缩。窗外是冬天空荡的街道。不说话。这个背影是全片最安静的悲剧。",
+        "purpose": "晚年期锚点，核心画面"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "22岁",
+        "shot_num": "01",
+        "prompt": "A 22-year-old American working-class man, Anglo-Saxon descent,\nsquare face with wide strong jaw, broad build,\nlight blue eyes—earnest, slightly awkward, not sophisticated,\nruddy complexion from outdoor factory work,\ndark brown short hair—factory regulation cut,\nwearing blue work coveralls with oil stains,\nsitting on factory steps, unlit cigarette in mouth,\nexpression: genuine, a bit clumsy, \"I'm 4073\",\nDetroit auto factory gate background, 1962,\nwarm Kodachrome orange-gold sunset light,\nother workers in background,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm ochre and rust tones, 淡赭 for skin,\n1960s American industrial realism,胶片颗粒感,\nemphasis on working-class authenticity,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "45岁",
+        "shot_num": "02",
+        "prompt": "A 45-year-old American factory worker,\nsame square face now with deeper lines between brows,\nsame light blue eyes but beginning to hollow—faith starting to waver,\ngrey-brown mixed short hair, slightly receding,\nstocky build with belly starting to show from sedentary years,\nwearing same blue coveralls—now faded, patched at elbows, one button replaced,\nsitting in living room sofa, watching television,\nexpression: speaking from belief but with visible doubt,\n1970s-1980s American working-class home interior,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\nwarm tones with grey creeping in, 焦墨 for brow furrows,\n淡墨 for eye hollows,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      },
+      {
+        "title": "66岁",
+        "shot_num": "03",
+        "prompt": "A 66-year-old American man, back to viewer,\nsitting by window, looking out at empty winter street,\nalmost white short hair, slightly hunched back, shoulders缩,\nwearing old wool cardigan, dark trousers,\nexpression not visible—back view only,\nbut posture speaks: defeated, confused, quietly broken,\nwindow frame dividing cold grey outside from dim interior,\nsnow or bare trees visible outside,\nsemi-realistic ink wash style, photorealistic base with Chinese ink aesthetic,\ncool grey dominant, 焦墨 for shadow on back,\nextremely quiet, still, minimal,\nthe silence of a man who no longer knows what to believe,\nshallow depth of field, 1280x720, 16:9 aspect ratio"
+      }
+    ],
+    "negative_prompt": "ugly, deformed, bad anatomy, disfigured, poorly drawn face,\nmutation, extra limb, extra fingers, fused fingers, too many fingers,\nblurry, watermark, text, logo, oversaturated, plastic skin,\nheavy makeup, beauty filter, anime, cartoon, illustration, 3D render,\nMarlon Brando, James Dean, Hollywood hero, movie star,\nyoung face on old body, old face on young body,\nperfect skin, no wrinkles, botox, facelift,\nluxury clothing, suit, tie, designer fashion,\nbright neon, saturated colors everywhere, Western oil painting, CGI look,\nscreaming, crying, dramatic breakdown, angry protest",
+    "total_images": 3,
+    "spec_file": "CHARACTERS\\鲍勃\\定妆规格.md"
+  }
+  {
+    "name": "师兄",
+    "priority": "P0",
+    "profile": {
+      "------": "------",
+      "姓名": "师兄",
+      "年龄": "31岁（2035年）",
+      "身份": "自动驾驶创业公司老板，前清华实验室传奇",
+      "国籍": "中国",
+      "性格": "不多话但有重量。认识莎拉十年"
+    },
+    "style_group": "都市科技冷调",
+    "shots": [
+      {
+        "num": 1,
+        "code": "01_定妆照",
+        "type": "中景",
+        "pose": "半侧面，单手端咖啡杯，黑框眼镜，嘴角微弧度",
+        "purpose": "13集镜头05核心锚点"
+      }
+    ],
+    "prompts": [
+      {
+        "title": "定妆照",
+        "shot_num": "01",
+        "prompt": "31-year-old Chinese male, thin and tall, black-framed glasses, tousled short dark hair, deep-set tired eyes with dark circles, dark grey hoodie over black t-shirt, holding white ceramic coffee mug, cold white fluorescent office lighting, knowing micro-expression at corner of mouth, semi-realistic Chinese ink wash aesthetic, cinematic 1920x1920"
+      }
+    ],
+    "negative_prompt": "smile, laugh, handsome, suit, luxury, anime, cartoon, 3D render",
+    "total_images": 1,
+    "spec_file": "CHARACTERS\\\\师兄\\\\定妆规格.md"
+  },
+
+]

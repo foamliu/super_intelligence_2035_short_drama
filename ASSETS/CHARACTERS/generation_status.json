@@ -1,0 +1,558 @@
+{
+  "generations": {
+    "周沫/直播专注": {
+      "status": "done",
+      "prompt_id": "dce7fcdf-0a58-4c7d-af82-a0f1ed232ee3",
+      "seed": 8836274019158545414,
+      "timestamp": "2026-07-25T11:30:41.952272",
+      "output": "ASSETS/CHARACTERS/周沫/01_直播专注.png"
+    },
+    "周沫/眼眶微湿": {
+      "status": "done",
+      "prompt_id": "5dd55675-404f-4cd8-a9f2-a56261eb7e82",
+      "seed": 2134444079049562827,
+      "timestamp": "2026-07-25T11:31:31.510112",
+      "output": "ASSETS/CHARACTERS/周沫/02_眼眶微湿.png"
+    },
+    "周沫/被裁背影": {
+      "status": "done",
+      "prompt_id": "79674b9e-adf2-4eb2-a731-925255a3cc7a",
+      "seed": 4926664661927657163,
+      "timestamp": "2026-07-25T11:32:16.953257",
+      "output": "ASSETS/CHARACTERS/周沫/03_被裁背影.png"
+    },
+    "林薇/屏幕侧脸": {
+      "status": "done",
+      "prompt_id": "20865230-c067-46fc-b920-66927e3c2c26",
+      "seed": 528794692293184869,
+      "timestamp": "2026-07-25T11:32:50.705495",
+      "output": "ASSETS/CHARACTERS/林薇/01_屏幕侧脸.png"
+    },
+    "林薇/直播间": {
+      "status": "done",
+      "prompt_id": "1f470cdd-abc4-48c4-bd04-3570617b04bc",
+      "seed": 2394684667855835618,
+      "timestamp": "2026-07-25T11:33:24.108229",
+      "output": "ASSETS/CHARACTERS/林薇/02_直播间.png"
+    },
+    "林薇/沉默已读": {
+      "status": "done",
+      "prompt_id": "98bece42-e6af-438d-9ef8-56036693f514",
+      "seed": 8412681004900984972,
+      "timestamp": "2026-07-25T11:33:59.492281",
+      "output": "ASSETS/CHARACTERS/林薇/03_沉默已读.png"
+    },
+    "莉娜·陈/演讲坦诚": {
+      "status": "done",
+      "prompt_id": "65b72539-f7d7-4f30-9f04-bc52c8f0b75c",
+      "seed": 3991876296652095113,
+      "timestamp": "2026-07-25T11:34:32.876740",
+      "output": "ASSETS/CHARACTERS/莉娜·陈/01_演讲坦诚.png"
+    },
+    "莉娜·陈/露台对话": {
+      "status": "done",
+      "prompt_id": "e44c6c18-a9c2-4233-8247-c12cd539782d",
+      "seed": 2285036669138395268,
+      "timestamp": "2026-07-25T11:35:06.278216",
+      "output": "ASSETS/CHARACTERS/莉娜·陈/02_露台对话.png"
+    },
+    "莉娜·陈/直视质疑": {
+      "status": "done",
+      "prompt_id": "17c01432-1168-40b4-861e-a51497fe4b3a",
+      "seed": 8231058896240697690,
+      "timestamp": "2026-07-25T11:35:39.708152",
+      "output": "ASSETS/CHARACTERS/莉娜·陈/03_直视质疑.png"
+    },
+    "沈固/空织坊独坐": {
+      "status": "done",
+      "prompt_id": "654652a9-5e93-4919-a809-6af27458db29",
+      "seed": 8542183287274928035,
+      "timestamp": "2026-07-25T11:36:17.138715",
+      "output": "ASSETS/CHARACTERS/沈固/01_空织坊独坐.png"
+    },
+    "沈固/悲字脸": {
+      "status": "done",
+      "prompt_id": "49215f25-8afc-41bd-9de8-0e9bd93b8f62",
+      "seed": 6883000172674066199,
+      "timestamp": "2026-07-25T11:36:56.614180",
+      "output": "ASSETS/CHARACTERS/沈固/02_悲字脸.png"
+    },
+    "沈固/手指交叉": {
+      "status": "done",
+      "prompt_id": "46c509c6-5975-4437-b1cc-3f7fd1d727a0",
+      "seed": 6827946067072293995,
+      "timestamp": "2026-07-25T11:37:36.074554",
+      "output": "ASSETS/CHARACTERS/沈固/03_手指交叉.png"
+    },
+    "老赵/举牌等待": {
+      "status": "done",
+      "prompt_id": "dbde7cc3-fe2c-418d-acd2-b3b8c428ab03",
+      "seed": 2071341499626814590,
+      "timestamp": "2026-07-25T11:38:09.459879",
+      "output": "ASSETS/CHARACTERS/老赵/01_举牌等待.png"
+    },
+    "老赵/写毛笔字": {
+      "status": "done",
+      "prompt_id": "039d88c3-f949-49c7-890e-002e0f8d4956",
+      "seed": 1762313237118120254,
+      "timestamp": "2026-07-25T11:38:42.825234",
+      "output": "ASSETS/CHARACTERS/老赵/02_写毛笔字.png"
+    },
+    "老赵/对话后举起": {
+      "status": "done",
+      "prompt_id": "561c2d4d-08cd-46ca-bc32-f841cdde974b",
+      "seed": 5740012403396086773,
+      "timestamp": "2026-07-25T11:39:16.191213",
+      "output": "ASSETS/CHARACTERS/老赵/03_对话后举起.png"
+    },
+    "李明/轮椅沉默": {
+      "status": "done",
+      "prompt_id": "af37aaf5-a1a7-45e9-a0da-163256200477",
+      "seed": 2639375335963853270,
+      "timestamp": "2026-07-25T11:39:57.385534",
+      "output": "ASSETS/CHARACTERS/李明/01_轮椅沉默.png"
+    },
+    "李明/低头侧脸": {
+      "status": "done",
+      "prompt_id": "3a4510fc-bf6c-42a4-9d87-bcedc3ea8de5",
+      "seed": 936685411523588805,
+      "timestamp": "2026-07-25T11:40:30.737226",
+      "output": "ASSETS/CHARACTERS/李明/02_低头侧脸.png"
+    },
+    "沈梁/交书": {
+      "status": "done",
+      "prompt_id": "c02bbee7-f9b3-44b2-9c23-73c4b6740bf9",
+      "seed": 5789145639961891813,
+      "timestamp": "2026-07-25T11:41:04.107623",
+      "output": "ASSETS/CHARACTERS/沈梁/01_交书.png"
+    },
+    "沈梁/树下独站": {
+      "status": "done",
+      "prompt_id": "d79b3dce-d1de-43d5-a939-2a4c6e93e61f",
+      "seed": 4691211776061751291,
+      "timestamp": "2026-07-25T11:41:37.445124",
+      "output": "ASSETS/CHARACTERS/沈梁/02_树下独站.png"
+    },
+    "王磊/写白板": {
+      "status": "done",
+      "prompt_id": "448d9146-1f08-4177-a8ba-cc77114d849f",
+      "seed": 5535695272785578164,
+      "timestamp": "2026-07-25T11:42:10.865266",
+      "output": "ASSETS/CHARACTERS/王磊/01_写白板.png"
+    },
+    "王磊/直视对话": {
+      "status": "done",
+      "prompt_id": "a00cf27b-ebec-43d0-803c-2ff89287da57",
+      "seed": 8566486764997251710,
+      "timestamp": "2026-07-25T11:42:44.198216",
+      "output": "ASSETS/CHARACTERS/王磊/02_直视对话.png"
+    },
+    "王阿姨/笔记本": {
+      "status": "done",
+      "prompt_id": "4a0782aa-a002-4b2b-8cba-b387568bda64",
+      "seed": 4741457811892985315,
+      "timestamp": "2026-07-25T11:43:17.536171",
+      "output": "ASSETS/CHARACTERS/王阿姨/01_笔记本.png"
+    },
+    "王阿姨/菊花笑": {
+      "status": "done",
+      "prompt_id": "7a05b939-2cb4-4a1c-84a7-70e5c94baeed",
+      "seed": 4817280372914326401,
+      "timestamp": "2026-07-25T11:43:52.960968",
+      "output": "ASSETS/CHARACTERS/王阿姨/02_菊花笑.png"
+    },
+    "老张/捏水瓶": {
+      "status": "done",
+      "prompt_id": "e0292677-95d0-4311-a084-12a5ac4b3b61",
+      "seed": 1619811497425033849,
+      "timestamp": "2026-07-25T11:44:26.346459",
+      "output": "ASSETS/CHARACTERS/老张/01_捏水瓶.png"
+    },
+    "老张/路灯学习": {
+      "status": "done",
+      "prompt_id": "83933a37-6dc6-4e8d-bb0c-996e3cdfa9a6",
+      "seed": 7008943590723271965,
+      "timestamp": "2026-07-25T11:44:59.690998",
+      "output": "ASSETS/CHARACTERS/老张/02_路灯学习.png"
+    },
+    "北极星CEO_安全工程师/定妆照": {
+      "status": "done",
+      "prompt_id": "ad63c8d3-6293-44da-a1ec-b553fc532cb1",
+      "seed": 9098369115042552637,
+      "timestamp": "2026-07-25T11:45:37.704581",
+      "output": "ASSETS/CHARACTERS/北极星CEO_安全工程师/01_定妆照.png"
+    },
+    "多萝西/22岁": {
+      "status": "done",
+      "prompt_id": "3e50cc13-0ead-469a-8c08-fc89a5544768",
+      "seed": 8952369086096461503,
+      "timestamp": "2026-07-25T11:46:11.030116",
+      "output": "ASSETS/CHARACTERS/多萝西/01_22岁.png"
+    },
+    "多萝西/30岁": {
+      "status": "done",
+      "prompt_id": "aae28e77-5cc0-405d-891c-879eafc5ae3b",
+      "seed": 1691339821902725346,
+      "timestamp": "2026-07-25T11:46:44.432958",
+      "output": "ASSETS/CHARACTERS/多萝西/02_30岁.png"
+    },
+    "多萝西/44岁": {
+      "status": "done",
+      "prompt_id": "a34af6f8-8640-4dc0-b1d5-20a958b0d138",
+      "seed": 6410197614833400303,
+      "timestamp": "2026-07-25T11:47:17.787741",
+      "output": "ASSETS/CHARACTERS/多萝西/03_44岁.png"
+    },
+    "多萝西/64岁": {
+      "status": "done",
+      "prompt_id": "8a55f861-3ddc-4743-af80-4c4423e4e1fa",
+      "seed": 1519071665078338236,
+      "timestamp": "2026-07-25T11:47:51.166021",
+      "output": "ASSETS/CHARACTERS/多萝西/04_64岁.png"
+    },
+    "奥蒂诺/机房前": {
+      "status": "done",
+      "prompt_id": "05a1f0a5-721a-4601-a08f-14dc32c560c4",
+      "seed": 6350932354855420755,
+      "timestamp": "2026-07-25T11:48:24.548225",
+      "output": "ASSETS/CHARACTERS/奥蒂诺/01_机房前.png"
+    },
+    "奥蒂诺/与患者": {
+      "status": "done",
+      "prompt_id": "6e83e5ed-1988-4b60-bfda-d0dad9c0a4e8",
+      "seed": 6247332781088261706,
+      "timestamp": "2026-07-25T11:48:57.848152",
+      "output": "ASSETS/CHARACTERS/奥蒂诺/02_与患者.png"
+    },
+    "奥蒂诺/门口": {
+      "status": "done",
+      "prompt_id": "8a16550d-e3fc-4764-b4f6-3a16153a00f0",
+      "seed": 1162896622520646023,
+      "timestamp": "2026-07-25T11:49:31.121211",
+      "output": "ASSETS/CHARACTERS/奥蒂诺/03_门口.png"
+    },
+    "小华/基础图形": {
+      "status": "done",
+      "prompt_id": "b6084554-8d3d-4094-b6c6-1d24b9e73611",
+      "seed": 410084073688719640,
+      "timestamp": "2026-07-25T11:50:04.486197",
+      "output": "ASSETS/CHARACTERS/小华/01_基础图形.png"
+    },
+    "小晴/窗口微笑": {
+      "status": "done",
+      "prompt_id": "1f939ae3-a9cb-498e-aada-52582ced51bf",
+      "seed": 5671177391400790355,
+      "timestamp": "2026-07-25T11:50:37.891450",
+      "output": "ASSETS/CHARACTERS/小晴/01_窗口微笑.png"
+    },
+    "小暖/门口站立": {
+      "status": "done",
+      "prompt_id": "8765cd00-9292-4699-b4b3-b2addea05073",
+      "seed": 2221521946221244364,
+      "timestamp": "2026-07-25T11:51:11.333408",
+      "output": "ASSETS/CHARACTERS/小暖/01_门口站立.png"
+    },
+    "小暖/翻身动作": {
+      "status": "done",
+      "prompt_id": "3e4f5c41-a038-48d6-91f4-372b5197c391",
+      "seed": 2936956903391418315,
+      "timestamp": "2026-07-25T11:51:44.710757",
+      "output": "ASSETS/CHARACTERS/小暖/02_翻身动作.png"
+    },
+    "小暖/带血迹": {
+      "status": "done",
+      "prompt_id": "c7630805-d4a0-4349-963a-4ae7f3281f7e",
+      "seed": 694998731955908537,
+      "timestamp": "2026-07-25T11:52:18.073461",
+      "output": "ASSETS/CHARACTERS/小暖/03_带血迹.png"
+    },
+    "小林/正面定妆": {
+      "status": "done",
+      "prompt_id": "454c4ff3-ab17-481a-a082-e8e8e38a62cc",
+      "seed": 8369741899169173285,
+      "timestamp": "2026-07-25T11:52:51.408299",
+      "output": "ASSETS/CHARACTERS/小林/01_正面定妆.png"
+    },
+    "小迈克/屏幕前": {
+      "status": "done",
+      "prompt_id": "0ddfc9b4-f741-426c-9a3e-5fd4c714a497",
+      "seed": 612805329891845915,
+      "timestamp": "2026-07-25T11:53:24.820329",
+      "output": "ASSETS/CHARACTERS/小迈克/01_屏幕前.png"
+    },
+    "小迈克/屏幕光泪": {
+      "status": "done",
+      "prompt_id": "571900e0-7a14-4528-83fa-54b138901626",
+      "seed": 3956516178553672648,
+      "timestamp": "2026-07-25T11:54:00.183622",
+      "output": "ASSETS/CHARACTERS/小迈克/02_屏幕光泪.png"
+    },
+    "小迈克/旧照闪回": {
+      "status": "done",
+      "prompt_id": "511f7e24-eb50-453d-9b8f-eb81feffe05e",
+      "seed": 402405733936556536,
+      "timestamp": "2026-07-25T11:54:33.487807",
+      "output": "ASSETS/CHARACTERS/小迈克/03_旧照闪回.png"
+    },
+    "技术总监/定妆照": {
+      "status": "done",
+      "prompt_id": "2a74b00a-0e4e-4b58-b280-673ba986d341",
+      "seed": 2115645753714912877,
+      "timestamp": "2026-07-25T11:55:06.781301",
+      "output": "ASSETS/CHARACTERS/技术总监/01_定妆照.png"
+    },
+    "星云/基础图形": {
+      "status": "done",
+      "prompt_id": "2939ac63-b571-4e0c-ae6f-2800f00f39e9",
+      "seed": 301086941467114488,
+      "timestamp": "2026-07-25T11:55:40.162619",
+      "output": "ASSETS/CHARACTERS/星云/01_基础图形.png"
+    },
+    "普里亚·夏尔马/正面定妆": {
+      "status": "done",
+      "prompt_id": "5f2cbc8d-40ed-484b-8d08-08ce93bdc38a",
+      "seed": 4500188726542798862,
+      "timestamp": "2026-07-25T11:56:13.588092",
+      "output": "ASSETS/CHARACTERS/普里亚·夏尔马/01_正面定妆.png"
+    },
+    "李师傅/看手机": {
+      "status": "done",
+      "prompt_id": "b3b185e5-b5fa-469e-91d0-53bda8eea5b1",
+      "seed": 92254009611543027,
+      "timestamp": "2026-07-25T11:56:48.998207",
+      "output": "ASSETS/CHARACTERS/李师傅/01_看手机.png"
+    },
+    "李师傅/教手机": {
+      "status": "done",
+      "prompt_id": "eeedc1a9-4ca0-4644-88a2-b2fd80618fcf",
+      "seed": 1455813328225301992,
+      "timestamp": "2026-07-25T11:57:22.372723",
+      "output": "ASSETS/CHARACTERS/李师傅/02_教手机.png"
+    },
+    "李师傅/看银杏": {
+      "status": "done",
+      "prompt_id": "35eb982f-27e8-4905-af49-32091e925e13",
+      "seed": 4659747751980960894,
+      "timestamp": "2026-07-25T11:57:55.762501",
+      "output": "ASSETS/CHARACTERS/李师傅/03_看银杏.png"
+    },
+    "李思远/专注": {
+      "status": "done",
+      "prompt_id": "ffa2016c-4cdc-49f3-ad84-593f6260e46d",
+      "seed": 8818284984325920441,
+      "timestamp": "2026-07-25T11:58:29.127001",
+      "output": "ASSETS/CHARACTERS/李思远/01_专注.png"
+    },
+    "李思远/推眼镜": {
+      "status": "done",
+      "prompt_id": "a4fb5637-98b3-4cd0-b3b1-9e9057cd22ab",
+      "seed": 5872399796665216194,
+      "timestamp": "2026-07-25T11:59:02.471677",
+      "output": "ASSETS/CHARACTERS/李思远/02_推眼镜.png"
+    },
+    "李思远/疲惫完成": {
+      "status": "done",
+      "prompt_id": "8965bf20-9d0f-48f6-843b-b298187a9680",
+      "seed": 4650470863904933669,
+      "timestamp": "2026-07-25T11:59:38.202298",
+      "output": "ASSETS/CHARACTERS/李思远/03_疲惫完成.png"
+    },
+    "林薇祖父/正面定妆": {
+      "status": "done",
+      "prompt_id": "3d54164c-08f3-423e-a5d1-334113054176",
+      "seed": 7159683277926136745,
+      "timestamp": "2026-07-25T12:00:11.494086",
+      "output": "ASSETS/CHARACTERS/林薇祖父/01_正面定妆.png"
+    },
+    "法官/定妆照": {
+      "status": "done",
+      "prompt_id": "7b61fba2-e9d0-4d0b-b8c5-ec2a4ff263c0",
+      "seed": 1213943556406842262,
+      "timestamp": "2026-07-25T12:00:44.824722",
+      "output": "ASSETS/CHARACTERS/法官/01_定妆照.png"
+    },
+    "王建国/贴机台": {
+      "status": "done",
+      "prompt_id": "fdc2b784-cc44-4b2f-9e32-fefa553f27f4",
+      "seed": 2309482647131822786,
+      "timestamp": "2026-07-25T12:01:18.234547",
+      "output": "ASSETS/CHARACTERS/王建国/01_贴机台.png"
+    },
+    "王建国/看手掌": {
+      "status": "done",
+      "prompt_id": "59f340db-1565-4f49-9ebe-93a4c10d35f0",
+      "seed": 2147527437457098992,
+      "timestamp": "2026-07-25T12:01:51.627152",
+      "output": "ASSETS/CHARACTERS/王建国/02_看手掌.png"
+    },
+    "王建国/休息室": {
+      "status": "done",
+      "prompt_id": "61000b39-93b1-4b85-a5d3-40e24561950a",
+      "seed": 8119315730010430155,
+      "timestamp": "2026-07-25T12:02:25.027896",
+      "output": "ASSETS/CHARACTERS/王建国/03_休息室.png"
+    },
+    "约翰内斯·奥比/正面定妆": {
+      "status": "done",
+      "prompt_id": "1ba1d242-40da-4a73-b1d1-5e2c5e10a734",
+      "seed": 3035775127746862252,
+      "timestamp": "2026-07-25T12:02:58.422789",
+      "output": "ASSETS/CHARACTERS/约翰内斯·奥比/01_正面定妆.png"
+    },
+    "老周/正面定妆": {
+      "status": "done",
+      "prompt_id": "89904992-bdc9-4737-a153-f132d4a51b88",
+      "seed": 8293736742118940642,
+      "timestamp": "2026-07-25T12:03:31.776563",
+      "output": "ASSETS/CHARACTERS/老周/01_正面定妆.png"
+    },
+    "老王/电梯": {
+      "status": "done",
+      "prompt_id": "f47c315e-f327-41c8-804c-f420ffa1324a",
+      "seed": 7962825865459581768,
+      "timestamp": "2026-07-25T12:04:05.131882",
+      "output": "ASSETS/CHARACTERS/老王/01_电梯.png"
+    },
+    "老迈克/正面定妆": {
+      "status": "done",
+      "prompt_id": "e9c433b4-74c6-4802-9e2d-9e2d54cce155",
+      "seed": 1374344615349163439,
+      "timestamp": "2026-07-25T12:04:38.581738",
+      "output": "ASSETS/CHARACTERS/老迈克/01_正面定妆.png"
+    },
+    "袁子轩/正面定妆": {
+      "status": "done",
+      "prompt_id": "521270fe-41f7-4af0-918e-af80e42f8fb1",
+      "seed": 741274356026720095,
+      "timestamp": "2026-07-25T12:05:11.988543",
+      "output": "ASSETS/CHARACTERS/袁子轩/01_正面定妆.png"
+    },
+    "赵建军/沉默": {
+      "status": "done",
+      "prompt_id": "ade969c2-ac0f-4789-9c11-f8b542267a2b",
+      "seed": 1973638338027600031,
+      "timestamp": "2026-07-25T12:05:45.352992",
+      "output": "ASSETS/CHARACTERS/赵建军/01_沉默.png"
+    },
+    "赵建军/整领带": {
+      "status": "done",
+      "prompt_id": "6053db97-d160-4ded-aca2-4035ca39a797",
+      "seed": 1629708206729846769,
+      "timestamp": "2026-07-25T12:06:18.734898",
+      "output": "ASSETS/CHARACTERS/赵建军/02_整领带.png"
+    },
+    "赵建军/汇报": {
+      "status": "done",
+      "prompt_id": "7c719ac5-8d19-4f36-a99f-7f02f3814868",
+      "seed": 1723345157848489455,
+      "timestamp": "2026-07-25T12:07:00.094100",
+      "output": "ASSETS/CHARACTERS/赵建军/03_汇报.png"
+    },
+    "赵淑芬/床边": {
+      "status": "done",
+      "prompt_id": "93869aac-4fb7-4864-8d5b-0cf8110b3b14",
+      "seed": 8592437840589302259,
+      "timestamp": "2026-07-25T12:07:33.521833",
+      "output": "ASSETS/CHARACTERS/赵淑芬/01_床边.png"
+    },
+    "赵淑芬/被推身": {
+      "status": "done",
+      "prompt_id": "a97a34e5-1be1-4fe6-9188-c62324aec312",
+      "seed": 6320185426073976190,
+      "timestamp": "2026-07-25T12:09:55.944658",
+      "output": "ASSETS/CHARACTERS/赵淑芬/02_被推身.png"
+    },
+    "赵淑芬/手搭机械臂": {
+      "status": "done",
+      "prompt_id": "3ca3a227-ea0c-4c36-82fa-4d60bc646357",
+      "seed": 2859912785670138952,
+      "timestamp": "2026-07-25T12:12:36.595903",
+      "output": "ASSETS/CHARACTERS/赵淑芬/03_手搭机械臂.png"
+    },
+    "迈克/定妆照": {
+      "status": "done",
+      "prompt_id": "47559e5f-38f3-4bc1-adca-b786d0b4065e",
+      "seed": 5932964091146962117,
+      "timestamp": "2026-07-25T12:52:31.318654",
+      "output": "ASSETS/CHARACTERS/迈克/01_定妆照.png"
+    },
+    "钱安/档案前": {
+      "status": "done",
+      "prompt_id": "775de09e-9011-4599-8208-10f9b188923b",
+      "seed": 8853221214992724036,
+      "timestamp": "2026-07-25T12:53:02.560557",
+      "output": "ASSETS/CHARACTERS/钱安/01_档案前.png"
+    },
+    "陈圆/正面定妆": {
+      "status": "done",
+      "prompt_id": "03411324-0ced-44c8-8d8b-e08d5cfda4c1",
+      "seed": 8586928685052530641,
+      "timestamp": "2026-07-25T12:53:35.853219",
+      "output": "ASSETS/CHARACTERS/陈圆/01_正面定妆.png"
+    },
+    "陈圆/闻茶香": {
+      "status": "done",
+      "prompt_id": "9578b6c3-23ab-4bde-b1b5-18bb5a7dbe70",
+      "seed": 1446265339982527588,
+      "timestamp": "2026-07-25T12:54:07.213013",
+      "output": "ASSETS/CHARACTERS/陈圆/02_闻茶香.png"
+    },
+    "陈思危/沉思": {
+      "status": "done",
+      "prompt_id": "150ad662-49bf-47af-aaab-561a66e98266",
+      "seed": 2282490730510139782,
+      "timestamp": "2026-07-25T12:54:38.486658",
+      "output": "ASSETS/CHARACTERS/陈思危/01_沉思.png"
+    },
+    "陈思危/书写": {
+      "status": "done",
+      "prompt_id": "ec6faba4-6045-4087-87eb-797e7ad1aade",
+      "seed": 7369979098370076115,
+      "timestamp": "2026-07-25T12:55:09.790855",
+      "output": "ASSETS/CHARACTERS/陈思危/02_书写.png"
+    },
+    "陈思危/停笔望窗": {
+      "status": "done",
+      "prompt_id": "10ba057a-bc1b-4190-8f67-61512b11a3b5",
+      "seed": 1163622345208340408,
+      "timestamp": "2026-07-25T12:55:41.050240",
+      "output": "ASSETS/CHARACTERS/陈思危/03_停笔望窗.png"
+    },
+    "陈思危/持草图": {
+      "status": "done",
+      "prompt_id": "37158791-e0cd-47a9-a8f6-9c1db586fa50",
+      "seed": 467907894004399503,
+      "timestamp": "2026-07-25T12:48:37.699623",
+      "output": "ASSETS/CHARACTERS/陈思危/04_持草图.png"
+    },
+    "陈远/正面定妆": {
+      "status": "done",
+      "prompt_id": "59fd10d5-e90d-435d-9b49-8f612d33e827",
+      "seed": 7117865418732640903,
+      "timestamp": "2026-07-25T12:50:15.518536",
+      "output": "ASSETS/CHARACTERS/陈远/01_正面定妆.png"
+    },
+    "鲍勃/22岁": {
+      "status": "done",
+      "prompt_id": "8bf1e931-1fc8-4aa1-bdef-91ee6122d955",
+      "seed": 2946134358225215127,
+      "timestamp": "2026-07-25T12:50:46.810132",
+      "output": "ASSETS/CHARACTERS/鲍勃/01_22岁.png"
+    },
+    "鲍勃/45岁": {
+      "status": "done",
+      "prompt_id": "2511e47f-f55d-4f50-8f25-fdf83fbd0d3f",
+      "seed": 502858627865710982,
+      "timestamp": "2026-07-25T12:51:18.070834",
+      "output": "ASSETS/CHARACTERS/鲍勃/02_45岁.png"
+    },
+    "鲍勃/66岁": {
+      "status": "done",
+      "prompt_id": "c0494523-7ed9-4abd-9e21-aa8109a3b135",
+      "seed": 7740969193178084498,
+      "timestamp": "2026-07-25T12:51:49.405385",
+      "output": "ASSETS/CHARACTERS/鲍勃/03_66岁.png"
+    }
+  },
+  "summary": {}
+}
