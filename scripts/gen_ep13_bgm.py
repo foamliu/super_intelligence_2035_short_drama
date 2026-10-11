@@ -4,8 +4,9 @@ import json, time, uuid, urllib.request
 from pathlib import Path
 
 COMFYUI = "http://127.0.0.1:8188"
-WF = Path("E:/code/super_intelligence_2035_short_drama/workflows/ACE-Step 1.5 文生音频.json")
-OUT = Path("E:/code/super_intelligence_2035_short_drama/OUTPUT/13_外骨骼/audio")
+ROOT = Path(__file__).resolve().parent.parent
+WF = ROOT / "workflows" / "ACE-Step 1.5 文生音频.json"
+OUT = ROOT / "OUTPUT" / "13_外骨骼" / "audio"
 OUT.mkdir(parents=True, exist_ok=True)
 
 BGMS = [

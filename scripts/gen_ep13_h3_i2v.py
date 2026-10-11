@@ -6,8 +6,9 @@ import json, time, uuid, urllib.request
 from pathlib import Path
 
 COMFY = "http://127.0.0.1:8188"
-WF = Path("E:/code/super_intelligence_2035_short_drama/workflows/video_minimax_h3_i2v.json")
-OUT = Path("E:/code/super_intelligence_2035_short_drama/OUTPUT/13_外骨骼/videos")
+ROOT = Path(__file__).resolve().parent.parent
+WF = ROOT / "workflows" / "video_minimax_h3_i2v.json"
+OUT = ROOT / "OUTPUT" / "13_外骨骼" / "videos"
 OUT.mkdir(parents=True, exist_ok=True)
 
 # ── Shot Definitions (H3-optimized English prompts) ──
