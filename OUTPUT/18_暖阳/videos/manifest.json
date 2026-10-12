@@ -24,6 +24,16 @@
       "bytes": 1106473
     },
     {
+      "shot": "03",
+      "file": "EP18_SHOT-03_H3_00001_.mp4",
+      "seed": 1803,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 462596
+    },
+    {
       "shot": "04",
       "file": "EP18_SHOT-04_H3_00001_.mp4",
       "seed": 1804,
@@ -74,6 +84,16 @@
       "bytes": 652368
     },
     {
+      "shot": "09",
+      "file": "EP18_SHOT-09_H3_00001_.mp4",
+      "seed": 1809,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 487719
+    },
+    {
       "shot": "10",
       "file": "EP18_SHOT-10_H3_00001_.mp4",
       "seed": 1810,
@@ -94,6 +114,16 @@
       "bytes": 613871
     },
     {
+      "shot": "12",
+      "file": "EP18_SHOT-12_H3_00001_.mp4",
+      "seed": 1812,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 325085
+    },
+    {
       "shot": "13",
       "file": "EP18_SHOT-13_H3_00001_.mp4",
       "seed": 1813,
@@ -112,6 +142,16 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 862040
+    },
+    {
+      "shot": "16",
+      "file": "EP18_SHOT-16_H3_00001_.mp4",
+      "seed": 1816,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 318994
     },
     {
       "shot": "17",
@@ -144,6 +184,16 @@
       "bytes": 817997
     },
     {
+      "shot": "21",
+      "file": "EP18_SHOT-21_H3_00001_.mp4",
+      "seed": 1821,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 719643
+    },
+    {
       "shot": "22",
       "file": "EP18_SHOT-22_H3_00001_.mp4",
       "seed": 1822,
@@ -152,6 +202,16 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 351351
+    },
+    {
+      "shot": "23",
+      "file": "EP18_SHOT-23_H3_00001_.mp4",
+      "seed": 1823,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 812329
     },
     {
       "shot": "24",
@@ -194,6 +254,16 @@
       "bytes": 2048000
     },
     {
+      "shot": "30",
+      "file": "EP18_SHOT-30_H3_00001_.mp4",
+      "seed": 1830,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 304523
+    },
+    {
       "shot": "31",
       "file": "EP18_SHOT-31_H3_00001_.mp4",
       "seed": 1831,
@@ -224,6 +294,26 @@
       "bytes": 645828
     },
     {
+      "shot": "34",
+      "file": "EP18_SHOT-34_H3_00001_.mp4",
+      "seed": 1834,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 450789
+    },
+    {
+      "shot": "35",
+      "file": "EP18_SHOT-35_H3_00001_.mp4",
+      "seed": 1835,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1037355
+    },
+    {
       "shot": "36",
       "file": "EP18_SHOT-36_H3_00001_.mp4",
       "seed": 1836,
@@ -244,6 +334,16 @@
       "bytes": 491949
     },
     {
+      "shot": "38",
+      "file": "EP18_SHOT-38_H3_00001_.mp4",
+      "seed": 1838,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 513988
+    },
+    {
       "shot": "39",
       "file": "EP18_SHOT-39_H3_00001_.mp4",
       "seed": 1839,
@@ -252,6 +352,16 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 530263
+    },
+    {
+      "shot": "40",
+      "file": "EP18_SHOT-40_H3_00001_.mp4",
+      "seed": 1840,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 304284
     },
     {
       "shot": "41",
@@ -272,6 +382,26 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 889169
+    },
+    {
+      "shot": "43",
+      "file": "EP18_SHOT-43_H3_00001_.mp4",
+      "seed": 1843,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 339329
+    },
+    {
+      "shot": "44",
+      "file": "EP18_SHOT-44_H3_00001_.mp4",
+      "seed": 1844,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 386164
     },
     {
       "shot": "45",
@@ -312,8 +442,58 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 733546
+    },
+    {
+      "shot": "49",
+      "file": "EP18_SHOT-49_H3_00001_.mp4",
+      "seed": 1849,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 873180
+    },
+    {
+      "shot": "50",
+      "file": "EP18_SHOT-50_H3_00001_.mp4",
+      "seed": 1850,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 595127
+    },
+    {
+      "shot": "51",
+      "file": "EP18_SHOT-51_H3_00001_.mp4",
+      "seed": 1851,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 561015
+    },
+    {
+      "shot": "52",
+      "file": "EP18_SHOT-52_H3_00001_.mp4",
+      "seed": 1852,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1051489
+    },
+    {
+      "shot": "53",
+      "file": "EP18_SHOT-53_H3_00001_.mp4",
+      "seed": 1853,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 574804
     }
   ],
-  "verified_count": 31,
-  "notes": "31/54 镜成片（h264 1056x608 24fps + aac，时长吻合 17k+5 量化）。手机UI系列 16 镜帧已全生成（1280x720）。剩余 23 镜待出片：I2V 18 镜（03/09/12/16/21/23/30/34/35/38/40/43/44/49/50/51/52/53）+ T2V 5 镜（15/20/27/28/54 无参考图）。I2V 批次后台运行中（gen_ep18_h3_i2v.py --skip-existing，PID 9136，逐镜 steps=4）。"
+  "verified_count": 49,
+  "notes": "49 I2V 镜全收 + 5 T2V 镜待出片（15/20/27/28/54 无参考图，gen_ep18_h3_t2v.py 后台运行中）。h264 1056x608 24fps + aac，时长吻合 17k+5 量化。手机UI系列 16 镜帧已全生成（1280x720）。"
 }
