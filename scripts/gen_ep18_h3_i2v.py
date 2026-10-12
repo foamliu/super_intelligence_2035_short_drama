@@ -235,6 +235,69 @@ SHOTS = [
             "Audio: 他做了一件连自己都觉得荒唐的事。停买。两周。什么都不买。"
         ),
     },
+    {
+        "shot": "06", "name": "车间主任递协议",
+        "img": "18_director_01_office.png",
+        "dur": 5.0, "seed": 1806,
+        "prompt": (
+            "Cinematic semi-realistic footage, a middle-aged Chinese factory supervisor in a plain "
+            "grey office, sitting behind a worn desk, sliding a labor-contract termination agreement "
+            "across the desk toward the off-screen worker, two plain teacups on the desk, dim cold "
+            "fluorescent office light, faded green-grey walls, faint ink-wash bleed only on the office "
+            "window glass. Medium shot, slow push-in. "
+            "Audio: 老周，厂里情况你也知道。"
+        ),
+    },
+    {
+        "shot": "13", "name": "老周发抖的手",
+        "img": "18_laozhou_04_hands.png",
+        "dur": 6.0, "seed": 1813,
+        "prompt": (
+            "Close-up of a 45-year-old Chinese man's hands on an old wooden table in a dim rented "
+            "room, rough fingers with old scars and visible veins, hands trembling slightly, warm "
+            "yellow desk lamp as the single light source, surrounding darkness, photorealistic "
+            "documentary texture, faint ink-wash in the shadows. Close-up, slow push-in. "
+            "Audio: 她带走小雨的时候，孩子才八岁，哭着说，爸爸我不要走。"
+        ),
+    },
+    {
+        "shot": "18", "name": "书桌辅导书",
+        "img": "18_room_03_desk_textbook.png",
+        "dur": 5.0, "seed": 1818,
+        "prompt": (
+            "Cinematic semi-realistic footage, a small rental-room desk with a brand-new "
+            "middle-school math tutorial book still sealed in plastic shrink-wrap, warm desk lamp "
+            "light, dim tidy room around, faint ink-wash in the shadows, quiet and still. "
+            "Medium shot, slow push-in. "
+            "Audio: 他买了。小雨说不用。他买，是因为小晴问了。"
+        ),
+    },
+    {
+        "shot": "22", "name": "门口快递箱",
+        "img": "18_room_04_door_packages.png",
+        "dur": 5.0, "seed": 1822,
+        "prompt": (
+            "Cinematic semi-realistic footage, the doorway of a small rental apartment with a row "
+            "of delivery cardboard boxes piled by the door, some opened and some with thin dust "
+            "settled on top, dim hallway light, quiet, faint ink-wash in the shadows. "
+            "Medium shot, slow push-in. "
+            "Audio: door draft, cardboard rustle, thin dust settling, distant corridor echo."
+        ),
+    },
+    {
+        "shot": "25", "name": "清晨开暖阳",
+        "img": "18_room_05_bedroom_morning.png",
+        "dur": 5.0, "seed": 1825,
+        "prompt": (
+            "Cinematic semi-realistic footage, early morning in a small rental bedroom, a "
+            "45-year-old Chinese man waking in bed, his first movement reaching for the smartphone "
+            "on the bedside table, the screen lighting up with a warm companion-app interface, soft "
+            "pale morning light through the curtains, faint ink-wash in the shadows. "
+            "Medium-close shot, slow push-in. "
+            "Audio: 早啊老周，今天天气不错。他觉得一天都有了着落。"
+        ),
+    },
+
 ]
 
 
