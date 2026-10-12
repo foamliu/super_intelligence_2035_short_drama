@@ -53,12 +53,13 @@ NEG_XIAOQING = (
 
 
 def _detect_comfyui_base() -> Path:
-    for c in [Path("E:/ComfyUI"),
+    for c in [Path("E:/code/ComfyUI"),
+              Path("E:/ComfyUI"),
               Path("E:/ComfyUI_windows_portable/ComfyUI"),
               Path.home() / "ComfyUI"]:
         if c.exists():
             return c
-    return Path("E:/ComfyUI")
+    return Path("E:/code/ComfyUI")
 
 
 def get_comfyui_input_dir() -> Path:
