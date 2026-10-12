@@ -3,26 +3,317 @@
   "pipeline": "Minimax H3 I2V · megapixels=0.6 (1056x608) · steps=4 · aspect_ratio=16:9 · 台词随 H3 Audio: 生成（禁用 TTS）",
   "generated_at": "2026-10-12",
   "verified": [
-    {"shot": "01", "file": "EP18_SHOT-01_H3_00001_.mp4", "seed": 1801, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 1262393},
-    {"shot": "02", "file": "EP18_SHOT-02_H3_00001_.mp4", "seed": 1802, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 1106473},
-    {"shot": "04", "file": "EP18_SHOT-04_H3_00001_.mp4", "seed": 1804, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 676941},
-    {"shot": "05", "file": "EP18_SHOT-05_H3_00001_.mp4", "seed": 1805, "dur_req_s": 3.0, "dur_actual_s": 3.042, "resolution": "1056x608", "codec": "h264+aac", "bytes": 246842},
-    {"shot": "08", "file": "EP18_SHOT-08_H3_00001_.mp4", "seed": 1808, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 652368},
-    {"shot": "14", "file": "EP18_SHOT-14_H3_00001_.mp4", "seed": 1814, "dur_req_s": 6.0, "dur_actual_s": 6.583, "resolution": "1056x608", "codec": "h264+aac", "bytes": 862040},
-    {"shot": "10", "file": "EP18_SHOT-10_H3_00001_.mp4", "seed": 1810, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 522561},
-    {"shot": "11", "file": "EP18_SHOT-11_H3_00001_.mp4", "seed": 1811, "dur_req_s": 6.0, "dur_actual_s": 6.583, "resolution": "1056x608", "codec": "h264+aac", "bytes": 613871},
-    {"shot": "19", "file": "EP18_SHOT-19_H3_00001_.mp4", "seed": 1819, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 817997},
-    {"shot": "24", "file": "EP18_SHOT-24_H3_00001_.mp4", "seed": 1824, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 764509},
-    {"shot": "26", "file": "EP18_SHOT-26_H3_00001_.mp4", "seed": 1826, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 288602},
-    {"shot": "33", "file": "EP18_SHOT-33_H3_00001_.mp4", "seed": 1833, "dur_req_s": 3.0, "dur_actual_s": 3.042, "resolution": "1056x608", "codec": "h264+aac", "bytes": 645828},
-    {"shot": "36", "file": "EP18_SHOT-36_H3_00001_.mp4", "seed": 1836, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 562189},
-    {"shot": "37", "file": "EP18_SHOT-37_H3_00001_.mp4", "seed": 1837, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 491949},
-    {"shot": "06", "file": "EP18_SHOT-06_H3_00001_.mp4", "seed": 1806, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 634921},
-    {"shot": "13", "file": "EP18_SHOT-13_H3_00001_.mp4", "seed": 1813, "dur_req_s": 6.0, "dur_actual_s": 6.583, "resolution": "1056x608", "codec": "h264+aac", "bytes": 1044955},
-    {"shot": "18", "file": "EP18_SHOT-18_H3_00001_.mp4", "seed": 1818, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 416037},
-    {"shot": "22", "file": "EP18_SHOT-22_H3_00001_.mp4", "seed": 1822, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 351351},
-    {"shot": "25", "file": "EP18_SHOT-25_H3_00001_.mp4", "seed": 1825, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 515107}
+    {
+      "shot": "01",
+      "file": "EP18_SHOT-01_H3_00001_.mp4",
+      "seed": 1801,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1262393
+    },
+    {
+      "shot": "02",
+      "file": "EP18_SHOT-02_H3_00001_.mp4",
+      "seed": 1802,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1106473
+    },
+    {
+      "shot": "04",
+      "file": "EP18_SHOT-04_H3_00001_.mp4",
+      "seed": 1804,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 676941
+    },
+    {
+      "shot": "05",
+      "file": "EP18_SHOT-05_H3_00001_.mp4",
+      "seed": 1805,
+      "dur_req_s": 3.0,
+      "dur_actual_s": 3.042,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 246842
+    },
+    {
+      "shot": "06",
+      "file": "EP18_SHOT-06_H3_00001_.mp4",
+      "seed": 1806,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 634921
+    },
+    {
+      "shot": "07",
+      "file": "EP18_SHOT-07_H3_00001_.mp4",
+      "seed": 1807,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 812238
+    },
+    {
+      "shot": "08",
+      "file": "EP18_SHOT-08_H3_00001_.mp4",
+      "seed": 1808,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 652368
+    },
+    {
+      "shot": "10",
+      "file": "EP18_SHOT-10_H3_00001_.mp4",
+      "seed": 1810,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 522561
+    },
+    {
+      "shot": "11",
+      "file": "EP18_SHOT-11_H3_00001_.mp4",
+      "seed": 1811,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 613871
+    },
+    {
+      "shot": "13",
+      "file": "EP18_SHOT-13_H3_00001_.mp4",
+      "seed": 1813,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1044955
+    },
+    {
+      "shot": "14",
+      "file": "EP18_SHOT-14_H3_00001_.mp4",
+      "seed": 1814,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 862040
+    },
+    {
+      "shot": "17",
+      "file": "EP18_SHOT-17_H3_00001_.mp4",
+      "seed": 1817,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 2261688
+    },
+    {
+      "shot": "18",
+      "file": "EP18_SHOT-18_H3_00001_.mp4",
+      "seed": 1818,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 416037
+    },
+    {
+      "shot": "19",
+      "file": "EP18_SHOT-19_H3_00001_.mp4",
+      "seed": 1819,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 817997
+    },
+    {
+      "shot": "22",
+      "file": "EP18_SHOT-22_H3_00001_.mp4",
+      "seed": 1822,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 351351
+    },
+    {
+      "shot": "24",
+      "file": "EP18_SHOT-24_H3_00001_.mp4",
+      "seed": 1824,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 764509
+    },
+    {
+      "shot": "25",
+      "file": "EP18_SHOT-25_H3_00001_.mp4",
+      "seed": 1825,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 515107
+    },
+    {
+      "shot": "26",
+      "file": "EP18_SHOT-26_H3_00001_.mp4",
+      "seed": 1826,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 288602
+    },
+    {
+      "shot": "29",
+      "file": "EP18_SHOT-29_H3_00001_.mp4",
+      "seed": 1829,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 2048000
+    },
+    {
+      "shot": "31",
+      "file": "EP18_SHOT-31_H3_00001_.mp4",
+      "seed": 1831,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1176224
+    },
+    {
+      "shot": "32",
+      "file": "EP18_SHOT-32_H3_00001_.mp4",
+      "seed": 1832,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 543979
+    },
+    {
+      "shot": "33",
+      "file": "EP18_SHOT-33_H3_00001_.mp4",
+      "seed": 1833,
+      "dur_req_s": 3.0,
+      "dur_actual_s": 3.042,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 645828
+    },
+    {
+      "shot": "36",
+      "file": "EP18_SHOT-36_H3_00001_.mp4",
+      "seed": 1836,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 562189
+    },
+    {
+      "shot": "37",
+      "file": "EP18_SHOT-37_H3_00001_.mp4",
+      "seed": 1837,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 491949
+    },
+    {
+      "shot": "39",
+      "file": "EP18_SHOT-39_H3_00001_.mp4",
+      "seed": 1839,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 530263
+    },
+    {
+      "shot": "41",
+      "file": "EP18_SHOT-41_H3_00001_.mp4",
+      "seed": 1841,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 574315
+    },
+    {
+      "shot": "42",
+      "file": "EP18_SHOT-42_H3_00001_.mp4",
+      "seed": 1842,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 889169
+    },
+    {
+      "shot": "45",
+      "file": "EP18_SHOT-45_H3_00001_.mp4",
+      "seed": 1845,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 2223961
+    },
+    {
+      "shot": "46",
+      "file": "EP18_SHOT-46_H3_00001_.mp4",
+      "seed": 1846,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1503175
+    },
+    {
+      "shot": "47",
+      "file": "EP18_SHOT-47_H3_00001_.mp4",
+      "seed": 1847,
+      "dur_req_s": 4.0,
+      "dur_actual_s": 4.458,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1409895
+    },
+    {
+      "shot": "48",
+      "file": "EP18_SHOT-48_H3_00001_.mp4",
+      "seed": 1848,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 733546
+    }
   ],
-  "verified_count": 19,
-  "notes": "19/54 镜成片（h264 1056x608 24fps + aac，时长吻合 17k+5 量化）。手机UI系列 16 镜帧已全生成（03/09/12/16/21/23/29/30/34/35/38/40/43/44/51/53，OUTPUT/18_暖阳/frames/18_ui_*.png，1280x720）。剩余 35 镜待出片：手机UI 16 镜（帧已备）+ 数据流T2V 5 镜（15/20/27/28/54 无参考图）+ 其余 14 镜（需补人物/场景资产）。"
+  "verified_count": 31,
+  "notes": "31/54 镜成片（h264 1056x608 24fps + aac，时长吻合 17k+5 量化）。手机UI系列 16 镜帧已全生成（1280x720）。剩余 23 镜待出片：I2V 18 镜（03/09/12/16/21/23/30/34/35/38/40/43/44/49/50/51/52/53）+ T2V 5 镜（15/20/27/28/54 无参考图）。I2V 批次后台运行中（gen_ep18_h3_i2v.py --skip-existing，PID 9136，逐镜 steps=4）。"
 }
