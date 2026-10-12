@@ -1,0 +1,23 @@
+{
+  "episode": "18_暖阳",
+  "pipeline": "Minimax H3 I2V · megapixels=0.6 (1056x608) · steps=4 · aspect_ratio=16:9 · 台词随 H3 Audio: 生成（禁用 TTS）",
+  "generated_at": "2026-10-12",
+  "verified": [
+    {"shot": "01", "file": "EP18_SHOT-01_H3_00001_.mp4", "seed": 1801, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 1262393},
+    {"shot": "02", "file": "EP18_SHOT-02_H3_00001_.mp4", "seed": 1802, "dur_req_s": 5.0, "dur_actual_s": 5.167, "resolution": "1056x608", "codec": "h264+aac", "bytes": 1106473},
+    {"shot": "04", "file": "EP18_SHOT-04_H3_00001_.mp4", "seed": 1804, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 676941},
+    {"shot": "05", "file": "EP18_SHOT-05_H3_00001_.mp4", "seed": 1805, "dur_req_s": 3.0, "dur_actual_s": 3.042, "resolution": "1056x608", "codec": "h264+aac", "bytes": 246842},
+    {"shot": "08", "file": "EP18_SHOT-08_H3_00001_.mp4", "seed": 1808, "dur_req_s": 4.0, "dur_actual_s": 4.458, "resolution": "1056x608", "codec": "h264+aac", "bytes": 652368},
+    {"shot": "14", "file": "EP18_SHOT-14_H3_00001_.mp4", "seed": 1814, "dur_req_s": 6.0, "dur_actual_s": 6.583, "resolution": "1056x608", "codec": "h264+aac", "bytes": 862040}
+  ],
+  "queued": [
+    {"shot": "10", "prompt_id": "dccd202d-2ded-4cd0-bbad-d7e705b4c272", "seed": 1810, "dur_req_s": 5.0},
+    {"shot": "11", "prompt_id": "10430cd0-9c25-49f1-ae2f-60ddf9e6e81c", "seed": 1811, "dur_req_s": 6.0},
+    {"shot": "19", "prompt_id": "1915e34a-baf7-487b-8d22-6b92987535a1", "seed": 1819, "dur_req_s": 5.0},
+    {"shot": "24", "prompt_id": "d894ad3c-19e7-4179-bb2b-8e68a4bd0aff", "seed": 1824, "dur_req_s": 5.0},
+    {"shot": "26", "prompt_id": "4e2db63e-869e-4a48-8664-b909714a55d6", "seed": 1826, "dur_req_s": 4.0},
+    {"shot": "33", "prompt_id": "df9e829f-8249-47ba-831a-3dcf8bdaaffc", "seed": 1833, "dur_req_s": 3.0},
+    {"shot": "36", "prompt_id": "020d3048-86cd-4fe4-b361-afcdae4ec996", "seed": 1836, "dur_req_s": 4.0},
+    {"shot": "37", "prompt_id": "90255a5b-6dbe-4a97-8016-47efab0f7825", "seed": 1837, "dur_req_s": 4.0}
+  ]
+}

@@ -142,6 +142,99 @@ SHOTS = [
             "Audio: 老周，你一个人扛了这么久，辛苦了。"
         ),
     },
+    # ── 第二批镜头（倾诉/陪伴/裂缝 · 复用现成帧 · 单人/无台词）──
+    {
+        "shot": "10", "name": "每个夜晚上线",
+        "img": "18_room_01_bed_night.png",
+        "dur": 5.0, "seed": 1810,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man lying on a bed in a small "
+            "dim rented room at night, holding a smartphone above his face, cold white screen light "
+            "washing over his tired face, the screen brightening softly, nightstand with a small "
+            "framed photo in soft focus, faint city lights behind half-drawn curtains. Slow lateral "
+            "pan, medium shot. Audio: quiet night city ambience, faint fabric rustle, soft electronic "
+            "screen chime."
+        ),
+    },
+    {
+        "shot": "11", "name": "老周倾诉越说越急",
+        "img": "18_room_02_sitting_bedside.png",
+        "dur": 6.0, "seed": 1811,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man sitting on the edge of a bed "
+            "in a dim rented room, speaking into the phone in his hand, brows furrowed, words coming "
+            "faster as he grows agitated, leaning slightly forward, warm bedside lamp as the only "
+            "light source. Medium-close shot, fixed camera. "
+            "Audio: 新来的大学生什么都不懂，工资比我高；我带出来的徒弟，现在成了我领导。"
+        ),
+    },
+    {
+        "shot": "19", "name": "老周听小晴问膝盖",
+        "img": "18_car_01_night_driving.png",
+        "dur": 5.0, "seed": 1819,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man leaning back in the driver "
+            "seat of a dim rideshare car at night, phone resting on his lap, listening quietly, cold "
+            "blue night and warm orange dashboard light mixing on his tired face, city lights blurred "
+            "beyond the window. Medium-close shot, fixed camera. "
+            "Audio: 老周，你膝盖的旧伤最近还疼吗？"
+        ),
+    },
+    {
+        "shot": "24", "name": "老周放下又拿起手机",
+        "img": "18_room_02_sitting_bedside.png",
+        "dur": 5.0, "seed": 1824,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man in a dim rented room, putting "
+            "his phone down then picking it up again, muttering quietly to himself, shoulders slightly "
+            "hunched, warm bedside lamp light. Medium shot, fixed camera. "
+            "Audio: 请心理医生一小时也要几百块。小晴陪我这么久，买点东西怎么了？"
+        ),
+    },
+    {
+        "shot": "26", "name": "深夜睁眼躺着",
+        "img": "18_room_01_bed_night.png",
+        "dur": 4.0, "seed": 1826,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man lying awake in a dim rented "
+            "room late at night, eyes open, phone glowing on the pillow beside him, cold white screen "
+            "light on the ceiling, faint city lights through curtains. Medium shot, fixed camera. "
+            "Audio: 我也没睡呢。"
+        ),
+    },
+    {
+        "shot": "33", "name": "老周皱眉察觉不对",
+        "img": "18_car_02_parked_midnight.png",
+        "dur": 3.0, "seed": 1833,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man frowning slightly in a parked "
+            "car at late night, a subtle unease on his face, warm street lamp light from the side "
+            "window crossing his face, cold white phone glow, quiet car interior. Close-up, fixed "
+            "camera. Audio: faint car air-conditioning hum, distant sparse traffic, soft stillness."
+        ),
+    },
+    {
+        "shot": "36", "name": "老周盯屏眉头紧皱",
+        "img": "18_car_03_daytime_forum.png",
+        "dur": 4.0, "seed": 1836,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man in the driver seat of a car "
+            "in overcast daylight, staring at his phone screen, brows tightening, low-saturation cool "
+            "grey tone, muted light through the window. Medium-close shot, fixed camera. "
+            "Audio: faint phone screen swipe sound, soft daytime traffic murmur."
+        ),
+    },
+    {
+        "shot": "37", "name": "老周扣下手机下决心",
+        "img": "18_room_02_sitting_bedside.png",
+        "dur": 4.0, "seed": 1837,
+        "prompt": (
+            "Cinematic semi-realistic footage, a 45-year-old Chinese man in a dim rented room, placing "
+            "his phone face-down on the table with a firm determined gesture, jaw set, warm bedside "
+            "lamp light. Medium shot, fixed camera. "
+            "Audio: 他做了一件连自己都觉得荒唐的事。停买。两周。什么都不买。"
+        ),
+    },
 ]
 
 
