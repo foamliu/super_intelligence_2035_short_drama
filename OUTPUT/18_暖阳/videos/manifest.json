@@ -144,6 +144,16 @@
       "bytes": 862040
     },
     {
+      "shot": "15",
+      "file": "EP18_SHOT-15_H3_T2V_00001_.mp4",
+      "seed": 1815,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 1030777
+    },
+    {
       "shot": "16",
       "file": "EP18_SHOT-16_H3_00001_.mp4",
       "seed": 1816,
@@ -182,6 +192,16 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 817997
+    },
+    {
+      "shot": "20",
+      "file": "EP18_SHOT-20_H3_T2V_00001_.mp4",
+      "seed": 1820,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 385964
     },
     {
       "shot": "21",
@@ -242,6 +262,26 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 288602
+    },
+    {
+      "shot": "27",
+      "file": "EP18_SHOT-27_H3_T2V_00001_.mp4",
+      "seed": 1827,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 837260
+    },
+    {
+      "shot": "28",
+      "file": "EP18_SHOT-28_H3_T2V_00001_.mp4",
+      "seed": 1828,
+      "dur_req_s": 5.0,
+      "dur_actual_s": 5.167,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 472038
     },
     {
       "shot": "29",
@@ -492,8 +532,18 @@
       "resolution": "1056x608",
       "codec": "h264+aac",
       "bytes": 574804
+    },
+    {
+      "shot": "54",
+      "file": "EP18_SHOT-54_H3_T2V_00001_.mp4",
+      "seed": 1854,
+      "dur_req_s": 6.0,
+      "dur_actual_s": 6.583,
+      "resolution": "1056x608",
+      "codec": "h264+aac",
+      "bytes": 668534
     }
   ],
-  "verified_count": 49,
+  "verified_count": 54,
   "notes": "49 I2V 镜全收 + 5 T2V 镜待出片（15/20/27/28/54 无参考图，gen_ep18_h3_t2v.py 后台运行中）。h264 1056x608 24fps + aac，时长吻合 17k+5 量化。手机UI系列 16 镜帧已全生成（1280x720）。"
 }
