@@ -1,518 +1,469 @@
 #!/usr/bin/env python3
 """
-第13集《外骨骼》T2I 静态图批量生成脚本
+第13集《外骨骼》T2I 静态图批量生成脚本（固化 · S3 重做 · 新口径·去 TTS）。
 
-解析 13_外骨骼_T2I_Prompts.md，调用 ComfyUI API 逐张生成。
-- 莎拉角色镜头 → LongCat Image Edit（输入=莎拉主定妆照 + 场景Prompt，保持角色一致性）
-- 非角色镜头 → Z-Image-Turbo 文生图
+作用：生成第 13 集「角色状态帧 + 场景图 + 虚拟观众 + 道具 + UI」共 14 张基础图，
+       作为后续 I2V（Minimax H3）的分镜帧输入。与 EP18 范式口径一致：
+   - 人物镜头（莎拉 / 师兄）→ LongCat Image Edit（输入=各自主定妆照，保角色一致）
+   - 非人物镜头（场景 / 虚拟观众 / 道具 / UI）→ Z-Image-Turbo 文生图
+
+⚠️ 台词/人声一律由 MiniMax H3 随视频生成（写进 I2V prompt 的 Audio:），
+   本脚本只出「帧」，不生成任何 TTS 音轨（2026-10-11 用户令：禁用 TTS）。
 
 用法:
-  python scripts/generate_ep13_t2i.py --dry-run          # 仅打印计划
-  python scripts/generate_ep13_t2i.py --priority p0       # 仅 P0 (虚拟观众 ×2)
-  python scripts/generate_ep13_t2i.py --shot 莎拉-01       # 仅某张图
-  python scripts/generate_ep13_t2i.py                     # 全部 14 张
-"""
+  python scripts/generate_ep13_t2i.py --dry-run      # 仅打印计划
+  python scripts/generate_ep13_t2i.py --shot 莎拉-01 # 仅生成某张
+  python scripts/generate_ep13_t2i.py                # 全部 14 张
 
+产出:
+  OUTPUT/13_外骨骼/frames/13_*.png（14 张）+ manifest.json
+"""
 import json
-import os
-import sys
 import time
 import uuid
-import re
+import shutil
 import urllib.request
 import urllib.error
 import urllib.parse
 import argparse
-import shutil
 from pathlib import Path
-from typing import Optional
 
 # ── 配置 ──────────────────────────────────────────────
 COMFYUI_URL = "http://127.0.0.1:8188"
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_DIR = PROJECT_ROOT / "OUTPUT" / "13_外骨骼" / "frames"
-T2I_SPEC_PATH = PROJECT_ROOT / "ASSETS" / "SHOT_SPECS" / "13_外骨骼_T2I_Prompts.md"
 ZIMAGE_WORKFLOW_PATH = PROJECT_ROOT / "workflows" / "Z-Image-Turbo 文生图.json"
 IMAGE_EDIT_WORKFLOW_PATH = PROJECT_ROOT / "workflows" / "Image Edit (LongCat Image Edit).json"
 
-# 角色定妆照映射 (镜头名前缀 → {ref_path, target_name})
-# target_name 必须是 ASCII 文件名, 因为 ComfyUI LoadImage 不支持中文文件名
-CHARACTER_REF_MAP = {
-    "莎拉": {
-        "ref_path": PROJECT_ROOT / "ASSETS" / "CHARACTERS" / "08_莎拉·赵" / "主定妆照.png",
-        "target_name": "ref_sarah_zhao.png",
-    },
-}
+SARAH_REF = PROJECT_ROOT / "ASSETS" / "CHARACTERS" / "08_莎拉·赵" / "主定妆照.png"
+SHIXIONG_REF = PROJECT_ROOT / "ASSETS" / "CHARACTERS" / "师兄" / "主定妆照.png"
+SARAH_REF_TARGET = "ref_sarah_13.png"
+SHIXIONG_REF_TARGET = "ref_shixiong_13.png"
 
-# ComfyUI input 目录
-_COMFYUI_INPUT_DIR = None
+# ── 负面词 ────────────────────────────────────────────
+NEG_SARAH = (
+    "ugly, deformed, bad anatomy, disfigured, poorly drawn face, mutation, extra limb, "
+    "extra fingers, fused fingers, too many fingers, blurry, watermark, text, logo, "
+    "oversaturated, plastic skin, heavy makeup, beauty filter, anime, cartoon, illustration, "
+    "3D render, nerd stereotype, thick glasses, awkward posture, overly dramatic stage "
+    "performer, diva, professional actress, cheerful, smiling excessively, emotional outburst, "
+    "perfect skin, beauty dish lighting, fashion magazine"
+)
+NEG_SHIXIONG = (
+    "smile, laughing, happy, cheerful, young, handsome, energetic, muscular, romantic, "
+    "clean-shaven model, makeup, skincare glow, suit, tie, CEO, luxury office, warm lighting, "
+    "golden hour, fashion, influencer, celebrity, K-pop, idol, anime, cartoon, 3D render, "
+    "oversaturated, plastic skin, beauty filter, deformed, ugly, duplicate, watermark, "
+    "signature, text, logo"
+)
+NEG_GENERIC = (
+    "cartoon, anime, 3D render, oversaturated, bright colors, deformed, extra fingers, "
+    "mutated, ugly, duplicate, watermark, signature, text, logo, cropped, worst quality, "
+    "low quality, normal quality, jpeg artifacts"
+)
 
 
 def _detect_comfyui_base() -> Path:
-    """检测 ComfyUI 根目录"""
-    candidates = [
-        Path("E:/ComfyUI"),
-        Path("E:/ComfyUI_windows_portable/ComfyUI"),
-        Path.home() / "ComfyUI",
-    ]
-    for c in candidates:
+    for c in [Path("E:/code/ComfyUI"),
+              Path("E:/ComfyUI"),
+              Path("E:/ComfyUI_windows_portable/ComfyUI"),
+              Path.home() / "ComfyUI"]:
         if c.exists():
             return c
-    return Path("E:/ComfyUI")
+    return Path("E:/code/ComfyUI")
 
 
 def get_comfyui_input_dir() -> Path:
-    """获取 ComfyUI input 目录 (用于上传参考图)"""
-    global _COMFYUI_INPUT_DIR
-    if _COMFYUI_INPUT_DIR:
-        return _COMFYUI_INPUT_DIR
-    _COMFYUI_INPUT_DIR = _detect_comfyui_base() / "input"
-    _COMFYUI_INPUT_DIR.mkdir(parents=True, exist_ok=True)
-    return _COMFYUI_INPUT_DIR
+    d = _detect_comfyui_base() / "input"
+    d.mkdir(parents=True, exist_ok=True)
+    return d
 
 
 def get_comfyui_output_dir() -> Path:
-    """获取 ComfyUI output 目录"""
     return _detect_comfyui_base() / "output"
 
 
-# ── 优先级映射 ────────────────────────────────────────
-PRIORITY_MAP = {
-    "p0": ["虚拟观众-01_不存在的脸在笑", "虚拟观众-02_渲染vs真实·两张脸的对比"],
-    "p1": ["地铁-01_早高峰·不在训练数据里的人",
-           "工位-01_外骨骼工具主界面",
-           "UI-01_外骨骼工具主界面（无人物）",
-           "UI-02_双标注·小周"],
-    "p2": ["莎拉-01_工位·解释外骨骼", "莎拉-02_地铁·观察者", "莎拉-03_吧台·0.52的散场",
-           "师兄-01_咖啡杯·实验室传奇"],
-    "p3": ["实验室-01_2017年深夜", "酒吧-01_散场后的吧台暗光",
-           "道具-01_笔记本标签·不可迁移", "道具-02_微信对话·十秒沉默"],
-}
-
-
-# ── 角色路由 ──────────────────────────────────────────
-def get_character_ref(img_name: str) -> Optional[dict]:
-    """根据镜头名判断是否属于角色镜头，返回 CHARACTER_REF_MAP 中的 dict (含 ref_path, target_name)"""
-    for prefix, info in CHARACTER_REF_MAP.items():
-        if img_name.startswith(prefix):
-            ref_path = info["ref_path"]
-            if ref_path.exists():
-                return info
-            else:
-                print(f"  [WARNING] 定妆照不存在: {ref_path}")
-                return None
-    return None
-
+# ── 14 张基础图规格 ────────────────────────────────────
+# image_edit 的 megapixels=0.92 → 实际输出约 1312×736（16:9，LongCat 按 32 倍数取整）
+SPECS = [
+    # — 莎拉状态帧（image_edit，输入主定妆照）—
+    {
+        "name": "莎拉-01_工位解释外骨骼", "mode": "image_edit", "megapixels": 0.92, "seed": 100,
+        "out": "13_sarah_01_desk_explaining.png",
+        "ref": SARAH_REF, "ref_target": SARAH_REF_TARGET, "neg": NEG_SARAH,
+        "prompt": (
+            "Same 30-year-old Chinese woman with medium-short dark hair, sitting at a tech office "
+            "desk, two monitors glowing — left monitor plays her own stand-up performance video, "
+            "right monitor shows a world-model interface rendering virtual audience faces with a "
+            "green/yellow/red laughter heatmap, one hand gesturing pointing at the heatmap region, "
+            "explaining something important but unsure if others can understand, cold white office "
+            "fluorescent light mixed with warm screen light, semi-realistic ink wash style bleeding "
+            "from monitor edges, photorealistic base"
+        ),
+    },
+    {
+        "name": "莎拉-02_地铁观察者", "mode": "image_edit", "megapixels": 0.92, "seed": 101,
+        "out": "13_sarah_02_subway_observing.png",
+        "ref": SARAH_REF, "ref_target": SARAH_REF_TARGET, "neg": NEG_SARAH,
+        "prompt": (
+            "Same 30-year-old Chinese woman standing in a crowded Shanghai morning subway car, one "
+            "hand holding an overhead strap, NOT looking at a phone while others around her stare at "
+            "screens, quietly observing a middle-aged woman with a grocery bag, a student with leaky "
+            "headphones, a dozing old man, harsh fluorescent light plus tunnel light sweeping through "
+            "windows, ink wash only faintly in the window reflections, semi-realistic ink wash style, "
+            "photorealistic base"
+        ),
+    },
+    {
+        "name": "莎拉-03_吧台散场", "mode": "image_edit", "megapixels": 0.92, "seed": 102,
+        "out": "13_sarah_03_bar_aftermath.png",
+        "ref": SARAH_REF, "ref_target": SARAH_REF_TARGET, "neg": NEG_SARAH,
+        "prompt": (
+            "Same 30-year-old Chinese woman sitting sideways at a closed comedy-club bar counter after "
+            "the show, warm dim light, smartphone screen glowing with a WeChat message, cold white "
+            "screen light on the lower half of her face, finger just finished typing a reply not yet "
+            "sent, expression sincere and quiet, rest of the frame in darkness, warm amber + dark wine "
+            "red + phone cold white, ink bleeding from bar shadows, semi-realistic ink wash style, "
+            "photorealistic base"
+        ),
+    },
+    # — 师兄状态帧（image_edit，输入主定妆照）—
+    {
+        "name": "师兄-01_咖啡杯", "mode": "image_edit", "megapixels": 0.92, "seed": 200,
+        "out": "13_shixiong_01_coffee.png",
+        "ref": SHIXIONG_REF, "ref_target": SHIXIONG_REF_TARGET, "neg": NEG_SHIXIONG,
+        "prompt": (
+            "Same 31-year-old Chinese man with black-framed glasses, thin and tall, tousled short dark "
+            "hair, deep-set tired eyes with subtle dark circles, holding a white ceramic coffee mug with "
+            "company logo, half profile, dark grey hoodie over black t-shirt, cold white fluorescent "
+            "office light from above, faint knowing micro-expression at corner of mouth, pores and eye "
+            "lines visible, semi-realistic ink wash style bleeding from background edges, "
+            "photorealistic base"
+        ),
+    },
+    # — 场景图（zimage）—
+    {
+        "name": "工位-01_外骨骼UI", "mode": "zimage", "seed": 600,
+        "out": "13_office_01_exoskeleton_ui.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "A dual-monitor engineering UI for an AI comedy tool, left monitor shows a video input "
+            "window of a woman on an open-mic stage holding a wired microphone with playback timecode, "
+            "center shows virtual audience rendering — rows of imaginary audience faces each with "
+            "expressions, one face marked with a green AI box, right shows a laughter-intensity heatmap "
+            "over virtual audience seats in green/yellow/red zones, engineering interface not sci-fi "
+            "HUD, grey-blue engineering color + green/yellow/red heatmap colors, clean restrained UI, "
+            "16:9"
+        ),
+    },
+    {
+        "name": "地铁-01_早高峰", "mode": "zimage", "seed": 601,
+        "out": "13_subway_01_rush_hour.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "Shanghai subway line-2 style train car during 7-8am rush hour, long stainless seats with "
+            "blue plastic panels, overhead grab handles, red LED information screen above the door, "
+            "crowded but not suffocating — middle-aged woman with grocery bag, student with leaky "
+            "headphones, old man dozing in a corner, some on phones some staring blankly, harsh "
+            "fluorescent tube light with occasional tunnel light sweeping through windows, window glass "
+            "reflects blurred figures, real everyday not sci-fi, warm grey + harsh white fluorescent, "
+            "faint ink wash only in window reflections, 16:9"
+        ),
+    },
+    {
+        "name": "实验室-01_2017深夜", "mode": "zimage", "seed": 602,
+        "out": "13_lab_01_2017_night.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "A Chinese university computer lab in 2017, grey floor, several old desktop PC towers "
+            "stacked under desks, old CRT/LCD monitors with wide bezels and warmer blue glow, "
+            "whiteboard with handwritten formulas scrawled, late night with only a desk lamp warm light "
+            "on the work area, dust motes floating in light, two chairs side by side one empty, a coffee "
+            "mug on the desk in front of the empty chair still steaming, nostalgic warm yellow + old "
+            "CRT blue, ink bleeding from frame edges, 16:9"
+        ),
+    },
+    {
+        "name": "酒吧-01_散场吧台", "mode": "zimage", "seed": 603,
+        "out": "13_bar_01_aftermath.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "An open-mic comedy club bar after the show has ended, audience gone, chairs pushed under "
+            "tables, empty mic stand on stage, one warm dim light still on at the bar counter, wood "
+            "grain with beer glass water rings, an empty beer bottle, a stainless bottle opener, "
+            "blurred figure tidying chairs in the deep background, not lonely but quiet after it is "
+            "over, warm amber + dark wine red, ink bleeding from shadows, 16:9"
+        ),
+    },
+    # — 虚拟观众（zimage · P0 视觉心脏）—
+    {
+        "name": "虚拟观众-01_想象的脸", "mode": "zimage", "seed": 700,
+        "out": "13_virtual_audience_01_imaginary_face.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "A single rendered virtual audience face, a face that does not exist in reality, smiling "
+            "and laughing, skin slightly too perfect and too smooth, marked with a green AI bounding box, "
+            "cold blue-grey synthetic tone, uncanny subtle artificiality, semi-realistic with ink wash "
+            "bleeding at the edges, cinematic close-up, 16:9"
+        ),
+    },
+    {
+        "name": "虚拟观众-02_渲染vs真实", "mode": "zimage", "seed": 701,
+        "out": "13_virtual_audience_02_render_vs_real.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "A diptych split composition: top half a rendered virtual face smiling with green AI box "
+            "and too-perfect skin; bottom half the same camera angle but a real open-mic audience — a "
+            "real young man wearing a baseball cap holding a beer glass, laughing a real imperfect laugh "
+            "with pores and tooth gaps and eye wrinkles, top half cool blue-grey synthetic, bottom half "
+            "warm real light, ink wash only in the top half, bottom fully realistic, 16:9"
+        ),
+    },
+    # — 道具（zimage）—
+    {
+        "name": "道具-01_笔记本标签", "mode": "zimage", "seed": 800,
+        "out": "13_prop_01_notebook_label.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "Close-up of a dark hardcover A5 notebook cover, a strip of white paper masking tape on the "
+            "cover with handwritten Chinese characters, tape edge slightly lifting with transparency, "
+            "corner of a monitor blue glow reflection on the desk, cold white office light plus one warm "
+            "desk lamp, ink bleeding from the tape edge, 16:9"
+        ),
+    },
+    {
+        "name": "道具-02_微信对话", "mode": "zimage", "seed": 801,
+        "out": "13_prop_02_wechat_hao.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "Close-up of a smartphone screen on an office desk, WeChat chat interface, top green message "
+            "bubbles from the user, below an empty white bubble just transitioned from typing, then a "
+            "white bubble with a single short reply, phone cold white light is the only light in the "
+            "pre-dawn blue-grey dark, faint fingerprints on the screen, ink bleeding from phone edge "
+            "into desk shadow, 16:9"
+        ),
+    },
+    # — UI（zimage）—
+    {
+        "name": "UI-01_外骨骼主界面", "mode": "zimage", "seed": 900,
+        "out": "13_ui_01_exoskeleton_clean.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "Engineering UI of an AI comedy tool without any person, left 40 percent a video player "
+            "frame black with playback controls and timecode, center 40 percent virtual audience "
+            "rendering area grey background with multiple audience boxes each a rendered face with "
+            "heatmap overlay green/yellow/red regions, right 20 percent a data panel with green yellow "
+            "red thresholds and a model version label, top small caption text, grey-blue engineering "
+            "tone + green/yellow/red heatmap, practical tool not sci-fi, 16:9"
+        ),
+    },
+    {
+        "name": "UI-02_双标注小周", "mode": "zimage", "seed": 901,
+        "out": "13_ui_02_double_annotation_xiaozhou.png", "width": 1280, "height": 720, "neg": NEG_GENERIC,
+        "prompt": (
+            "Close-up detail of a virtual audience seat third row, a rendered audience face with a "
+            "machine-style green AI bounding box in light green rectangle and white text, overlaid with "
+            "a red handwritten name in rounded irregular handwriting, the same data with two annotations "
+            "— machine world green box versus human world red handwritten name, background is the "
+            "rendered virtual face smiling, grey-blue engineering + green box + red text, 16:9"
+        ),
+    },
+]
 
 # ── ComfyUI API ───────────────────────────────────────
-def comfyui_request(endpoint: str, data: Optional[dict] = None, method: str = "POST") -> dict:
+def comfyui_request(endpoint, data=None, method="POST"):
     url = f"{COMFYUI_URL}{endpoint}"
     body = json.dumps(data).encode("utf-8") if data else None
-    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"}, method=method)
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.URLError as e:
-        print(f"  [ERROR] ComfyUI 请求失败: {e}")
-        raise
+    req = urllib.request.Request(url, data=body,
+                                 headers={"Content-Type": "application/json"}, method=method)
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return json.loads(resp.read().decode("utf-8"))
 
 
-def queue_prompt(workflow: dict) -> str:
+def queue_prompt(workflow):
     payload = {"prompt": workflow, "client_id": f"ep13_{uuid.uuid4().hex[:8]}"}
-    result = comfyui_request("/prompt", payload)
-    pid = result.get("prompt_id", "")
+    pid = comfyui_request("/prompt", payload).get("prompt_id", "")
     if not pid:
-        raise RuntimeError(f"提交失败: {result}")
+        raise RuntimeError("提交失败")
     return pid
 
 
-def get_history(prompt_id: str) -> dict:
-    return comfyui_request(f"/history/{prompt_id}", method="GET")
-
-
-def wait_for_prompt(prompt_id: str, timeout: int = 600) -> dict:
+def wait_for_prompt(prompt_id, timeout=900):
     start = time.time()
     while time.time() - start < timeout:
-        history = get_history(prompt_id)
+        try:
+            history = comfyui_request(f"/history/{prompt_id}", method="GET")
+        except urllib.error.URLError:
+            time.sleep(3)
+            continue
         if prompt_id in history:
             return history[prompt_id]
         time.sleep(3)
-    raise TimeoutError(f"Prompt {prompt_id} 超时 ({timeout}s)")
+    raise TimeoutError(f"Prompt {prompt_id} 超时")
 
 
-def find_output_files(history_entry: dict) -> list[dict]:
+def find_output_files(history_entry):
     outputs = []
-    for node_id, nd in history_entry.get("outputs", {}).items():
+    for _nid, nd in history_entry.get("outputs", {}).items():
         for img in nd.get("images", []):
-            outputs.append({
-                "filename": img["filename"],
-                "subfolder": img.get("subfolder", ""),
-                "type": img.get("type", "output"),
-            })
+            outputs.append({"filename": img["filename"],
+                            "subfolder": img.get("subfolder", ""),
+                            "type": img.get("type", "output")})
     return outputs
 
 
-def download_output_image(out: dict, dst: Path) -> bool:
-    fname = out["filename"]
-    ftype = out.get("type", "output")
-    subfolder = out.get("subfolder", "")
-
-    # 方式1: HTTP /view API
-    params = urllib.parse.urlencode({"filename": fname, "type": ftype})
+def download_output_image(out, dst):
+    params = urllib.parse.urlencode({"filename": out["filename"],
+                                     "subfolder": out.get("subfolder", ""),
+                                     "type": out.get("type", "output")})
     url = f"{COMFYUI_URL}/view?{params}"
     try:
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=60) as resp:
+        with urllib.request.urlopen(url, timeout=60) as resp:
             data = resp.read()
             if len(data) > 100:
                 dst.write_bytes(data)
                 return True
     except Exception as e:
-        print(f"    [WARNING] HTTP /view 失败 ({fname}): {e}")
-
-    # 方式2: 文件系统复制
-    comfy_out = get_comfyui_output_dir()
-    for src_path in [
-        comfy_out / subfolder / fname,
-        comfy_out / "temp" / fname,
-        comfy_out / fname,
-    ]:
-        if src_path.exists():
-            shutil.copy2(src_path, dst)
-            return True
-
-    print(f"    [WARNING] 源文件未找到: {fname} (type={ftype})")
+        print(f"    [WARNING] /view 失败: {e}")
+    src = get_comfyui_output_dir() / out.get("subfolder", "") / out["filename"]
+    if src.exists():
+        shutil.copy2(src, dst)
+        return True
     return False
 
 
-# ── 参考图上传到 ComfyUI input ────────────────────────
-def upload_ref_to_comfyui(ref_path: Path, target_name: str) -> str:
-    """
-    通过 ComfyUI /upload/image API 上传参考图，确保 LoadImage 可识别。
-    如果已注册且文件大小相同则跳过。
-    """
-    import uuid as _uuid
-
-    input_dir = get_comfyui_input_dir()
-    dst = input_dir / target_name
-
-    # 如果已注册且文件大小相同，跳过
-    if dst.exists() and dst.stat().st_size == ref_path.stat().st_size:
-        if _check_comfyui_has_image(target_name):
-            print(f"    📎 参考图已注册: {target_name}")
-            return target_name
-
-    # 复制到 ComfyUI input 目录
-    shutil.copy2(ref_path, dst)
-
-    # 通过 /upload/image API 注册到 ComfyUI
-    try:
-        boundary = f"----{_uuid.uuid4().hex}"
-        body = bytearray()
-
-        for fn, fv in [("overwrite", "true"), ("type", "input")]:
-            body.extend(f"--{boundary}\r\n".encode())
-            body.extend(f'Content-Disposition: form-data; name="{fn}"\r\n\r\n'.encode())
-            body.extend(f"{fv}\r\n".encode())
-
-        file_data = dst.read_bytes()
-        body.extend(f"--{boundary}\r\n".encode())
-        body.extend(f'Content-Disposition: form-data; name="image"; filename="{target_name}"\r\n'.encode())
-        body.extend(f"Content-Type: image/png\r\n\r\n".encode())
-        body.extend(file_data)
-        body.extend(f"\r\n--{boundary}--\r\n".encode())
-
-        url = f"{COMFYUI_URL}/upload/image"
-        req = urllib.request.Request(url, data=bytes(body))
-        req.add_header("Content-Type", f"multipart/form-data; boundary={boundary}")
-        req.method = "POST"
-
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            resp.read()
-
-        print(f"    📤 已上传参考图: {ref_path.name} → ComfyUI ({target_name})")
-    except Exception as e:
-        print(f"    ⚠️  /upload/image API 失败: {e}")
-        print(f"    ⚠️  文件已复制到 {dst}，可能需要刷新 ComfyUI 浏览器才能识别")
-
+def upload_ref_to_comfyui(ref_path, target_name):
+    """把定妆照复制到 ComfyUI input，供 LoadImage 使用。"""
+    dst = get_comfyui_input_dir() / target_name
+    if not (dst.exists() and dst.stat().st_size == ref_path.stat().st_size):
+        shutil.copy2(ref_path, dst)
     return target_name
 
 
-def _check_comfyui_has_image(filename: str) -> bool:
-    """检查 ComfyUI LoadImage 是否已注册指定文件"""
-    try:
-        req = urllib.request.Request(f"{COMFYUI_URL}/object_info")
-        with urllib.request.urlopen(req, timeout=10) as resp:
-            data = json.loads(resp.read())
-            images = data.get("LoadImage", {}).get("input", {}).get("required", {}).get("image", [[], {}])[0]
-            return filename in images
-    except Exception:
-        return False
-
-
-# ── Workflow 加载 ─────────────────────────────────────
-def load_workflow(path: Path) -> dict:
+def load_workflow(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-# ── Z-Image-Turbo T2I Workflow 构建 ──────────────────
-def build_zimage_t2i(prompt: str, neg_prompt: str, width: int, height: int, seed: int) -> dict:
+def build_zimage_t2i(prompt, neg_prompt, width, height, seed):
     wf = load_workflow(ZIMAGE_WORKFLOW_PATH)
-
     full_prompt = prompt.strip()
     if neg_prompt:
         full_prompt += f"\n\nDo NOT include: {neg_prompt}"
-
-    for node_id, node in wf.items():
-        if node.get("class_type") == "CLIPTextEncode":
+    for _nid, node in wf.items():
+        ct = node.get("class_type")
+        if ct == "CLIPTextEncode":
             node["inputs"]["text"] = full_prompt
-
-    for node_id, node in wf.items():
-        if node.get("class_type") == "EmptySD3LatentImage":
+        elif ct == "EmptySD3LatentImage":
             node["inputs"]["width"] = width
             node["inputs"]["height"] = height
             node["inputs"]["batch_size"] = 1
-
-    for node_id, node in wf.items():
-        if node.get("class_type") == "KSampler":
+        elif ct == "KSampler":
             node["inputs"]["seed"] = int(seed)
-
     return wf
 
 
-# ── LongCat Image Edit Workflow 构建 ──────────────────
-def build_image_edit(prompt: str, neg_prompt: str, ref_filename: str,
-                     width: int, height: int, seed: int) -> dict:
-    """
-    构建 LongCat Image Edit workflow:
-    - LoadImage → 加载参考图 (定妆照)
-    - TextEncodeQwenImageEdit (正向) → 注入场景 Prompt
-    - TextEncodeQwenImageEdit (负向) → 注入负面词
-    - KSampler → 注入 seed
-    - ImageScaleToTotalPixels → 注入分辨率
-    """
+def build_image_edit(prompt, neg_prompt, ref_filename, megapixels, seed):
     wf = load_workflow(IMAGE_EDIT_WORKFLOW_PATH)
-
-    # 计算 megapixels (ImageScaleToTotalPixels 用的单位)
-    megapixels = max(1.0, (width * height) / 1_000_000)
-
-    # LoadImage → 注入参考图文件名
-    for node_id, node in wf.items():
+    for _nid, node in wf.items():
         if node.get("class_type") == "LoadImage":
             node["inputs"]["image"] = ref_filename
-
-    # ImageScaleToTotalPixels → 注入分辨率
-    for node_id, node in wf.items():
+    for _nid, node in wf.items():
         if node.get("class_type") == "ImageScaleToTotalPixels":
-            node["inputs"]["megapixels"] = megapixels
-
-    # TextEncodeQwenImageEdit: 第一个=正向 prompt, 第二个=负向 prompt
-    text_encode_nodes = []
-    for node_id, node in wf.items():
+            node["inputs"]["megapixels"] = float(megapixels)
+    enc = []
+    for _nid, node in wf.items():
         if node.get("class_type") == "TextEncodeQwenImageEdit":
-            text_encode_nodes.append((node_id, node))
-
-    # 按节点 ID 排序, 第一个注入正向 prompt
-    text_encode_nodes.sort(key=lambda x: x[0])
-    if len(text_encode_nodes) >= 1:
-        text_encode_nodes[0][1]["inputs"]["prompt"] = prompt.strip()
-    if len(text_encode_nodes) >= 2:
-        text_encode_nodes[1][1]["inputs"]["prompt"] = neg_prompt.strip() if neg_prompt else ""
-
-    # KSampler → 注入 seed
-    for node_id, node in wf.items():
+            enc.append((_nid, node))
+    enc.sort(key=lambda x: x[0])
+    if len(enc) >= 1:
+        enc[0][1]["inputs"]["prompt"] = prompt.strip()
+    if len(enc) >= 2:
+        enc[1][1]["inputs"]["prompt"] = neg_prompt.strip() if neg_prompt else ""
+    for _nid, node in wf.items():
         if node.get("class_type") == "KSampler":
             node["inputs"]["seed"] = int(seed)
-
     return wf
 
 
-# ── T2I Prompt 解析 ──────────────────────────────────
-def parse_t2i_spec(spec_path: Path) -> list[dict]:
-    if not spec_path.exists():
-        print(f"  [ERROR] 文件不存在: {spec_path}")
-        return []
-
-    with open(spec_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    images = []
-
-    block_pattern = re.compile(
-        r'###\s+(.+?)\n(.*?)(?=\n###\s+|\n---\s*\n##\s*制作优先级|\n##\s*文件命名规范|\Z)',
-        re.DOTALL,
-    )
-
-    for match in block_pattern.finditer(content):
-        name = match.group(1).strip()
-        block = match.group(2)
-
-        if "文件命名规范" in name or "制作优先级" in name:
-            continue
-
-        img = {"name": name}
-
-        field_pattern = re.compile(r'-\s*\*\*(.*?)\*\*[：:]\s*(.*?)(?=\n-\s*\*\*|\n\n|\Z)', re.DOTALL)
-        fields = {}
-        for fm in field_pattern.finditer(block):
-            key = fm.group(1).strip().lower()
-            val = fm.group(2).strip()
-            fields[key] = val
-
-        img["prompt"] = fields.get("画面", fields.get("prompt", ""))
-        img["neg_prompt"] = fields.get("负面词", fields.get("negative prompt", ""))
-
-        size_str = fields.get("尺寸", fields.get("size", ""))
-        size_match = re.findall(r'(\d+)', size_str)
-        if len(size_match) >= 2:
-            img["width"] = int(size_match[0])
-            img["height"] = int(size_match[1])
-        else:
-            img["width"] = 1920
-            img["height"] = 1920
-
-        seed_str = fields.get("seed", "42")
-        seed_match = re.search(r'(\d+)', seed_str)
-        img["seed"] = int(seed_match.group(1)) if seed_match else 42
-
-        file_val = fields.get("文件", fields.get("file", ""))
-        file_val = file_val.strip("`'\" ")
-        img["output_file"] = file_val if file_val else f"13_{name.replace(' ', '_')}.png"
-
-        if not img["prompt"]:
-            print(f"  [WARNING] {name}: 无画面描述 (prompt)，跳过")
-            continue
-
-        images.append(img)
-
-    return images
-
-
-# ── 单张生成 (自动路由 T2I / Image Edit) ──────────────
-def run_one_image(img: dict, output_dir: Path) -> bool:
-    name = img["name"]
-    output_file = img["output_file"]
-
-    # 检查是否为角色镜头 → Image Edit
-    ref_info = get_character_ref(name)
-
-    if ref_info:
-        mode = "IMAGE_EDIT"
-        ref_path = ref_info["ref_path"]
-        target_name = ref_info["target_name"]
-        ref_filename = upload_ref_to_comfyui(ref_path, target_name)
-        print(f"\n  [IMAGE_EDIT] {name}")
-        print(f"    参考图: {ref_path.name}")
-        wf = build_image_edit(
-            prompt=img["prompt"],
-            neg_prompt=img["neg_prompt"],
-            ref_filename=ref_filename,
-            width=img["width"],
-            height=img["height"],
-            seed=img["seed"],
-        )
-    else:
-        mode = "Z-IMAGE-TURBO"
-        print(f"\n  [Z-IMAGE] {name}")
-        wf = build_zimage_t2i(
-            prompt=img["prompt"],
-            neg_prompt=img["neg_prompt"],
-            width=img["width"],
-            height=img["height"],
-            seed=img["seed"],
-        )
-
-    print(f"    文件: {output_file}")
-    print(f"    尺寸: {img['width']}x{img['height']} | Seed: {img['seed']}")
-    print(f"    Prompt: {img['prompt'][:120]}...")
-
-    try:
-        pid = queue_prompt(wf)
-        print(f"    已提交 (prompt_id={pid})，等待生成...")
-        history = wait_for_prompt(pid, timeout=600)
-        outputs = find_output_files(history)
-
-        if outputs:
-            output_dir.mkdir(parents=True, exist_ok=True)
-            ok = True
-            for out in outputs:
-                dst = output_dir / output_file
-                if download_output_image(out, dst):
-                    size_kb = dst.stat().st_size // 1024
-                    print(f"    ✅ 已保存: {dst} ({size_kb}KB)")
-                else:
-                    print(f"    ❌ 下载失败: {out['filename']}")
-                    ok = False
-            return ok
-        else:
-            print(f"    [ERROR] 无输出文件")
+# ── 单张生成 ──────────────────────────────────────────
+def run_one(spec, output_dir):
+    out_file = output_dir / spec["out"]
+    if spec["mode"] == "image_edit":
+        ref = spec["ref"]
+        if not ref.exists():
+            print(f"  [ERROR] 缺定妆照: {ref}")
             return False
+        target = upload_ref_to_comfyui(ref, spec["ref_target"])
+        wf = build_image_edit(spec["prompt"], spec.get("neg", ""), target,
+                              spec["megapixels"], spec["seed"])
+    else:
+        wf = build_zimage_t2i(spec["prompt"], spec.get("neg", ""),
+                              spec["width"], spec["height"], spec["seed"])
 
-    except Exception as e:
-        print(f"    [ERROR] 失败: {e}")
+    pid = queue_prompt(wf)
+    print(f"    已提交 {pid[:8]}...")
+    hist = wait_for_prompt(pid)
+    outs = find_output_files(hist)
+    if not outs:
+        print(f"    [ERROR] 无输出")
         return False
+    output_dir.mkdir(parents=True, exist_ok=True)
+    ok = download_output_image(outs[0], out_file)
+    if ok:
+        kb = out_file.stat().st_size // 1024
+        print(f"    ✅ {out_file.name} ({kb}KB, seed={spec['seed']})")
+    else:
+        print(f"    ❌ 下载失败")
+    return ok
 
 
-# ── 主流程 ────────────────────────────────────────────
+def write_manifest(ok_map):
+    rows = []
+    for s in SPECS:
+        p = OUTPUT_DIR / s["out"]
+        rows.append({
+            "out": s["out"],
+            "name": s["name"],
+            "mode": s["mode"],
+            "seed": s["seed"],
+            "ok": ok_map.get(s["out"], False),
+            "bytes": p.stat().st_size if p.exists() else 0,
+        })
+    manifest = {"chapter": "13_外骨骼", "frames": rows, "total": len(rows)}
+    (OUTPUT_DIR / "manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"    manifest.json → {len(rows)} 条")
+
+
 def main():
-    parser = argparse.ArgumentParser(description="第13集 T2I 静态图批量生成")
-    parser.add_argument("--dry-run", action="store_true", help="仅打印计划，不实际提交")
-    parser.add_argument("--priority", type=str, choices=["p0", "p1", "p2", "p3", "all"], default="all",
-                        help="按优先级筛选")
-    parser.add_argument("--shot", type=str, help="仅生成指定图 (名称模糊匹配)")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser(description="第13集《外骨骼》T2I 基础图批量生成")
+    ap.add_argument("--dry-run", action="store_true", help="仅打印计划")
+    ap.add_argument("--shot", type=str, help="按名称模糊筛选")
+    args = ap.parse_args()
 
-    images = parse_t2i_spec(T2I_SPEC_PATH)
-    print(f"共解析 {len(images)} 张图像:")
+    specs = [s for s in SPECS if not args.shot or args.shot in s["name"]]
 
-    # 标注每张图使用的生成方式
-    for img in images:
-        ref_info = get_character_ref(img["name"])
-        if ref_info:
-            mode_str = f"🖼️ Image Edit (ref: {ref_info['ref_path'].name})"
-        else:
-            mode_str = "📝 Z-Image-Turbo"
-        print(f"  - {img['name']} → {img['output_file']} ({img['width']}x{img['height']}) [{mode_str}]")
-
-    if args.priority != "all":
-        allowed = PRIORITY_MAP.get(args.priority, [])
-        images = [img for img in images if any(a in img["name"] for a in allowed)]
-        print(f"\n按优先级 {args.priority.upper()} 筛选后: {len(images)} 张")
-
-    if args.shot:
-        images = [img for img in images if args.shot in img["name"]]
-        print(f"\n按关键词 '{args.shot}' 筛选后: {len(images)} 张")
-
-    if not images:
-        print("无符合条件的图像，退出")
-        return
-
+    print("=" * 62)
+    print(f" EP13《外骨骼》T2I 基础图  |  共 {len(specs)} 张  |  out: {OUTPUT_DIR}")
+    print("=" * 62)
+    for s in specs:
+        tag = "🖼️ Image Edit(定妆照)" if s["mode"] == "image_edit" else "📝 Z-Image-Turbo"
+        print(f"  - {s['name']}  →  {s['out']}  [{tag}] seed={s['seed']}")
     if args.dry_run:
-        print("\n[Dry-run] 以下是将要生成的图像:")
-        for img in images:
-            ref_info = get_character_ref(img["name"])
-            if ref_info:
-                mode_str = f"Image Edit (ref: {ref_info['ref_path'].name})"
-            else:
-                mode_str = "Z-Image-Turbo"
-            print(f"  → {img['output_file']} [{mode_str}] ({img['width']}x{img['height']}, seed={img['seed']})")
+        print("\n[Dry-run] 未实际提交。")
         return
 
-    output_dir = OUTPUT_DIR
-    success = 0
-    for i, img in enumerate(images, 1):
-        print(f"\n{'─'*50}")
-        print(f"[{i}/{len(images)}]")
-        ok = run_one_image(img, output_dir)
-        if ok:
-            success += 1
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    ok_map = {}
+    ok_n = 0
+    for i, s in enumerate(specs, 1):
+        print(f"\n[{i}/{len(specs)}] {s['name']}")
+        try:
+            ok = run_one(s, OUTPUT_DIR)
+            ok_map[s["out"]] = ok
+            if ok:
+                ok_n += 1
+        except Exception as e:
+            ok_map[s["out"]] = False
+            print(f"    ❌ {e}")
         time.sleep(1)
-
-    print(f"\n{'='*60}")
-    print(f"生成完成: {success}/{len(images)}")
-    print(f"输出目录: {output_dir}")
+    write_manifest(ok_map)
+    print(f"\n{'=' * 62}\n 完成: {ok_n}/{len(specs)}  输出: {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":
     main()
+
+
