@@ -1,113 +1,171 @@
 #!/usr/bin/env python3
-"""EP13 成片合成：拼接 11 镜 + 混音（BGM + TTS）+ 字幕 -> 成片 mp4。"""
-import subprocess, sys, os
+# -*- coding: utf-8 -*-
+"""第13集《外骨骼》成片合成：48 镜 concat（★音画钉长）+ 硬字幕烧录。
+
+铁律（任务书 §4.7 / STEM_FEST_PLAYBOOK §7）：
+- `帧数 ÷ 24` 是画面的权威时间轴；每段音频必须被钉到它：
+  `aresample=32000,aformat=channel_layouts=stereo,apad,atrim=0:<本镜时长>,asetpts=N/SR/TB`
+- 🚫 禁用 `-shortest`（实测砍的是视频）；🚫 禁用 TTS（人声已在视频轨内，不叠）。
+- 拼接后闸门：|音轨长度 − 画面长度| < 0.15s（必要非充分，还需逐镜测内容偏移）。
+
+⚠️ 推翻旧法（2026-10-12 用户令）：本脚本**不再混 TTS**（旧 `TTS_CUES`/`_720p_` 产物
+全部作废）；人声已由 MiniMax H3 随视频一起生成（写进 prompt 的 `Audio:`），
+合成时只 concat 各镜视频轨 + 原音轨，BGM/音效另走混音脚本。
+
+用法:
+  python scripts/synth_ep13.py --dry-run   # 仅列出 48 镜文件/时长/缺漏
+  python scripts/synth_ep13.py             # 拼接 master + （若 SRT 在）烧硬字幕
+"""
+import argparse
+import subprocess
+import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent  # 项目根（原 E:/code/... 已迁至 D:\...，改为脚本相对定位）
-EP = ROOT / "OUTPUT" / "13_外骨骼"
-UP = EP / "upscaled"
-AUD = EP / "audio"
-UP.mkdir(parents=True, exist_ok=True)
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "OUTPUT" / "13_外骨骼" / "videos"
+SRT = OUT / "EP13_外骨骼_字幕.srt"
+MASTER = OUT / "EP13_外骨骼_master.mp4"
+FINAL = OUT / "EP13_外骨骼_成片.mp4"
 
-# 镜头顺序（叙事序）
-ORDER = [
-    "EP13_SHOT-01_H3_720p_sarah_desk_explaining.mp4",  # 工位解释外骨骼
-    "EP13_SHOT-02_office_exoskeleton_ui_push.mp4",      # 外骨骼UI
-    "EP13_SHOT-03_H3_720p_shixiong_coffee_legal.mp4",   # 师兄"合法吗"
-    "EP13_SHOT-04_lab_2017_night_coffee_steam.mp4",     # 2017实验室闪回
-    "EP13_SHOT-05_subway_rush_hour_commute.mp4",        # 地铁群像
-    "EP13_SHOT-06_H3_720p_sarah_subway_observing.mp4",  # 莎拉地铁观察
-    "EP13_SHOT-07_virtual_face_082_laughing.mp4",       # 虚拟观众脸
-    "EP13_SHOT-08_render_vs_real_fade.mp4",             # 渲染vs真实
-    "EP13_SHOT-09_notebook_label_push.mp4",             # 笔记本
-    "EP13_SHOT-10_wechat_typing_hao.mp4",               # 微信"好"
-    "EP13_SHOT-11_H3_sarah_bar_052.mp4",                # 吧台散场
-]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from gen_ep13_h3_r2v import SHOTS as R2V_SHOTS  # noqa: E402
+from gen_ep13_h3_t2v import SHOTS as T2V_SHOTS  # noqa: E402
 
-def run(cmd):
-    r = subprocess.run(cmd, capture_output=True, text=True,
-                       encoding="utf-8", errors="replace")
-    return r
+ALL = {s["shot"]: s for s in R2V_SHOTS + T2V_SHOTS}
 
-def probe_dur(path):
-    r = run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
-             "-of", "csv=p=0", str(path)])
+
+def h3_dur_sec(dur: float) -> float:
+    """H3 帧数量化 `17k+5` 后的实际播放时长（= 帧数/24，画面权威时间轴）。"""
+    raw = max(5, round(dur * 24))
+    frames = raw + (5 - (raw % 17)) % 17
+    return frames / 24.0
+
+
+def resolve(shot: str):
+    """返回该镜 mp4（R2V 或 T2V），缺失返回 None。"""
+    hits = sorted(OUT.glob(f"EP13_SHOT-{shot}_H3_*.mp4"))
+    return hits[0] if hits else None
+
+
+def ffprobe(args, path):
+    r = subprocess.run(
+        ["ffprobe", "-v", "error", *args, str(path)],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
     try:
         return float(r.stdout.strip())
     except Exception:
         return 0.0
 
-# 台词与镜头的对应（start 为在成片中的起始秒，允许声音溢出到后续镜头）
-TTS_CUES = [
-    # (音频文件, 起始秒)
-    ("13_tts_sarah_02_desk.flac", 0.00),       # 工位解释外骨骼
-    ("13_tts_shixiong_01_hefa.flac", 18.19),   # 师兄"合法吗"
-    ("13_tts_shixiong_02_code.flac", 19.87),
-    ("13_tts_shixiong_03_bracket.flac", 22.99),
-    ("13_tts_sarah_05_hao.flac", 70.79),       # 微信"好"
-    ("13_tts_sarah_04_bar.flac", 80.85),       # 吧台散场
-]
+
+def build_concat_cmd(order):
+    """构造 ffmpeg concat filter_complex（48 输入，音频逐段钉长）。"""
+    n = len(order)
+    parts = []
+    for i, (shot, path) in enumerate(order):
+        dur = h3_dur_sec(ALL[shot]["dur"])
+        parts.append(f"[{i}:v]settb=AVTB,setpts=PTS-STARTPTS[v{i}]")
+        parts.append(
+            f"[{i}:a]aresample=32000,aformat=channel_layouts=stereo,"
+            f"apad,atrim=0:{dur:.3f},asetpts=N/SR/TB[a{i}]"
+        )
+    concat_inputs = "".join(f"[v{i}][a{i}]" for i in range(n))
+    fc = ";".join(parts) + f";{concat_inputs}concat=n={n}:v=1:a=1[v][a]"
+
+    cmd = ["ffmpeg", "-y"]
+    for _shot, path in order:
+        cmd += ["-i", str(path)]
+    cmd += [
+        "-filter_complex", fc,
+        "-map", "[v]", "-map", "[a]",
+        "-c:v", "libx264", "-crf", "18", "-preset", "fast",
+        "-c:a", "aac", "-b:a", "192k",
+        str(MASTER),
+    ]
+    return cmd
+
+
+def burn_subs():
+    """硬字幕烧录（libass + 微软雅黑），保原音轨。"""
+    vf = (
+        f"subtitles=EP13_外骨骼_字幕.srt"
+        f":fontsdir='C\\:/Windows/Fonts'"
+        f":force_style='FontName=Microsoft YaHei,FontSize=21,"
+        f"PrimaryColour=&H00FFFFFF,OutlineColour=&H90000000,"
+        f"BorderStyle=1,Outline=2,Shadow=0,MarginV=30'"
+    )
+    subprocess.run(
+        ["ffmpeg", "-y", "-i", "EP13_外骨骼_master.mp4", "-vf", vf,
+         "-c:v", "libx264", "-crf", "18", "-preset", "fast",
+         "-c:a", "copy", "EP13_外骨骼_成片.mp4"],
+        cwd=str(OUT), capture_output=True, text=True,
+        encoding="utf-8", errors="replace",
+    )
+    if FINAL.exists() and FINAL.stat().st_size > 0:
+        d = ffprobe(["-show_entries", "format=duration", "-of", "csv=p=0"], FINAL)
+        mb = FINAL.stat().st_size / 1024 / 1024
+        print(f"✅ 硬字幕成片: {FINAL.name} ({d:.2f}s, {mb:.1f}MB)")
+    else:
+        print("❌ 字幕烧录失败")
+
 
 def main():
-    # 1. 拼接视频轨（concat demuxer，绝对路径 + UTF-8）
-    concat_txt = UP / "concat_list.txt"
-    lines = [f"file '{UP / f}'" for f in ORDER]
-    concat_txt.write_text("\n".join(lines), encoding="utf-8")
+    ap = argparse.ArgumentParser(description="第13集《外骨骼》成片合成")
+    ap.add_argument("--dry-run", action="store_true", help="仅列出计划，不拼接")
+    args = ap.parse_args()
 
-    video_track = UP / "video_track.mp4"
-    print("=== 1. 拼接视频轨 ===")
-    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0",
-         "-i", str(concat_txt),
-         "-c:v", "libx264", "-crf", "18", "-preset", "fast",
-         "-an", str(video_track)])
-    if not video_track.exists():
-        print("拼接失败")
+    order = []          # [(shot, path)]
+    missing = []
+    total = 0.0
+    for shot in sorted(ALL.keys(), key=int):
+        path = resolve(shot)
+        dur = h3_dur_sec(ALL[shot]["dur"])
+        if path:
+            order.append((shot, path))
+            total += dur
+        else:
+            missing.append(shot)
+
+    print("=" * 66)
+    print(f" EP13《外骨骼》合成  |  {len(order)}/{len(ALL)} 镜在位  |  预计 {total:.2f}s")
+    print("=" * 66)
+    for shot, path in order:
+        print(f"  SHOT-{shot:>2}  {path.name}  ({h3_dur_sec(ALL[shot]['dur']):.3f}s)")
+    if missing:
+        print(f"\n⚠️ 缺 {len(missing)} 镜: {', '.join(missing)}")
+    if args.dry_run:
+        print("\n[Dry-run] 未拼接。")
         return
-    total = probe_dur(video_track)
-    print(f"视频轨完成: {total:.1f}s")
 
-    # 2. 构建混音：TTS 台词 + BGM
-    print("=== 2. 混音 (TTS + BGM) ===")
-    bgm_src = AUD / "13_bgm_04_bar_aftermath.mp3"
+    if missing:
+        print("❌ 有缺镜，中止拼接。")
+        return
 
-    inputs = ["-i", str(video_track), "-i", str(bgm_src)]
-    fc_parts = []
-    amix_inputs = []
-    # TTS 输入（从 index 2 开始）
-    for i, (tts_file, start_s) in enumerate(TTS_CUES):
-        p = AUD / tts_file
-        if not p.exists():
-            continue
-        idx = 2 + i
-        inputs += ["-i", str(p)]
-        delay_ms = int(start_s * 1000)
-        fc_parts.append(f"[{idx}:a]aresample=48000,adelay={delay_ms}|{delay_ms},"
-                        f"volume=1.0[t{i}]")
-        amix_inputs.append(f"[t{i}]")
+    print("\n=== 1. 拼接 master（★音画钉长）===")
+    cmd = build_concat_cmd(order)
+    r = subprocess.run(cmd, capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
+    if not MASTER.exists() or MASTER.stat().st_size == 0:
+        print("❌ 拼接失败:\n", r.stderr[-1500:])
+        return
 
-    # BGM 循环 + 低音量
-    fc_parts.append(f"[1:a]aresample=48000,volume=0.22[bgm]")
-    amix_inputs.append("[bgm]")
+    vd = ffprobe(["-select_streams", "v:0", "-show_entries",
+                  "stream=duration", "-of", "csv=p=0"], MASTER)
+    ad = ffprobe(["-select_streams", "a:0", "-show_entries",
+                  "stream=duration", "-of", "csv=p=0"], MASTER)
+    drift = abs(ad - vd)
+    print(f"   master: 视频 {vd:.3f}s / 音轨 {ad:.3f}s / 漂移 {drift:.3f}s")
+    if drift >= 0.15:
+        print(f"❌ 闸门未过：|音轨−画面| = {drift:.3f}s ≥ 0.15s（音画漂移铁律 §4.7）")
+        return
+    print(f"   ✅ 闸门通过（{drift:.3f}s < 0.15s）")
 
-    # 混合所有音频
-    n = len(amix_inputs)
-    amix = "".join(amix_inputs) + f"amix=inputs={n}:duration=longest:normalize=0[outa]"
-    fc_parts.append(amix)
-
-    filter_complex = ";".join(fc_parts)
-
-    final = EP / "EP13_外骨骼_成片_v2.mp4"
-    print("=== 3. 合成成片 ===")
-    r = run(["ffmpeg", "-y", *inputs,
-             "-filter_complex", filter_complex,
-             "-map", "0:v", "-map", "[outa]",
-             "-c:v", "copy", "-c:a", "aac", "-b:a", "192k",
-             "-shortest", str(final)])
-    if final.exists():
-        print(f"OK 成片: {final.name} ({probe_dur(final):.1f}s, "
-              f"{(final.stat().st_size/1024/1024):.1f}MB)")
+    if SRT.exists():
+        print("\n=== 2. 硬字幕烧录 ===")
+        burn_subs()
     else:
-        print("合成失败:", r.stderr[-1200:])
+        print(f"\n⚠️ 无字幕文件 {SRT.name}，跳过烧录（先跑 gen_ep13_subtitles.py）。")
+
 
 if __name__ == "__main__":
     main()
