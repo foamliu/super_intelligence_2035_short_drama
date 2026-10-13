@@ -7,6 +7,27 @@
 
 ---
 
+## #8 · 2026-10-13 · 长批量生成重定向日志“空转”——stdout 块缓冲看不到进度
+
+**环节**：EP18《暖阳》R2V/T2V 批量生成（`scripts/run_ep18_gen.bat` → `gen_ep18_h3_r2v.py` / `gen_ep18_h3_t2v.py`）
+
+**错误行为**：
+- 用 `.bat` 把脚本输出 `> ep18_gen.log` 重定向后，日志只有一行 `START`，之后数小时看不到任何进度
+- 误以为任务挂了，反复 tail 日志排查，浪费时间
+
+**根因**：
+- Windows 下 `python.exe` 的 stdout 在**非 TTY（重定向到文件）时是块缓冲**（block-buffered），`print()` 不会即时落盘
+- 脚本的 `print()` 未加 `flush=True`，启动时也没用 `-u`
+
+**正确做法 / 解决方案**：
+- 启动长批量脚本加 `-u`（`python -u ...`）或设 `PYTHONUNBUFFERED=1`，让 print 即时落盘
+- 判进度**看产物**而非日志：`OUTPUT/{章节}/videos/` 里落盘的 mp4 数量/文件名、ComfyUI `/queue`（running/pending）、进程存活状态
+- 长批量（几十镜 × 数分钟）**必须 detached 后台启动**（避免 shell 超时把进程杀掉），并记下 PID 便于查活
+
+**已修复**：`scripts/run_ep18_gen.bat` 的 python 调用已加 `-u`。
+
+---
+
 ## #7 · 2026-07-28 · AI 助手混淆分镜帧目录 → 误指路径
 
 **环节**：分镜生成后，用户问"分镜在哪"，AI 助手回答时指向了错误的目录。
