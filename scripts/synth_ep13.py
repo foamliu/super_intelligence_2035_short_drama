@@ -7,6 +7,9 @@
   `aresample=32000,aformat=channel_layouts=stereo,apad,atrim=0:<本镜时长>,asetpts=N/SR/TB`
 - 🚫 禁用 `-shortest`（实测砍的是视频）；🚫 禁用 TTS（人声已在视频轨内，不叠）。
 - 拼接后闸门：|音轨长度 − 画面长度| < 0.15s（必要非充分，还需逐镜测内容偏移）。
+- ★ 分辨率归一：R2V(mp=0.4)=864×480 与 T2V(mp=0.6)=1056×608 尺寸/宽高比不一致
+  （1.8 vs 1.737），concat 前必须统一 → 全部 `scale=1280:720:flags=lanczos,setsar=1`
+  （标准 16:9 720p；后续 SeedVR2 ×1.5 → 1920×1080）。
 
 ⚠️ 推翻旧法（2026-10-12 用户令）：本脚本**不再混 TTS**（旧 `TTS_CUES`/`_720p_` 产物
 全部作废）；人声已由 MiniMax H3 随视频一起生成（写进 prompt 的 `Audio:`），
@@ -64,7 +67,10 @@ def build_concat_cmd(order):
     parts = []
     for i, (shot, path) in enumerate(order):
         dur = h3_dur_sec(ALL[shot]["dur"])
-        parts.append(f"[{i}:v]settb=AVTB,setpts=PTS-STARTPTS[v{i}]")
+        parts.append(
+            f"[{i}:v]scale=1280:720:flags=lanczos,setsar=1,"
+            f"settb=AVTB,setpts=PTS-STARTPTS[v{i}]"
+        )
         parts.append(
             f"[{i}:a]aresample=32000,aformat=channel_layouts=stereo,"
             f"apad,atrim=0:{dur:.3f},asetpts=N/SR/TB[a{i}]"
