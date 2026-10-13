@@ -344,14 +344,23 @@ def _download_view(filename, subfolder, typ, dest):
 
 
 def _save_outputs(hist, shot):
-    """从 history 里抓视频产物落盘到 OUT，返回 [Path,...]。"""
+    """从 history 里抓视频产物落盘到 OUT，返回 [Path,...]。
+
+    Minimax H3 的 SaveVideo 节点把 .mp4 登记在 ``images`` 键下（不是 ``videos``），
+    所以这里按 MCP 的 _collect_outputs 口径遍历 images/gifs/videos/audio 四个键。
+    """
     out_files = []
     for _nid, node in hist.get("outputs", {}).items():
-        for item in node.get("videos", []):
-            fname = item.get("filename")
-            dst = OUT / fname
-            _download_view(fname, item.get("subfolder", ""), item.get("type", ""), dst)
-            out_files.append(dst)
+        if not isinstance(node, dict):
+            continue
+        for key in ("images", "gifs", "videos", "audio"):
+            for item in node.get(key) or []:
+                if not isinstance(item, dict) or not item.get("filename"):
+                    continue
+                fname = item["filename"]
+                dst = OUT / fname
+                _download_view(fname, item.get("subfolder", ""), item.get("type", ""), dst)
+                out_files.append(dst)
     return out_files
 
 
