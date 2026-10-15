@@ -3,7 +3,9 @@
 
 - 时间轴 = 逐镜镜头时长（H3 `17k+5` 帧量化，任务书 §4.1）
 - 台词 = 各镜 prompt 里 `Audio:` 字段的中文原文（台词**随 H3 生成**，🚫 禁用 TTS）
-- 无台词镜（`Audio:` 为英文音景）自动跳过，不产生字幕条目
+- ★ 无台词镜（`Audio:` 为中文音景描述，如「界面点击的轻响」）用 `SFX_ONLY` 显式排除，
+  🚫 不做「含中文即当台词」的启发式（会把音景描述误提成字幕）。
+- 中文单语字幕（对齐本仓既有 EP18 口径；双语为后续可选项）。
 
 用法:
   python scripts/gen_ep18_subtitles.py --dry-run   # 仅打印字幕预览（镜号/起止/文本）
@@ -20,10 +22,13 @@ SRT = OUT / "EP18_暖阳_字幕.srt"
 
 # 复用两个生成脚本的 SHOTS（台词权威 = H3 prompt 的 Audio: 字段）
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gen_ep18_h3_i2v import SHOTS as I2V_SHOTS  # noqa: E402
+from gen_ep18_h3_r2v import SHOTS as R2V_SHOTS  # noqa: E402
 from gen_ep18_h3_t2v import SHOTS as T2V_SHOTS  # noqa: E402
 
-ALL = {s["shot"]: s for s in I2V_SHOTS + T2V_SHOTS}
+ALL = {s["shot"]: s for s in R2V_SHOTS + T2V_SHOTS}
+
+# 无台词镜（Audio: 为纯音景描述，H3 不出人声）—— 与逐镜表「台词/音效」列核对一致。
+SFX_ONLY = {"01", "03", "10", "22", "27", "29", "33", "34", "36", "41", "47", "49", "53"}
 
 CJK_RE = re.compile(r"[\u4e00-\u9fff]")
 # 按句末标点切段（保标点），长句再按逗号/破折号切
@@ -40,10 +45,7 @@ def h3_dur_sec(dur: float) -> float:
 def extract_dialogue(prompt: str) -> str:
     """提取 prompt 里 `Audio:` 字段的中文台词；无中文（纯音景）→ 空串。"""
     m = re.search(r"Audio:\s*(.*)$", prompt, flags=re.S)
-    if not m:
-        return ""
-    text = m.group(1).strip()
-    return text if CJK_RE.search(text) else ""
+    return m.group(1).strip() if m else ""
 
 
 def split_segments(text: str) -> list:
@@ -84,7 +86,7 @@ def build_entries():
     for shot in sorted(ALL.keys(), key=int):
         s = ALL[shot]
         dur = h3_dur_sec(s["dur"])
-        text = extract_dialogue(s["prompt"])
+        text = extract_dialogue(s["prompt"]) if shot not in SFX_ONLY else ""
         if text:
             segs = split_segments(text)
             weights = [len(x) for x in segs]

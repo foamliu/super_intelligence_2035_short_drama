@@ -23,10 +23,10 @@ MASTER = OUT / "EP18_暖阳_master.mp4"
 FINAL = OUT / "EP18_暖阳_成片.mp4"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from gen_ep18_h3_i2v import SHOTS as I2V_SHOTS  # noqa: E402
+from gen_ep18_h3_r2v import SHOTS as R2V_SHOTS  # noqa: E402
 from gen_ep18_h3_t2v import SHOTS as T2V_SHOTS  # noqa: E402
 
-ALL = {s["shot"]: s for s in I2V_SHOTS + T2V_SHOTS}
+ALL = {s["shot"]: s for s in R2V_SHOTS + T2V_SHOTS}
 
 
 def h3_dur_sec(dur: float) -> float:
@@ -59,7 +59,8 @@ def build_concat_cmd(order):
     parts = []
     for i, (shot, path) in enumerate(order):
         dur = h3_dur_sec(ALL[shot]["dur"])
-        parts.append(f"[{i}:v]settb=AVTB,setpts=PTS-STARTPTS[v{i}]")
+        parts.append(f"[{i}:v]scale=1280:720:flags=lanczos,setsar=1,"
+                     f"settb=AVTB,setpts=PTS-STARTPTS[v{i}]")
         parts.append(
             f"[{i}:a]aresample=32000,aformat=channel_layouts=stereo,"
             f"apad,atrim=0:{dur:.3f},asetpts=N/SR/TB[a{i}]"
@@ -133,7 +134,7 @@ def main():
         return
 
     if missing:
-        print("❌ 有缺镜，中止拼接（先补齐 T2V 15/20/27/28/54）。")
+        print("❌ 有缺镜，中止拼接（先补齐 R2V/T2V 缺失镜）。")
         return
 
     print("\n=== 1. 拼接 master（★音画钉长）===")
