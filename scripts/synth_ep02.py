@@ -86,7 +86,7 @@ def burn_subs():
     """硬字幕烧录（libass + 微软雅黑），保原音轨。"""
     vf = (
         f"subtitles=EP02_经验_字幕.srt"
-        f":fontsdir='C\\\\:/Windows/Fonts'"
+        f":fontsdir='C\\:/Windows/Fonts'"
         f":force_style='FontName=Microsoft YaHei,FontSize=21,"
         f"PrimaryColour=&H00FFFFFF,OutlineColour=&H90000000,"
         f"BorderStyle=1,Outline=2,Shadow=0,MarginV=30'"
