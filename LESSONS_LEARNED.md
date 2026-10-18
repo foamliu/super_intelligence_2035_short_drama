@@ -7,6 +7,23 @@
 
 ---
 
+## #9 · 2026-10-18 · 多镜批量「只提交 + /history 回收」两段式——绕开 30s shell 超时与 MCP 输出根错位
+
+**环节**：EP05《临界点》H3 批量生成（`scripts/gen_ep05_h3_r2v.py` / `gen_ep05_h3_t2v.py` + `recover_ep05_h3.py`）
+
+**问题**：
+- 55 镜 × 10–15 分钟/镜 = 数小时总量，远超交互式 shell 的 30 秒超时上限，`--wait` 端到端校验被截断
+- ComfyUI MCP 工具的 `project_root` / `output_root` 绑在另一个项目 `E:\code\stem_fest`，与生产仓库 `super_intelligence_2035_short_drama` 路径不一致
+
+**正确做法 / 解决方案**：
+- 生成脚本拆两段：`--submit`（只 POST /prompt，秒级返回）+ 独立 `recover` 脚本轮询 ComfyUI `/history`，把 `EP05_SHOT-*` 成品 mp4 拉回仓库 `OUTPUT/05_临界点/videos/`
+- 用直接 Python 脚本（读本地 `workflows/`、写本地 `OUTPUT/`）而非 MCP 工具，绕过 stem_fest 默认输出根错位
+- 判进度看产物 + `/queue` + `/history`，不看日志（同 #8）
+
+**已修复**：`scripts/recover_ep05_h3.py` 落地，支持 `--loop 300` 后台轮询直到 55/55。
+
+---
+
 ## #8 · 2026-10-13 · 长批量生成重定向日志“空转”——stdout 块缓冲看不到进度
 
 **环节**：EP18《暖阳》R2V/T2V 批量生成（`scripts/run_ep18_gen.bat` → `gen_ep18_h3_r2v.py` / `gen_ep18_h3_t2v.py`）
