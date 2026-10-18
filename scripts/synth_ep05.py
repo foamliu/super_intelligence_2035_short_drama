@@ -13,6 +13,7 @@
   python scripts/synth_ep05.py             # 拼接 master + （若 SRT 在）烧硬字幕
 """
 import argparse
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -83,13 +84,20 @@ def build_concat_cmd(order):
 
 
 def burn_subs():
-    """硬字幕烧录（libass + 微软雅黑），保原音轨。"""
+    """硬字幕烧录（libass + 微软雅黑），保原音轨。
+
+    ★ 踩坑（2026-10-18）：`fontsdir='C:/Windows/Fonts'` 里的冒号会破坏 ffmpeg
+    subtitles 滤镜的选项解析（报 `No option name near '/Windows/Fonts'`）⇒ 一律
+    不传 fontsdir，依赖 libass 走系统字体目录；中文 SRT 文件名也先复制成 ASCII
+    名 `ep05_sub.srt`，规避滤镜解析里非 ASCII 路径的坑。
+    """
+    ascii_srt = OUT / "ep05_sub.srt"
+    shutil.copyfile(SRT, ascii_srt)
     vf = (
-        f"subtitles=EP05_临界点_字幕.srt"
-        f":fontsdir='C\\\\:/Windows/Fonts'"
-        f":force_style='FontName=Microsoft YaHei,FontSize=21,"
-        f"PrimaryColour=&H00FFFFFF,OutlineColour=&H90000000,"
-        f"BorderStyle=1,Outline=2,Shadow=0,MarginV=30'"
+        "subtitles=ep05_sub.srt"
+        ":force_style='FontName=Microsoft YaHei,FontSize=21,"
+        "PrimaryColour=&H00FFFFFF,OutlineColour=&H90000000,"
+        "BorderStyle=1,Outline=2,Shadow=0,MarginV=30'"
     )
     subprocess.run(
         ["ffmpeg", "-y", "-i", "EP05_临界点_master.mp4", "-vf", vf,
