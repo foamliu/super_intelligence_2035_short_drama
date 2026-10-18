@@ -798,6 +798,8 @@ elif ct == "SaveAudioAdvanced":
 | `gen_ep05_h3_r2v.py` | 第05集《临界点》有角色镜 R2V（41镜） | Minimax H3 R2V |
 | `gen_ep05_h3_t2v.py` | 第05集《临界点》无角色镜 T2V（14镜） | Minimax H3 T2V |
 | `recover_ep05_h3.py` | 第05集 H3 出片回收（/history → OUTPUT） | — |
+| `gen_ep05_subtitles.py` | 第05集《临界点》字幕生成（Audio:→srt） | — |
+| `synth_ep05.py` | 第05集《临界点》成片合成（拼接+字幕烧录） | ffmpeg |
 
 > 每个脚本均包含 `load_wf()` → `queue()` → `wait()` → `download()` 四步通用 API 模式。
 
@@ -873,7 +875,7 @@ Minimax H3 是**视频+音频联合生成模型**——一次推理同时输出�
 | **13_外骨骼** | ✅ 16 帧已生成 | ✅ 12 镜（4 H3 + 8 LTX） | ✅ 15 音频 | 🔜 待合成 |
 | **18_暖阳** | ✅ 13 帧 | ✅ 19 镜（H3 I2V） | 随 H3 生成（禁用 TTS） | ⏳ 待合成 |
 | **04_棋子** | ✅ 15 帧 | ✅ 55 镜（R2V 21 + T2V 34） | 随 H3 生成 | ✅ 已合成 |
-| **05_临界点** | ✅ 参考资产就位 | 🔄 55 镜已提交（R2V 41 + T2V 14）·回收中 | 随 H3 生成 | ⏳ 待合成 |
+| **05_临界点** | ✅ 参考资产就位 | 🔄 55 镜已提交（R2V 41 + T2V 14）·回收 43/55 | 随 H3 生成 | ⏳ 待合成 |
 | 12_身体 | ⏳ 待启动 | ⏳ | ⏳ | ⏳ |
 | 其他 | ⏳ 待启动 | ⏳ | ⏳ | ⏳ |
 
@@ -881,7 +883,7 @@ Minimax H3 是**视频+音频联合生成模型**——一次推理同时输出�
 
 > **18 集当前状态**：19/54 镜已用 Minimax H3 I2V 生成（清单 `OUTPUT/18_暖阳/videos/manifest.json`，1056×608 24fps + aac，台词随 H3 `Audio:` 生成）。剩余 35 镜需补资产：手机UI系列（03/09/12/16/21/23/29/30/34/35/38/40/43/44/51/53）、数据流 T2V（15/20/27/28/54 无参考图）。
 
-> **05 集当前状态**：55 镜（R2V 41 + T2V 14）已全部提交 ComfyUI H3 队列生成中，参考资产（定妆照 + 场景图）已就位（`MISSING_REFS=[]`）。用 `python scripts/recover_ep05_h3.py --loop 300` 轮询 `/history` 回收成品到 `OUTPUT/05_临界点/videos/`。
+> **05 集当前状态**：55 镜（R2V 41 + T2V 14）已全部提交 ComfyUI H3 队列生成中，参考资产（定妆照 + 场景图）已就位（`MISSING_REFS=[]`）。已回收 **43/55**（R2V 41/41 ✅ + T2V 2/14）；字幕/合成脚本 `gen_ep05_subtitles.py` + `synth_ep05.py` 已固化。用 `python scripts/recover_ep05_h3.py --loop 300` 轮询 `/history` 回收成品到 `OUTPUT/05_临界点/videos/`。
 
 ---
 
